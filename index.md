@@ -5,6 +5,8 @@
 layout: default
 ---
 
+![Profile Picture](https://www.gravatar.com/avatar/9DBDB3A3957B36A0266908A8231E081As.png)
+
 
 ### Blog Summary
 - July 2018
