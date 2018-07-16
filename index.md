@@ -11,7 +11,7 @@ layout: default
 ### Blog Summary
 - July 2018
   - [First Blog Post](./_posts/2018-07-12-First-Blog-Post.md)
-
+  - [Junos Routing Notes](./_posts/2018-07-16-Junos-Routing-Notes.md)
 
 
 ___
