@@ -1,6 +1,6 @@
 # Site settings
 title: The Dumping Blog
-description: 'I will be dumping content to this page and refining it later - Lee Dowdells'
+description: 'I will be dumping content to this page and refining it later. Also still to program the redirect the social media buttons below correctly - Lee Dowdells'
 url: 'https://lee2098.github.io'
 baseurl: ''
 # google_analytics: 'UA-XXXXXX-X'
@@ -9,10 +9,10 @@ baseurl: ''
 author:
   name: 'Lee Dowdells'
   email: lee-2098@live.co.uk
-  twitter_username: holder
-  facebook_username: holder
-  github_username:  holder
-  linkedin_username:  holder
+  twitter_username: 404
+  facebook_username: 404
+  github_username:  404
+  linkedin_username:  404
 
 defaults:
   -
