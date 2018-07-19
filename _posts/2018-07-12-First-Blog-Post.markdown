@@ -1,6 +1,11 @@
 ---
-layout: default
+title:  "The First Dump"
+date:   2018-07-12 18:42:23
+categories: [jekyll]
+tags: [jekyll]
 ---
+
+
 ## The First Dump
 
 This is simply a note to myself on how to fix the midnight Jekyll theme should any others have the same problem. This was mainly figured out by trial and error along with some comparisons with working github page sources.
