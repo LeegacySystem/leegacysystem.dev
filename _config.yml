@@ -3,7 +3,7 @@ title: The Dumping Blog
 description: 'I will be dumping content to this page and refining it later. Also still to program the redirect the social media buttons below correctly - Lee Dowdells'
 url: 'https://lee2098.github.io'
 baseurl: ''
-# google_analytics: 'UA-XXXXXX-X'
+google_analytics: 'UA-123062478-1'
 # disqus_shortname: 'your-disqus-name'
 
 author:
@@ -11,8 +11,8 @@ author:
   email: lee-2098@live.co.uk
   twitter_username: 'commit_confirm'
   facebook_username: '@commit-confirm'
-  github_username:  404
-  linkedin_username:  404
+  github_username:  'commit-confirm'
+  linkedin_username:  'lee-dowdells-2a4853b6'
 
 defaults:
   -
