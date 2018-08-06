@@ -1,6 +1,6 @@
 # Site settings
-title: The Dumping Blog
-description: 'I will be dumping content to this page and refining it later. Also still to program the redirect the social media buttons below correctly - Lee Dowdells'
+title: 'Commit-Confirm'
+description: 'This site is a personal project mainly intended as a repository of somewhat limited knowledge. I aim to use it as a tool to aid in committing topics of interest to my typically transient memory. - Lee Dowdells'
 url: 'https://lee2098.github.io'
 baseurl: ''
 google_analytics: 'UA-123062478-1'
