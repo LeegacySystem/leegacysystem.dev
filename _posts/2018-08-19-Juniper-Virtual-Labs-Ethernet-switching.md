@@ -1,6 +1,7 @@
 ---
 layout: default
-comments: true
+categories: [jekyll]
+tags: [jekyll]
 ---
 
 ## **Juniper Virtual Labs - Ethernet-switching**
