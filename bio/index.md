@@ -1,7 +1,7 @@
 ---
 layout: bio
 ---
-### **_Hi, my name is Lee Dowdells and this is Jackass!_** ###
+### **_Hi, my name is Lee and this is Jackass!_** ###
 <BR>
 
 
