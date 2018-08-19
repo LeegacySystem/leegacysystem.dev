@@ -24,7 +24,7 @@ I ended up spending more time than I would care to admit on this, in the end I r
 
 IMAGE 3
 
-<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2018/01/vqfx-topology.png"><img src="{{ site.url }}/images/posts/2018/01/vqfx-topology.png" width="150" ></a></div>
+<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2018/01/vqfx-topology.png"><img src="{{ site.url }}/images/posts/2018/01/vqfx-topology.png" width="523" ></a></div>
 
 
 If your RE and PFE are connected as shown, all you have to do is power them up and wait. On my home server they both powered up fairly fast (compared to vsrx), however it took another 10/15 minutes before they both started to work as expected. On your first attempt if you power them up and go for a 30 minute coffee/youtube mini binge, by the time you come back "show interface terse" should include xe-0/0/X interfaces. 
