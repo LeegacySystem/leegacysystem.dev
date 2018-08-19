@@ -1,7 +1,7 @@
 # Site settings
 title: 'Commit-Confirm'
 description: 'This site is a personal project mainly intended as a repository of somewhat limited knowledge. I aim to use it as a tool to aid in committing topics of interest to my typically poor memory. - Lee Dowdells'
-url: 'https://lee2098.github.io'
+url: 'https://commit-confirm.github.io'
 baseurl: ''
 google_analytics: 'UA-123062478-1'
 # disqus_shortname: 'your-disqus-name'

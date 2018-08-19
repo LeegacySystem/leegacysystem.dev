@@ -26,6 +26,7 @@ IMAGE 3
 
 <div style="text-align:center;"><a href="{{ site.url }}images/posts/2018/01/vqfx-topology.png"><img src="{{ site.url }}images/posts/2018/01/vqfx-topology.png" width="150" ></a></div>
 
+
 If your RE and PFE are connected as shown, all you have to do is power them up and wait. On my home server they both powered up fairly fast (compared to vsrx), however it took another 10/15 minutes before they both started to work as expected. On your first attempt if you power them up and go for a 30 minute coffee/youtube mini binge, by the time you come back "show interface terse" should include xe-0/0/X interfaces. 
 
 To test basic switching was working as expected I created a test VLAN on both REs, put the connecting interface between REs into the vlan and created a L3 interface with an IP assigned at each end. I've included both full configurations below along with my test output. 
