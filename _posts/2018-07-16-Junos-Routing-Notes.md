@@ -2,10 +2,11 @@
 title:  "Junos Routing Notes"
 date:   2018-08-16 17:00:00
 categories: [Juniper]
-tags: [Juniper Routing JNCIA]
+tags: 
+- Juniper
+- Routing
+- JNCIA
 ---
-
-## Junos Routing Notes
 
 This post is a review of Juniper Static Routing statements, mainly focusing on these three types:
 

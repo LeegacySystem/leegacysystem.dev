@@ -2,10 +2,13 @@
 title:  "Juniper Hardware Platform Overview"
 date:   2018-08-16 17:00:00
 categories: [Juniper]
-tags: [Juniper Hardware EX QFX JNCIA]
+tags:
+- Juniper
+- Hardware
+- EX
+- QFX
+- JNCIA
 ---
-
-## **Juniper Hardware Platform Overview**
 
 This post will look at the various juniper hardware platforms and summarise on each. The information presented is taken directly from the juniper product-services page. As there are comparisions of each platform this post will be table heavy.
 

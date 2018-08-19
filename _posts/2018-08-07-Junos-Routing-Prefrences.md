@@ -2,10 +2,11 @@
 title:  "Junos Routing Notes"
 date:   2018-08-16 17:00:00
 categories: [Juniper]
-tags: [Juniper Routing JNCIA]
+tags: 
+- Juniper
+- Routing
+- JNCIA
 ---
-
-## **Junos Default Route Prefrence Overview**
 
 This is a short post on juniper default route prefrences for specific protcols seen in the routing table. Routes with a lower prefrence are preferred over higher.
 

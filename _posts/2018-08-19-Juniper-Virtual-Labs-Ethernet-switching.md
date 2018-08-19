@@ -1,11 +1,14 @@
 ---
 title:  "Juniper Virtual Labs - Ethernet-switching"
-date:   2018-08-19 17:42:23
+date:   2018-08-19 13:42:23
 categories: [Juniper]
-tags: [Juniper Home-Lab vQFX JNCIS-ENT]
+tags: 
+- Juniper 
+- Home-Lab 
+- vQFX 
+- JNCIS-ENT
+- Eve-NG
 ---
-
-## **Juniper Virtual Labs - Ethernet-switching**
 
 I wanted to write up a quick post on getting a virtual lab up and running for studying towards the JNCIS-ENT exam. I was lucky enough to go on the in-person juniper training course for JEX & JIR so I have physical lab examples that I wanted to run at home. To do this I choose to use Eve-NG as it seems to be gaining popularity and covers a reasonable amount of [supported images](http://www.eve-ng.net/documentation/supported-images). I'm not going to cover the installation/configuration of eve-ng as their documentation is very good. However, as a caution, the main downside to Eve vs GNS3 that I have found is simply there is less community discussion around Eve-ng.
 
