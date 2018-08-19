@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 
 ## **Juniper Virtual Labs - Ethernet-switching**

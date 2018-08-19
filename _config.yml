@@ -4,7 +4,7 @@ description: 'This site is a personal project mainly intended as a repository of
 url: 'https://commit-confirm.github.io'
 baseurl: ''
 google_analytics: 'UA-123062478-1'
-# disqus_shortname: 'your-disqus-name'
+disqus_shortname: 'commit-confirm-github-io'
 
 author:
   name: 'Lee Dowdells'
