@@ -1,5 +1,5 @@
 ---
-layout: default
+title:  "Juniper Virtual Labs - Ethernet-switching"
 categories: [jekyll]
 tags: [jekyll]
 ---
