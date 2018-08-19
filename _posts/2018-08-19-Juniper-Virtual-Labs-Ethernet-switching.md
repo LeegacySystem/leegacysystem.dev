@@ -1,7 +1,8 @@
 ---
 title:  "Juniper Virtual Labs - Ethernet-switching"
-categories: [jekyll]
-tags: [jekyll]
+date:   2018-08-19 17:42:23
+categories: [Juniper]
+tags: [Juniper Home-Lab vQFX JNCIS-ENT]
 ---
 
 ## **Juniper Virtual Labs - Ethernet-switching**

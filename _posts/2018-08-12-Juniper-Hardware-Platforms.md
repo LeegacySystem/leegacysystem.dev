@@ -1,8 +1,11 @@
 ---
-layout: default
+title:  "Juniper Hardware Platform Overview"
+date:   2018-08-16 17:00:00
+categories: [Juniper]
+tags: [Juniper Hardware EX QFX JNCIA]
 ---
 
-## **Juniper hardware platform overview**
+## **Juniper Hardware Platform Overview**
 
 This post will look at the various juniper hardware platforms and summarise on each. The information presented is taken directly from the juniper product-services page. As there are comparisions of each platform this post will be table heavy.
 
@@ -175,3 +178,8 @@ QFX supports various control plane stacking technologies. Virtual Chassis (VC) i
 | **ARP Entries**         	| 144,000      	| 256,000      	| 256,000               	|                       	|
 
 <br/>
+
+<br/>
+<br/>
+
+TBD

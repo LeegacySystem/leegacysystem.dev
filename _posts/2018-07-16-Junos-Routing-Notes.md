@@ -1,5 +1,8 @@
 ---
-layout: default
+title:  "Junos Routing Notes"
+date:   2018-08-16 17:00:00
+categories: [Juniper]
+tags: [Juniper Routing JNCIA]
 ---
 
 ## Junos Routing Notes

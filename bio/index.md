@@ -5,7 +5,7 @@ layout: bio
 <BR>
 
 
-If it is not already clear, I should probably point out this isn't actually a blog about me performing stunts and injuring myself. It his however a work in progress and will never really be complete, even if I have spare time to continue with progress it.
+If it is not already clear, this isn't Jackass. It his however a work in progress and will never really be complete. Posts here may not be the best structured as they will be quick write ups mostly for my own refrence.
 
 &nbsp;
 &nbsp;
