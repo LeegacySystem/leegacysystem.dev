@@ -14,5 +14,4 @@ A routing policy can be used to allow all equal cost paths to be load balanced o
 
 Network vendors typically implement load balancing as in a per-packet or per-flow approach. This is one area where Juniper is really rather confusing. Historically LB in Junos was per-packet and as such the configuration statement is per-packet. However presumably for backwards compatability the statement is still per-packet but in the background its actually doing per-flow. Per-flow is the modern standard approach as it reduces the chance the destination recieving out-of-order packets.
 
-
 A flow is defined by default in Junos as the source and destination IP addresses, port inforamtion is ignored. Junos lets you modify this definition to include layer 4 port information in the hash. An important not is that every ICMP packet is trated as a new flow which may cause odd results and cause confusion when troubleshooting.  
