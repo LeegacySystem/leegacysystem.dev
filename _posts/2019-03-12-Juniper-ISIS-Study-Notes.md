@@ -5,6 +5,7 @@ categories: [Juniper]
 tags: 
 - Juniper 
 - IS-IS
+- JNCIS-ENT
 ---
 
 ## **First draft notes, likely to be messy/missing information**
