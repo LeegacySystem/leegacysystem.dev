@@ -1,5 +1,5 @@
 ---
-title:  "Junos Routing Notes"
+title:  "Junos Routing Prefrences"
 date:   2018-08-16 17:00:00
 categories: [Juniper]
 tags: 
@@ -24,6 +24,7 @@ This is a short post on juniper default route prefrences for specific protcols s
 | RIP / RIPng                	| 100                	| RIP 			                         	|
 | PIM                        	| 105                	| "Multicast Protocols Feature Guide"      	|
 | Aggregate                  	| 130                	| aggregate                              	|
+| Generated                  	| 130                	| Generated                              	|
 | OSPF AS external routes    	| 150                	| OSPF external-preference               	|
 | BGP (EBGP/IBGP)            	| 170                	| BGP preference, export, import         	|
 
