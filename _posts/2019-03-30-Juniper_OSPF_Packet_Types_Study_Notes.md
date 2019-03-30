@@ -40,7 +40,7 @@ LSUs are the flooding mechanism used to send Link-State Advertisements. Each LSU
 
 <a href="{{ site.url }}/images/posts/2019/01/capture.png"><img src="{{ site.url }}/images/posts/2019/03/OSPF_Packets-LSU_Packet.png" width="720" >
 
-#### **OSPF Link State Acknowledgement (type 4):**
+#### **OSPF Link State Acknowledgement (type 5):**
 As previously mentioned an Acknowledgement has to be sent in response to an LSU to acknowledge that the reciever obtained all LSAs within the LSU. One packet can be used to acknowledge multiple LSAs.
 
 <a href="{{ site.url }}/images/posts/2019/01/capture.png"><img src="{{ site.url }}/images/posts/2019/03/OSPF_Packets-LSA_(Ack)_packet.png" width="720" >
