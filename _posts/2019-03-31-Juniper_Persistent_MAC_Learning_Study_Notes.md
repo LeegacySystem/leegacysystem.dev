@@ -25,3 +25,4 @@ There are four main considerations when using persistent learning:
 </ol>
 
 Persistent MAC learning is configured under "edit ethernet-switching-options secure-access-port interface ge-0/0/0.0" with the persistent-learning statement. To verify the MAC is persistent the "show ethernet-switching table" command can be used to display the type of entry in the forwarding table.
+
