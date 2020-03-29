@@ -1,18 +1,18 @@
 # Site settings
 title: 'Commit-Confirm'
-description: 'This site is a personal project mainly intended as a repository of somewhat limited knowledge. I aim to use it as a tool to aid in committing topics of interest to my typically poor memory. - Lee Dowdells'
+description: 'This site is a personal project mainly intended as a repository of somewhat limited knowledge. I aim to use it as a tool to aid in committing topics of interest to my typically poor memory. - Lee'
 url: 'https://commit-confirm.github.io'
 baseurl: ''
 google_analytics: 'UA-123062478-1'
 disqus_shortname: 'commit-confirm-github-io'
 
 author:
-  name: 'Lee Dowdells'
-  email: lee-2098@live.co.uk
+  name: 'Lee'
+  email: lee@commit-confirm.host
   twitter_username: 'commit_confirm'
   facebook_username: '@commit-confirm'
   github_username:  'commit-confirm'
-  linkedin_username:  'lee-dowdells-2a4853b6'
+  linkedin_username:  'lee-dow180'
 
 defaults:
   -
