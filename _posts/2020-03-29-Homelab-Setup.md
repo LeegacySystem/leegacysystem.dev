@@ -1,4 +1,13 @@
 
+---
+title:  "CoreDNS Homelab Setup"
+date:   2020-03-29 14:40:00
+categories: [Docker]
+tags: 
+- Docker
+- DNS
+- Homelab
+---
 
 # CoreDNS Homelab Setup
 Well it turns out Coronavirus is great studying as there's literally nothing else to do, apart from play games and watching tv....
@@ -64,7 +73,7 @@ lab_coredns       | linux/amd64, go1.14.1, 1766568
 
 --
 
-lee@host:~|⇒  dig CH txt version.bind @localhost
+⇒  dig CH txt version.bind @localhost
 
 ; <<>> DiG 9.11.14-RedHat-9.11.14-2.fc31 <<>> CH txt version.bind @localhost
 ;; global options: +cmd
