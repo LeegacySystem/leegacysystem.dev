@@ -1,4 +1,3 @@
-
 ---
 title:  "CoreDNS Homelab Setup"
 date:   2020-03-29 14:40:00
