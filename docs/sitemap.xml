@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://commit-confirm.github.io/posts/homelab-setup/</loc>
+    <lastmod>2020-03-29T14:40:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/</loc>
+    <lastmod>2020-03-29T14:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/tags/dns/</loc>
+    <lastmod>2020-03-29T14:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/tags/docker/</loc>
+    <lastmod>2020-03-29T14:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/categories/docker/</loc>
+    <lastmod>2020-03-29T14:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/snippets/</loc>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/tags/homelab/</loc>
+    <lastmod>2020-03-29T14:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/posts/</loc>
+    <lastmod>2020-03-29T14:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/projects/</loc>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/projects/</loc>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/series/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://commit-confirm.github.io/tags/</loc>
+    <lastmod>2020-03-29T14:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

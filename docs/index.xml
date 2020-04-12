@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Commit-Confirm</title>
+    <link>https://commit-confirm.github.io/</link>
+    <description>Recent content on Commit-Confirm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 29 Mar 2020 14:40:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://commit-confirm.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CoreDNS Homelab Setup</title>
+      <link>https://commit-confirm.github.io/posts/homelab-setup/</link>
+      <pubDate>Sun, 29 Mar 2020 14:40:00 +0000</pubDate>
+      
+      <guid>https://commit-confirm.github.io/posts/homelab-setup/</guid>
+      <description>CoreDNS Homelab Setup Well it turns out Coronavirus is great studying as there&amp;rsquo;s literally nothing else to do, apart from play games and watching tv&amp;hellip;.
+Anyway this post will go over my notes on setting up CoreDNS for DNS resolution within my home network. The post will focus on Docker along with DNS principles.
+super important tldr The hardest thing about using CoreDNS is not typing or saying CoreOS, super annoying habbit.</description>
+    </item>
+    
+    <item>
+      <title>About Hugo</title>
+      <link>https://commit-confirm.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://commit-confirm.github.io/about/</guid>
+      <description>Hugo is a static site engine written in Go.
+It makes use of a variety of open source projects including:
+ Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.
+Setup Some fun facts about Hugo:
+ Built in Go Loosely inspired by Jekyll Primarily developed by spf13 on the train while commuting to and from Manhattan. Coded in Vim using spf13-vim  Have questions or suggestions?</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://commit-confirm.github.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://commit-confirm.github.io/contact/</guid>
+      <description>Follow me, @johndoe.</description>
+    </item>
+    
+    <item>
+      <title>Contato</title>
+      <link>https://commit-confirm.github.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://commit-confirm.github.io/contact/</guid>
+      <description>Me siga em @joaoninguem.</description>
+    </item>
+    
+    <item>
+      <title>First snippet</title>
+      <link>https://commit-confirm.github.io/snippets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://commit-confirm.github.io/snippets/</guid>
+      <description>This content is in snippets/first/index.md</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://commit-confirm.github.io/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://commit-confirm.github.io/projects/</guid>
+      <description>Nothing to see here&amp;hellip; Move along!</description>
+    </item>
+    
+    <item>
+      <title>Projetos</title>
+      <link>https://commit-confirm.github.io/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://commit-confirm.github.io/projects/</guid>
+      <description>Em construção&amp;hellip; Aguarde!</description>
+    </item>
+    
+    <item>
+      <title>Sobre Hugo</title>
+      <link>https://commit-confirm.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://commit-confirm.github.io/about/</guid>
+      <description>Em construção&amp;hellip; Aguarde!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Lee Dowdells">
+    <meta name="description" content="A personal stash of notes covering various topics">
+    <meta name="keywords" content="blog, devops, neteng, juniper">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CoreDNS Homelab Setup"/>
+<meta name="twitter:description" content="CoreDNS Homelab Setup Well it turns out Coronavirus is great studying as there&rsquo;s literally nothing else to do, apart from play games and watching tv&hellip;.
+Anyway this post will go over my notes on setting up CoreDNS for DNS resolution within my home network. The post will focus on Docker along with DNS principles.
+super important tldr The hardest thing about using CoreDNS is not typing or saying CoreOS, super annoying habbit."/>
+
+    <meta property="og:title" content="CoreDNS Homelab Setup" />
+<meta property="og:description" content="CoreDNS Homelab Setup Well it turns out Coronavirus is great studying as there&rsquo;s literally nothing else to do, apart from play games and watching tv&hellip;.
+Anyway this post will go over my notes on setting up CoreDNS for DNS resolution within my home network. The post will focus on Docker along with DNS principles.
+super important tldr The hardest thing about using CoreDNS is not typing or saying CoreOS, super annoying habbit." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://commit-confirm.github.io/posts/homelab-setup/" />
+<meta property="article:published_time" content="2020-03-29T14:40:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-03-29T14:40:00&#43;00:00"/>
+
+
+    
+      <base href="https://commit-confirm.github.io/posts/homelab-setup/">
+    
+    <title>
+  CoreDNS Homelab Setup · Commit-Confirm
+</title>
+
+    
+      <link rel="canonical" href="https://commit-confirm.github.io/posts/homelab-setup/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://commit-confirm.github.io/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://commit-confirm.github.io/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css" integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://commit-confirm.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://commit-confirm.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.54.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-dark">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://commit-confirm.github.io/">
+      Commit-Confirm
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://commit-confirm.github.io/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://commit-confirm.github.io/posts/">Blog</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">CoreDNS Homelab Setup</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2020-03-29T14:40:00Z'>
+                March 29, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              5-minute read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fas fa-folder"></i>
+    <a href="https://commit-confirm.github.io/categories/docker/">Docker</a></div>
+
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://commit-confirm.github.io/tags/docker/">Docker</a>
+      <span class="separator">•</span>
+    <a href="https://commit-confirm.github.io/tags/dns/">DNS</a>
+      <span class="separator">•</span>
+    <a href="https://commit-confirm.github.io/tags/homelab/">Homelab</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        
+
+<h1 id="coredns-homelab-setup">CoreDNS Homelab Setup</h1>
+
+<p>Well it turns out Coronavirus is great studying as there&rsquo;s literally nothing else to do, apart from play games and watching tv&hellip;.</p>
+
+<p>Anyway this post will go over my notes on setting up CoreDNS for DNS resolution within my home network. The post will focus on Docker along with DNS principles.</p>
+
+<p><strong>super important tldr</strong> The hardest thing about using CoreDNS is not typing or saying CoreOS, super annoying habbit.</p>
+
+<h2 id="coredns">CoreDNS</h2>
+
+<p>CoreDNS is designed to be a lightweight, DNS Server written the Go programming language. CoreDNS graduated from the Cloud Native Computing Foundation in 2019 following Promethues and Kubernetes, which relies heavily on CoreDNS as a default DNS provider.</p>
+
+<h3 id="coredns-configuration">CoreDNS Configuration</h3>
+
+<p>Three default zone files:
+1) CoreDNS corefile
+2) Forward lookup zone
+3) Reverse lookup Zone</p>
+
+<p>A zone file is simply the file which defines each record, a mapping of IP address to host names.</p>
+
+<h4 id="basic-configuration-tests">Basic Configuration Tests</h4>
+
+<p>I don&rsquo;t require anything complicated so for now I will focus on the Corefile. Looking over the documentation there are some config snippets provided which I;ve used to verify basic operations.</p>
+
+<p><strong>corefile</strong></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">. {
+   chaos CoreDNS-001
+}</pre></div>
+<p>I used this corefile with the following compose:</p>
+
+<p><strong>docker-compose</strong></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">version: &#34;3.7&#34;
+services:
+  coredns:
+    image: coredns/coredns
+    container_name: lab_coredns
+    hostname: coredns
+    ports:
+      - 53:53/udp
+      - 53:53/tcp
+    volumes:
+      - ./coredns:/root/
+    command: &#34;-conf /root/corefile&#34;
+    networks:
+      homelab:
+        aliases:
+        - &#34;coreDNS&#34;</pre></div>
+<p><strong>Testing</strong></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">⇒  docker-compose up coredns                         
+Starting lab_coredns ... done
+Attaching to lab_coredns
+lab_coredns       | .:53
+lab_coredns       | CoreDNS-1.6.9
+lab_coredns       | linux/amd64, go1.14.1, 1766568
+
+
+--
+
+⇒  dig CH txt version.bind @localhost
+
+; &lt;&lt;&gt;&gt; DiG 9.11.14-RedHat-9.11.14-2.fc31 &lt;&lt;&gt;&gt; CH txt version.bind @localhost
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 58270
+;; flags: qr rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: d14a96c110ad8ef1 (echoed)
+;; QUESTION SECTION:
+;version.bind.                  CH      TXT
+
+;; ANSWER SECTION:
+version.bind.           0       CH      TXT     &#34;CoreDNS-001&#34;
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#53(127.0.0.1)
+;; WHEN: Sun Mar 29 13:00:40 BST 2020
+;; MSG SIZE  rcvd: 89
+````
+
+#### Global zone
+As the previous configuration doesn&#39;t really do much but return a string for a specific query its time to move on. One thing to note that everything between {} brackets counts as a zone. I need to modify this root zone for it to allow non-defined zone queries be forwarded to external DNS servers.</pre></div>
+<p>.:53 {
+    forward . 8.8.8.8 9.9.9.9
+    log
+    errors
+}</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">This global zone file will for all matching queries forward them to the public Goggle DNS servers. Along with logging errors. 
+
+#### Private zone
+Next up is to add a second zone which defines the homelab enviroment.</pre></div>
+<p>.:53 {
+    forward . 8.8.8.8 9.9.9.9
+    log
+    errors
+}</p>
+
+<p>⇒ homelab.host:53 {
+    file /root/homelab.db
+    log
+    errors
+}</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">The private zone defined here is actually very similar to the global zone with only two real diferences. Now any query that comes in relating to a host which belongs in the ⇒ homelab.host zone will trigger a lookup in the homelab.db file, which doesn&#39;t exist yet. 
+
+#### Defining zone records
+Creating the homelab.db and defining the records as below:</pre></div>
+<p>⇒ homelab.host.        IN  SOA coredns.⇒ homelab.host. dummy-email.⇒ homelab.host. 1585484552 7200 3600 1209600 3600</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"></pre></div>
+<p>1) <em>⇒ homelab.host.</em>                - Zone
+2) <em>SOA</em>                                - Start Of Authority record type
+3) <em>coredns.⇒ homelab.host.</em>        - SOA server for zone (this server)
+4) <em>dummy-email.⇒ homelab.host.</em>    - fake email
+5) <em>1585484552</em>                         - Unique serial (unix timestamp)
+6) <em>7200</em>                               - SOA Refresh Rate
+7) <em>3600</em>                               - SOA Retry Rate
+8) <em>1209600</em>                            - SOA Expiration hold time
+9) <em>3600</em>                               - Records default TTL</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">There are some interesting values in here, a quick Google of recommended times ([RFC 2308](https://tools.ietf.org/html/rfc2308)) shows that the defaults for SOA refresh/retry/expiry rates are: 30m/15m/7d/20m. However this is a dated document and for homelab usage those defaults are a little extreme, I don&#39;t want to wait 20 minutes just for TTLs to expire.
+
+Next up is to define the rest of the host file, you can see its structure in the previously linked RFS.
+**homelab.db**</pre></div>
+<p>⇒ homelab.host.        IN  SOA coredns.⇒ homelab.host. dummy-email.⇒ homelab.host. 1585484552 7200 3600 1209600 3600</p>
+
+<p>future_stuff.⇒ homelab.host.    IN  A   192.168.0.22
+desktop.⇒ homelab.host.    IN  A   127.0.0.1
+*.⇒ homelab.host. IN  A   127.0.0.1</p>
+
+<p>#*.⇒ homelab.host. IN  CNAME   desktop.⇒ homelab.host</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">My homelab.db file only has three entires in it, the first indicates and queries to &#34;*future_stuff.⇒ homelab.host*&#34; should go to *192.168.0.22*. This is just an example as for now all my services live on my desktop in seperate containers, although this will change in future. The second entry defines a mapping for *desktop.⇒ homelab.host* to *127.0.0.1*. Lastly the final CNAME entry maps everything else to the previously defined A record host name.
+
+##### Testing each zone:
+After starting the contianer I should be able to run dig commands from my host command prompt:</pre></div>
+<h1 id="showing-the-global-zone-works">Showing the global zone works</h1>
+
+<p>⇒  dig @127.0.0.1 google.com | grep google<br />
+; &lt;&lt;&gt;&gt; DiG 9.11.14-RedHat-9.11.14-2.fc31 &lt;&lt;&gt;&gt; @127.0.0.1 google.com
+;google.com.                    IN      A
+google.com.             58      IN      A       172.217.169.14</p>
+
+<h1 id="showing-the-desktop-record">Showing the desktop record</h1>
+
+<p>⇒  dig @127.0.0.1 desktop.⇒ homelab.host | grep commit
+; &lt;&lt;&gt;&gt; DiG 9.11.14-RedHat-9.11.14-2.fc31 &lt;&lt;&gt;&gt; @127.0.0.1 desktop.⇒ homelab.host
+;desktop.⇒ homelab.host.   IN      A
+desktop.⇒ homelab.host. 0  IN      A       127.0.0.1</p>
+
+<h1 id="showing-the-place-holder-record">Showing the place holder record</h1>
+
+<p>⇒  dig @127.0.0.1 future_stuff.⇒ homelab.host | grep future
+; &lt;&lt;&gt;&gt; DiG 9.11.14-RedHat-9.11.14-2.fc31 &lt;&lt;&gt;&gt; @127.0.0.1 future_stuff.⇒ homelab.host
+;future_stuff.⇒ homelab.host. IN   A
+future_stuff.⇒ homelab.host. 0 IN  A       192.168.0.22
+```</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>This has been a very basic coverage of CoreDNS going over my usecase. In future I&rsquo;ll likely build on this using CoreDNS and Kubernetes together, possibly with other provider types such as Git and other modules.</p>
+
+<h2 id="note">Note</h2>
+
+<p>The CNAME wildcard entry didn&rsquo;t work, and I couldn&rsquo;t be bothered spending time on it so I change the wildcard CNAME to an A record</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+    </main>
+
+    
+
+    
+
+  </body>
+
+</html>
