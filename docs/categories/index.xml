@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Commit-Confirm</title>
-    <link>https://commit-confirm.github.io/categories/</link>
+    <link>https://commit-confirm.host/categories/</link>
     <description>Recent content in Categories on Commit-Confirm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	<atom:link href="https://commit-confirm.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://commit-confirm.host/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Docker</title>
-      <link>https://commit-confirm.github.io/categories/docker/</link>
+      <link>https://commit-confirm.host/categories/docker/</link>
       <pubDate>Sun, 29 Mar 2020 14:40:00 +0000</pubDate>
       
-      <guid>https://commit-confirm.github.io/categories/docker/</guid>
+      <guid>https://commit-confirm.host/categories/docker/</guid>
       <description></description>
     </item>
     
