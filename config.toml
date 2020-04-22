@@ -1,4 +1,4 @@
-baseurl = "https://commit-confirm.host"
+baseurl = "https://www.commit-confirm.host"
 title = "Commit-Confirm"
 
 theme = "hugo-coder"
