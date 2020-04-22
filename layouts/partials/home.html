@@ -1,7 +1,10 @@
 <section class="container centered">
 
-  <div id="particles-js"></div>
-  <script src="js/particles.js"></script>
+<!-- particles.js -->
+<link rel="stylesheet" media="screen" href="css/style.css">
+<div id="particles-js"></div>
+<script src="js/particles.js"></script>
+<script src="js/app.js"></script>
 
   <div class="about">
     {{ if and (isset .Site.Params "avatarurl") (not (isset .Site.Params "gravatar")) }}
