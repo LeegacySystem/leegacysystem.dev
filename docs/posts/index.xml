@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Commit-Confirm</title>
-    <link>https://commit-confirm.host/posts/</link>
+    <link>https://www.commit-confirm.host/posts/</link>
     <description>Recent content in Posts on Commit-Confirm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 29 Mar 2020 14:40:00 +0000</lastBuildDate>
     
-	<atom:link href="https://commit-confirm.host/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.commit-confirm.host/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CoreDNS Homelab Setup</title>
-      <link>https://commit-confirm.host/posts/homelab-setup/</link>
+      <link>https://www.commit-confirm.host/posts/homelab-setup/</link>
       <pubDate>Sun, 29 Mar 2020 14:40:00 +0000</pubDate>
       
-      <guid>https://commit-confirm.host/posts/homelab-setup/</guid>
+      <guid>https://www.commit-confirm.host/posts/homelab-setup/</guid>
       <description>CoreDNS Homelab Setup Well it turns out Coronavirus is great studying as there&amp;rsquo;s literally nothing else to do, apart from play games and watching tv&amp;hellip;.
 Anyway this post will go over my notes on setting up CoreDNS for DNS resolution within my home network. The post will focus on Docker along with DNS principles.
 super important tldr The hardest thing about using CoreDNS is not typing or saying CoreOS, super annoying habbit.</description>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Commit-Confirm</title>
-    <link>https://commit-confirm.host/</link>
+    <link>https://www.commit-confirm.host/</link>
     <description>Recent content on Commit-Confirm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 29 Mar 2020 14:40:00 +0000</lastBuildDate>
     
-	<atom:link href="https://commit-confirm.host/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.commit-confirm.host/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CoreDNS Homelab Setup</title>
-      <link>https://commit-confirm.host/posts/homelab-setup/</link>
+      <link>https://www.commit-confirm.host/posts/homelab-setup/</link>
       <pubDate>Sun, 29 Mar 2020 14:40:00 +0000</pubDate>
       
-      <guid>https://commit-confirm.host/posts/homelab-setup/</guid>
+      <guid>https://www.commit-confirm.host/posts/homelab-setup/</guid>
       <description>CoreDNS Homelab Setup Well it turns out Coronavirus is great studying as there&amp;rsquo;s literally nothing else to do, apart from play games and watching tv&amp;hellip;.
 Anyway this post will go over my notes on setting up CoreDNS for DNS resolution within my home network. The post will focus on Docker along with DNS principles.
 super important tldr The hardest thing about using CoreDNS is not typing or saying CoreOS, super annoying habbit.</description>
@@ -24,10 +24,10 @@ super important tldr The hardest thing about using CoreDNS is not typing or sayi
     
     <item>
       <title>About Hugo</title>
-      <link>https://commit-confirm.host/about/</link>
+      <link>https://www.commit-confirm.host/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://commit-confirm.host/about/</guid>
+      <guid>https://www.commit-confirm.host/about/</guid>
       <description>Hugo is a static site engine written in Go.
 It makes use of a variety of open source projects including:
  Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.
@@ -37,55 +37,55 @@ Setup Some fun facts about Hugo:
     
     <item>
       <title>Contact</title>
-      <link>https://commit-confirm.host/contact/</link>
+      <link>https://www.commit-confirm.host/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://commit-confirm.host/contact/</guid>
+      <guid>https://www.commit-confirm.host/contact/</guid>
       <description>Follow me, @johndoe.</description>
     </item>
     
     <item>
       <title>Contato</title>
-      <link>https://commit-confirm.host/contact/</link>
+      <link>https://www.commit-confirm.host/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://commit-confirm.host/contact/</guid>
+      <guid>https://www.commit-confirm.host/contact/</guid>
       <description>Me siga em @joaoninguem.</description>
     </item>
     
     <item>
       <title>First snippet</title>
-      <link>https://commit-confirm.host/snippets/</link>
+      <link>https://www.commit-confirm.host/snippets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://commit-confirm.host/snippets/</guid>
+      <guid>https://www.commit-confirm.host/snippets/</guid>
       <description>This content is in snippets/first/index.md</description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>https://commit-confirm.host/projects/</link>
+      <link>https://www.commit-confirm.host/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://commit-confirm.host/projects/</guid>
+      <guid>https://www.commit-confirm.host/projects/</guid>
       <description>Nothing to see here&amp;hellip; Move along!</description>
     </item>
     
     <item>
       <title>Projetos</title>
-      <link>https://commit-confirm.host/projects/</link>
+      <link>https://www.commit-confirm.host/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://commit-confirm.host/projects/</guid>
+      <guid>https://www.commit-confirm.host/projects/</guid>
       <description>Em construção&amp;hellip; Aguarde!</description>
     </item>
     
     <item>
       <title>Sobre Hugo</title>
-      <link>https://commit-confirm.host/about/</link>
+      <link>https://www.commit-confirm.host/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://commit-confirm.host/about/</guid>
+      <guid>https://www.commit-confirm.host/about/</guid>
       <description>Em construção&amp;hellip; Aguarde!</description>
     </item>
     

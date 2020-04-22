@@ -3,86 +3,86 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://commit-confirm.host/posts/homelab-setup/</loc>
+    <loc>https://www.commit-confirm.host/posts/homelab-setup/</loc>
     <lastmod>2020-03-29T14:40:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://commit-confirm.host/about/</loc>
+    <loc>https://www.commit-confirm.host/about/</loc>
   </url>
   
   <url>
-    <loc>https://commit-confirm.host/categories/</loc>
+    <loc>https://www.commit-confirm.host/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://commit-confirm.host/</loc>
-    <lastmod>2020-03-29T14:40:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://commit-confirm.host/contact/</loc>
-  </url>
-  
-  <url>
-    <loc>https://commit-confirm.host/contact/</loc>
-  </url>
-  
-  <url>
-    <loc>https://commit-confirm.host/tags/dns/</loc>
+    <loc>https://www.commit-confirm.host/</loc>
     <lastmod>2020-03-29T14:40:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://commit-confirm.host/categories/docker/</loc>
+    <loc>https://www.commit-confirm.host/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/dns/</loc>
     <lastmod>2020-03-29T14:40:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://commit-confirm.host/tags/docker/</loc>
+    <loc>https://www.commit-confirm.host/categories/docker/</loc>
     <lastmod>2020-03-29T14:40:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://commit-confirm.host/snippets/</loc>
-  </url>
-  
-  <url>
-    <loc>https://commit-confirm.host/tags/homelab/</loc>
+    <loc>https://www.commit-confirm.host/tags/docker/</loc>
     <lastmod>2020-03-29T14:40:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://commit-confirm.host/posts/</loc>
+    <loc>https://www.commit-confirm.host/snippets/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/homelab/</loc>
     <lastmod>2020-03-29T14:40:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://commit-confirm.host/projects/</loc>
-  </url>
-  
-  <url>
-    <loc>https://commit-confirm.host/projects/</loc>
-  </url>
-  
-  <url>
-    <loc>https://commit-confirm.host/series/</loc>
+    <loc>https://www.commit-confirm.host/posts/</loc>
+    <lastmod>2020-03-29T14:40:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://commit-confirm.host/about/</loc>
+    <loc>https://www.commit-confirm.host/projects/</loc>
   </url>
   
   <url>
-    <loc>https://commit-confirm.host/tags/</loc>
+    <loc>https://www.commit-confirm.host/projects/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/series/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/</loc>
     <lastmod>2020-03-29T14:40:00+00:00</lastmod>
     <priority>0</priority>
   </url>
