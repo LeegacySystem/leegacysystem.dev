@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dai on Commit-Confirm</title>
+    <link>https://www.commit-confirm.host/tags/dai/</link>
+    <description>Recent content in Dai on Commit-Confirm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://www.commit-confirm.host/tags/dai/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Junos DAI and IP Source Guard Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/junos_dai_and_ip_source_guard_study_notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/junos_dai_and_ip_source_guard_study_notes/</guid>
+      <description>This will looking into Dynamic Arp Insepction and IP Source Guard for Junos.
+Dynamic APR Inspection: DAI is intended as a security solution for possible ARP spoofing or also referred to as ARP poisoning MITM attacks within a LAN/VLAN. Using the previously covered DHCP snooping binding database DAI examines each ARP request and response packet on LAN when coming from untrusted (access ports). Trusted (trunk) ports bypass the DAI check much like the DHCP snooping check.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ex on Commit-Confirm</title>
+    <link>https://www.commit-confirm.host/tags/ex/</link>
+    <description>Recent content in Ex on Commit-Confirm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 16 Aug 2018 17:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.commit-confirm.host/tags/ex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Juniper Hardware Platform Overview</title>
+      <link>https://www.commit-confirm.host/posts/juniper-hardware-platforms/</link>
+      <pubDate>Thu, 16 Aug 2018 17:00:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper-hardware-platforms/</guid>
+      <description>This post will look at the various juniper hardware platforms and summarise on each. The information presented is taken directly from the juniper product-services page. As there are comparisions of each platform this post will be table heavy.
+The Switching Platforms:  EX Switches QFX Switches  The Routing Platforms:  MX Routers PTX Routers ACX Routers CTP Routers T4000 Routers  The Security Platforms:  SRX series firewalls</description>
+    </item>
+    
+  </channel>
+</rss>

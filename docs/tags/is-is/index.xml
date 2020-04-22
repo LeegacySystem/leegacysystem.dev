@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Is Is on Commit-Confirm</title>
+    <link>https://www.commit-confirm.host/tags/is-is/</link>
+    <description>Recent content in Is Is on Commit-Confirm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 12 Mar 2019 17:41:23 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.commit-confirm.host/tags/is-is/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Juniper IS-IS Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper-isis-study-notes/</link>
+      <pubDate>Tue, 12 Mar 2019 17:41:23 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper-isis-study-notes/</guid>
+      <description>First draft notes, likely to be messy/missing information IS-IS or Intermediate System to Intermediate System is an exam objective in the JNCIS-ENT curriculum and a routing protocol I had never actually come across before. At the time when I studied the CCNA and CCNP IS-IS was mentioned but never looked at in detail, this may have changed by now.
+The interesting thing about IS-IS is that was inteded to superceed OSPF once the OSI model became widely adopted.</description>
+    </item>
+    
+  </channel>
+</rss>

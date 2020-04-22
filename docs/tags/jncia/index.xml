@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jncia on Commit-Confirm</title>
+    <link>https://www.commit-confirm.host/tags/jncia/</link>
+    <description>Recent content in Jncia on Commit-Confirm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 16 Aug 2018 17:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.commit-confirm.host/tags/jncia/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Juniper Hardware Platform Overview</title>
+      <link>https://www.commit-confirm.host/posts/juniper-hardware-platforms/</link>
+      <pubDate>Thu, 16 Aug 2018 17:00:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper-hardware-platforms/</guid>
+      <description>This post will look at the various juniper hardware platforms and summarise on each. The information presented is taken directly from the juniper product-services page. As there are comparisions of each platform this post will be table heavy.
+The Switching Platforms:  EX Switches QFX Switches  The Routing Platforms:  MX Routers PTX Routers ACX Routers CTP Routers T4000 Routers  The Security Platforms:  SRX series firewalls</description>
+    </item>
+    
+    <item>
+      <title>Junos Routing Notes</title>
+      <link>https://www.commit-confirm.host/posts/junos-routing-notes/</link>
+      <pubDate>Thu, 16 Aug 2018 17:00:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/junos-routing-notes/</guid>
+      <description>This post is a review of Juniper Static Routing statements, mainly focusing on these three types:
+ Discard Reject Forwarding (next-hop)  
+1. Discard In Cisco Terms this is a null route with no ICMP reject notification, this is typically used for advertising summary/aggregate routes to neighboring devices. An example of this would be:
+Local routes: 10.10.0.0/25 10.10.0.128&amp;frasl;25 | Aggregate discard route: 10.10.0.0/24
+Both /25 local routes can be aggregated into a single /24.</description>
+    </item>
+    
+    <item>
+      <title>Junos Routing Prefrences</title>
+      <link>https://www.commit-confirm.host/posts/junos-routing-prefrences/</link>
+      <pubDate>Thu, 16 Aug 2018 17:00:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/junos-routing-prefrences/</guid>
+      <description>This is a short post on juniper default route prefrences for specific protcols seen in the routing table. Routes with a lower prefrence are preferred over higher.
+
+Summary:    Route Protocol/Source Default Preference Statement to Modify Default Preference     Directly connected network 0 –   System routes 4 –   Static and Static LSPs 5 static   Static LSPs 6 –   OSPF internal route 10 OSPF   RIP / RIPng 100 RIP   PIM 105 &amp;ldquo;Multicast Protocols Feature Guide&amp;rdquo;   Aggregate 130 aggregate   Generated 130 Generated   OSPF AS external routes 150 OSPF external-preference   BGP (EBGP/IBGP) 170 BGP preference, export, import    source:https://www.</description>
+    </item>
+    
+  </channel>
+</rss>

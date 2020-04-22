@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Lee Dowdells">
+    <meta name="description" content="A personal stash of notes covering various topics">
+    <meta name="keywords" content="blog, devops, neteng, juniper">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The First Dump"/>
+<meta name="twitter:description" content="The First Dump This is simply a note to myself on how to fix the midnight Jekyll theme should any others have the same problem. This was mainly figured out by trial and error along with some comparisons with working github page sources.
+As I&rsquo;ve already forgotten how I fixed it, see commit#5 with file change highlights below:
+1) Gemfile.lock There are a lot of additions in here. I think this is just a mistake while messing around with the local bundle."/>
+
+    <meta property="og:title" content="The First Dump" />
+<meta property="og:description" content="The First Dump This is simply a note to myself on how to fix the midnight Jekyll theme should any others have the same problem. This was mainly figured out by trial and error along with some comparisons with working github page sources.
+As I&rsquo;ve already forgotten how I fixed it, see commit#5 with file change highlights below:
+1) Gemfile.lock There are a lot of additions in here. I think this is just a mistake while messing around with the local bundle." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.commit-confirm.host/posts/first-blog-post/" />
+<meta property="article:published_time" content="2018-07-12T18:42:23&#43;00:00"/>
+<meta property="article:modified_time" content="2018-07-12T18:42:23&#43;00:00"/>
+
+
+    
+      <base href="https://www.commit-confirm.host/posts/first-blog-post/">
+    
+    <title>
+  The First Dump · Commit-Confirm
+</title>
+
+    
+      <link rel="canonical" href="https://www.commit-confirm.host/posts/first-blog-post/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://www.commit-confirm.host/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://www.commit-confirm.host/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css" integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://www.commit-confirm.host/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.commit-confirm.host/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.54.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-dark">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://www.commit-confirm.host/">
+      Commit-Confirm
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.commit-confirm.host/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.commit-confirm.host/posts/">Blog</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">The First Dump</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2018-07-12T18:42:23Z'>
+                July 12, 2018
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              1-minute read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fas fa-folder"></i>
+    <a href="https://www.commit-confirm.host/categories/jekyll/">jekyll</a></div>
+
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://www.commit-confirm.host/tags/jekyll/">jekyll</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        
+
+<h2 id="the-first-dump">The First Dump</h2>
+
+<p>This is simply a note to myself on how to fix the midnight Jekyll theme should any others have the same problem. This was mainly figured out by trial and error along with some comparisons with working github page sources.</p>
+
+<p>As I&rsquo;ve already forgotten how I fixed it, <a href="https://github.com/lee2098/lee2098.github.io/commit/6f95a64446d2a02505db3780a148cb541c8db0eb">see commit#5</a> with file change highlights below:</p>
+
+<h4 id="1-gemfile-lock"><em>1) Gemfile.lock</em></h4>
+
+<p>There are a lot of additions in here. I think this is just a mistake while messing around with the local bundle. Best guess .lock is simlar to a .swp file but will look up at some point as I know very little about ruby.</p>
+
+<h4 id="2-2018-07-12-welcome-to-jekyll-markdown"><em>2) 2018-07-12-welcome-to-jekyll.markdown</em></h4>
+
+<p>This is a minor change to the yaml frontmatter telling the Jekyll templating system to use the default (see below) layout.</p>
+
+<h4 id="3-about-md-index-md"><em>3) about.md &amp; index.md</em></h4>
+
+<p>Same as above</p>
+
+<hr />
+
+<h6 id="notes-creating-layouts-default-doesn-t-seem-to-show-in-the-commit-review-need-to-figureo-out-why"><strong>Notes -</strong> creating _layouts/default doesn&rsquo;t seem to show in the commit review (need to figureo out why)</h6>
+
+<p>Below is just a test to see code formating</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-s" data-lang="s"><span style="color:#007f7f">#!/usr/bin/env python</span>
+<span style="color:#007f7f">#http://www.pythonforbeginners.com/code-snippets-source-code/python-script-log-checker/</span>
+logfile = <span style="color:#fff;font-weight:bold">open</span>(<span style="color:#0ff;font-weight:bold">&#34;/var/log/syslog&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;r&#34;</span>)
+<span style="color:#fff;font-weight:bold">for</span> line <span style="color:#fff;font-weight:bold">in</span> logfile:
+    line_split = line.split()
+    print line_split
+    <span style="color:#fff;font-weight:bold">list</span> = line_split[<span style="color:#ff0;font-weight:bold">0</span>], line_split[<span style="color:#ff0;font-weight:bold">1</span>], line_split[<span style="color:#ff0;font-weight:bold">2</span>], line_split[<span style="color:#ff0;font-weight:bold">4</span>]
+    print <span style="color:#fff;font-weight:bold">list</span></code></pre></div>
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+    </main>
+
+    
+
+    
+
+  </body>
+
+</html>

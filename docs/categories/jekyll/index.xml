@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll on Commit-Confirm</title>
+    <link>https://www.commit-confirm.host/categories/jekyll/</link>
+    <description>Recent content in Jekyll on Commit-Confirm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 12 Jul 2018 18:42:23 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.commit-confirm.host/categories/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The First Dump</title>
+      <link>https://www.commit-confirm.host/posts/first-blog-post/</link>
+      <pubDate>Thu, 12 Jul 2018 18:42:23 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/first-blog-post/</guid>
+      <description>The First Dump This is simply a note to myself on how to fix the midnight Jekyll theme should any others have the same problem. This was mainly figured out by trial and error along with some comparisons with working github page sources.
+As I&amp;rsquo;ve already forgotten how I fixed it, see commit#5 with file change highlights below:
+1) Gemfile.lock There are a lot of additions in here. I think this is just a mistake while messing around with the local bundle.</description>
+    </item>
+    
+  </channel>
+</rss>

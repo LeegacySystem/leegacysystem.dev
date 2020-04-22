@@ -8,7 +8,128 @@
   </url>
   
   <url>
+    <loc>https://www.commit-confirm.host/posts/junos_jncis-ent_easy_wins_study_notes/</loc>
+    <lastmod>2019-04-10T15:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/junos_bgp_packets_and_attributes_study_notes/</loc>
+    <lastmod>2019-04-10T15:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/junos_bgp_states_study_notes/</loc>
+    <lastmod>2019-04-10T12:59:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper_dhcp_snooping_study_notes/</loc>
+    <lastmod>2019-03-31T13:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper_persistent_mac_learning_study_notes/</loc>
+    <lastmod>2019-03-31T12:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper_mac_limiting_study_notes/</loc>
+    <lastmod>2019-03-31T12:04:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper_stp_protection_states_study_notes/</loc>
+    <lastmod>2019-03-30T19:02:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper_ospf_states_study_notes/</loc>
+    <lastmod>2019-03-30T16:40:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper_ospf_packet_types_study_notes/</loc>
+    <lastmod>2019-03-30T15:05:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper_tunnels_greip-ip_study_notes/</loc>
+    <lastmod>2019-03-21T19:22:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper_filter_based_forwarding_study_notes/</loc>
+    <lastmod>2019-03-21T19:09:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper_load_balancing_study_notes.md/</loc>
+    <lastmod>2019-03-21T18:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper_routing_instances_and_rib_groups_study_notes/</loc>
+    <lastmod>2019-03-21T18:35:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper_martian_addresses_study_notes/</loc>
+    <lastmod>2019-03-21T18:13:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper_static_aggregated_and_generated_routes_study_notes/</loc>
+    <lastmod>2019-03-21T17:21:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper-isis-study-notes/</loc>
+    <lastmod>2019-03-12T17:41:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/802_1d-2004_broke_my_lab/</loc>
+    <lastmod>2019-01-14T20:22:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper-spanning-tree-key-stp-terms/</loc>
+    <lastmod>2019-01-14T15:41:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper-virtual-labs-ethernet-switching/</loc>
+    <lastmod>2018-08-19T13:42:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/juniper-hardware-platforms/</loc>
+    <lastmod>2018-08-16T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/junos-routing-notes/</loc>
+    <lastmod>2018-08-16T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/junos-routing-prefrences/</loc>
+    <lastmod>2018-08-16T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/first-blog-post/</loc>
+    <lastmod>2018-07-12T18:42:23+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.commit-confirm.host/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/bgp/</loc>
+    <lastmod>2019-04-10T15:20:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -31,13 +152,18 @@
   </url>
   
   <url>
-    <loc>https://www.commit-confirm.host/tags/dns/</loc>
-    <lastmod>2020-03-29T14:40:00+00:00</lastmod>
+    <loc>https://www.commit-confirm.host/tags/dai/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.commit-confirm.host/categories/docker/</loc>
+    <loc>https://www.commit-confirm.host/tags/dhcp/</loc>
+    <lastmod>2019-03-31T13:30:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/dns/</loc>
     <lastmod>2020-03-29T14:40:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -49,12 +175,129 @@
   </url>
   
   <url>
+    <loc>https://www.commit-confirm.host/categories/docker/</loc>
+    <lastmod>2020-03-29T14:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/eve-ng/</loc>
+    <lastmod>2018-08-19T13:42:23+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/ex/</loc>
+    <lastmod>2018-08-16T17:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/categories/firewall/</loc>
+    <lastmod>2019-01-14T20:22:23+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.commit-confirm.host/snippets/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/hardware/</loc>
+    <lastmod>2018-08-16T17:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/home-lab/</loc>
+    <lastmod>2018-08-19T13:42:23+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.commit-confirm.host/tags/homelab/</loc>
     <lastmod>2020-03-29T14:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/ieee/</loc>
+    <lastmod>2019-01-14T20:22:23+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/ip-source-guard/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/is-is/</loc>
+    <lastmod>2019-03-12T17:41:23+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/jekyll/</loc>
+    <lastmod>2018-07-12T18:42:23+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/categories/jekyll/</loc>
+    <lastmod>2018-07-12T18:42:23+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/jncia/</loc>
+    <lastmod>2018-08-16T17:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/jncis-ent/</loc>
+    <lastmod>2019-04-10T15:50:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/juniper/</loc>
+    <lastmod>2019-04-10T15:50:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/categories/juniper/</loc>
+    <lastmod>2019-04-10T15:50:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/posts/junos_dai_and_ip_source_guard_study_notes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/l2sec/</loc>
+    <lastmod>2019-03-31T13:30:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/linux/</loc>
+    <lastmod>2019-01-14T20:22:23+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/mac_sec/</loc>
+    <lastmod>2019-03-31T12:30:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/ospf/</loc>
+    <lastmod>2019-03-30T16:40:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -73,6 +316,18 @@
   </url>
   
   <url>
+    <loc>https://www.commit-confirm.host/tags/qfx/</loc>
+    <lastmod>2018-08-16T17:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/routing/</loc>
+    <lastmod>2019-04-10T15:50:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.commit-confirm.host/series/</loc>
     <priority>0</priority>
   </url>
@@ -82,8 +337,20 @@
   </url>
   
   <url>
+    <loc>https://www.commit-confirm.host/tags/stp/</loc>
+    <lastmod>2019-03-30T19:02:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.commit-confirm.host/tags/</loc>
-    <lastmod>2020-03-29T14:40:00+00:00</lastmod>
+    <lastmod>2019-04-10T15:20:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.commit-confirm.host/tags/vqfx/</loc>
+    <lastmod>2018-08-19T13:42:23+00:00</lastmod>
     <priority>0</priority>
   </url>
   

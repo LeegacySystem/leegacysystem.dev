@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Lee Dowdells">
+    <meta name="description" content="A personal stash of notes covering various topics">
+    <meta name="keywords" content="blog, devops, neteng, juniper">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Juniper MAC Limiting Study Notes"/>
+<meta name="twitter:description" content="This post will take a quick look into the three types of MAC Limiting available in Juniper.
+This post will take a quick look into the three types of STP Protection available in Juniper including an example diagram of where to use each.
+MAC Limit (mac-limit): Allows for the admin to define the maximum number of expected MAC addresses for a specific port. If that value is set to 2 and a third MAC arrives at the interface, traffic from that MAC is subject to later action conditions but by default will be dropped and logged."/>
+
+    <meta property="og:title" content="Juniper MAC Limiting Study Notes" />
+<meta property="og:description" content="This post will take a quick look into the three types of MAC Limiting available in Juniper.
+This post will take a quick look into the three types of STP Protection available in Juniper including an example diagram of where to use each.
+MAC Limit (mac-limit): Allows for the admin to define the maximum number of expected MAC addresses for a specific port. If that value is set to 2 and a third MAC arrives at the interface, traffic from that MAC is subject to later action conditions but by default will be dropped and logged." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.commit-confirm.host/posts/juniper_mac_limiting_study_notes/" />
+<meta property="article:published_time" content="2019-03-31T12:04:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-03-31T12:04:00&#43;00:00"/>
+
+
+    
+      <base href="https://www.commit-confirm.host/posts/juniper_mac_limiting_study_notes/">
+    
+    <title>
+  Juniper MAC Limiting Study Notes · Commit-Confirm
+</title>
+
+    
+      <link rel="canonical" href="https://www.commit-confirm.host/posts/juniper_mac_limiting_study_notes/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://www.commit-confirm.host/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://www.commit-confirm.host/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css" integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://www.commit-confirm.host/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.commit-confirm.host/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.54.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-dark">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://www.commit-confirm.host/">
+      Commit-Confirm
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.commit-confirm.host/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.commit-confirm.host/posts/">Blog</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Juniper MAC Limiting Study Notes</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-03-31T12:04:00Z'>
+                March 31, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              2-minute read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fas fa-folder"></i>
+    <a href="https://www.commit-confirm.host/categories/juniper/">Juniper</a></div>
+
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://www.commit-confirm.host/tags/juniper/">Juniper</a>
+      <span class="separator">•</span>
+    <a href="https://www.commit-confirm.host/tags/routing/">Routing</a>
+      <span class="separator">•</span>
+    <a href="https://www.commit-confirm.host/tags/jncis-ent/">JNCIS-ENT</a>
+      <span class="separator">•</span>
+    <a href="https://www.commit-confirm.host/tags/mac_sec/">MAC_Sec</a>
+      <span class="separator">•</span>
+    <a href="https://www.commit-confirm.host/tags/l2sec/">L2SEC</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        
+
+<p>This post will take a quick look into the three types of MAC Limiting available in Juniper.</p>
+
+<p>This post will take a quick look into the three types of STP Protection available in Juniper including an example diagram of where to use each.</p>
+
+<h4 id="mac-limit-mac-limit"><strong>MAC Limit (mac-limit):</strong></h4>
+
+<p>Allows for the admin to define the maximum number of expected MAC addresses for a specific port. If that value is set to 2 and a third MAC arrives at the interface, traffic from that MAC is subject to later action conditions but by default will be dropped and logged.</p>
+
+<h4 id="allowed-mac-allowed-mac"><strong>Allowed MAC (allowed-mac):</strong></h4>
+
+<p>This option allows the admin to define the exact MAC addresses that should arrive at the interface rather than the number of them. Again if an unexpected MAC address arrives at the interface traffic from that MAC is subject to later action conditions but by default will be dropped and logged. The down side of doing allowed MACs is that it requires more administrative effort as the MAC must be known and configured.</p>
+
+<h4 id="mac-move-limiting-mac-move-limit"><strong>MAC move limiting (mac-move-limit):</strong></h4>
+
+<p>This option will limit the amount of times that a specific MAC address can move within the network and is configured on a per vlan basis. Again if an unexpected MAC address arrives at the interface traffic from that MAC is subject to later action conditions but by default will be dropped and logged. MAC limiting protects against MAC flooding and spoofing that can be used as a DOS attack.</p>
+
+<p>When using MAC limiting in any form it is important to think about the needs of the environment as well as security. For example if your environment has IP phones hooked up to computers both sharing the same physical access port, then the MAC limit will have to be at least two for both devices to work.</p>
+
+<p>All three types of limiting share the same three (excluding the off action) configurable actions:
+<ol>
+  <li><i>Syslog</i> – Forwards the packet but generates a system alarm.</li>
+  <li><i>Drop &amp; Syslog</i> – Drops the offending MAC packet and generates an alarm.</li>
+  <li><i>Shutdown (&amp; Syslog)</i> – Shutdown the interface and generates an alarm.</li>
+  <li><i>None</i> – Turns off MAC limiting for a specific port if it has been enabled on all interfaces.</li>
+</ol></p>
+
+<h4 id="auto-recovery"><strong>Auto recovery:</strong></h4>
+
+<p>If desired a timer can be configured between 10 and 3600 seconds at &ldquo;edit ethernet-switching-options port-error-disable disable-timeout&rdquo; that will roll back the configured action after the timeout expires.  The alternative and default is for the action to apply until the admin manually clears the port error.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+    </main>
+
+    
+
+    
+
+  </body>
+
+</html>

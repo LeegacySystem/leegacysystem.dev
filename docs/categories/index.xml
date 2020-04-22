@@ -19,5 +19,32 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Firewall</title>
+      <link>https://www.commit-confirm.host/categories/firewall/</link>
+      <pubDate>Mon, 14 Jan 2019 20:22:23 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/categories/firewall/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jekyll</title>
+      <link>https://www.commit-confirm.host/categories/jekyll/</link>
+      <pubDate>Thu, 12 Jul 2018 18:42:23 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/categories/jekyll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Juniper</title>
+      <link>https://www.commit-confirm.host/categories/juniper/</link>
+      <pubDate>Wed, 10 Apr 2019 15:50:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/categories/juniper/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac_sec on Commit-Confirm</title>
+    <link>https://www.commit-confirm.host/tags/mac_sec/</link>
+    <description>Recent content in Mac_sec on Commit-Confirm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 31 Mar 2019 12:30:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.commit-confirm.host/tags/mac_sec/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Juniper Persistent MAC Learning Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_persistent_mac_learning_study_notes/</link>
+      <pubDate>Sun, 31 Mar 2019 12:30:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_persistent_mac_learning_study_notes/</guid>
+      <description>This will be a very short port looking into persistent MAC learning.
+Persistent MAC learning (also known as sticky MAC) allows for a switch to retain dynamically learned MACs and their associated interfaces after a reboot of the system. Persistent learning has to be enabled as by default it is disabled. When coupled with MAC limiting methods covered previously persistent learning ensures that only trusted devices are connected to a switch port even after a reboot when any counters would have cleared.</description>
+    </item>
+    
+    <item>
+      <title>Juniper MAC Limiting Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_mac_limiting_study_notes/</link>
+      <pubDate>Sun, 31 Mar 2019 12:04:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_mac_limiting_study_notes/</guid>
+      <description>This post will take a quick look into the three types of MAC Limiting available in Juniper.
+This post will take a quick look into the three types of STP Protection available in Juniper including an example diagram of where to use each.
+MAC Limit (mac-limit): Allows for the admin to define the maximum number of expected MAC addresses for a specific port. If that value is set to 2 and a third MAC arrives at the interface, traffic from that MAC is subject to later action conditions but by default will be dropped and logged.</description>
+    </item>
+    
+  </channel>
+</rss>

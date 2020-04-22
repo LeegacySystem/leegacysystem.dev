@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>L2sec on Commit-Confirm</title>
+    <link>https://www.commit-confirm.host/tags/l2sec/</link>
+    <description>Recent content in L2sec on Commit-Confirm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 31 Mar 2019 13:30:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.commit-confirm.host/tags/l2sec/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Juniper DHCP Snooping Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_dhcp_snooping_study_notes/</link>
+      <pubDate>Sun, 31 Mar 2019 13:30:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_dhcp_snooping_study_notes/</guid>
+      <description>This post will cover DHCP snooping in Junos, starting with the exchange of DHCP packets.
+As shown in the diagram above the process of obtaining an IP address through DHCP involves multiple broadcasts to the network segment. This can be abuses by attackers as they can by default see and respond to those broadcast messages just as easily as the DHCP server can. If a rogue DHCP server was to assign a fake IP address it would essentially DOS that end host, or it could forward its traffic while capture in a MITM attack.</description>
+    </item>
+    
+    <item>
+      <title>Juniper Persistent MAC Learning Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_persistent_mac_learning_study_notes/</link>
+      <pubDate>Sun, 31 Mar 2019 12:30:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_persistent_mac_learning_study_notes/</guid>
+      <description>This will be a very short port looking into persistent MAC learning.
+Persistent MAC learning (also known as sticky MAC) allows for a switch to retain dynamically learned MACs and their associated interfaces after a reboot of the system. Persistent learning has to be enabled as by default it is disabled. When coupled with MAC limiting methods covered previously persistent learning ensures that only trusted devices are connected to a switch port even after a reboot when any counters would have cleared.</description>
+    </item>
+    
+    <item>
+      <title>Juniper MAC Limiting Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_mac_limiting_study_notes/</link>
+      <pubDate>Sun, 31 Mar 2019 12:04:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_mac_limiting_study_notes/</guid>
+      <description>This post will take a quick look into the three types of MAC Limiting available in Juniper.
+This post will take a quick look into the three types of STP Protection available in Juniper including an example diagram of where to use each.
+MAC Limit (mac-limit): Allows for the admin to define the maximum number of expected MAC addresses for a specific port. If that value is set to 2 and a third MAC arrives at the interface, traffic from that MAC is subject to later action conditions but by default will be dropped and logged.</description>
+    </item>
+    
+    <item>
+      <title>Juniper STP Protection States Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_stp_protection_states_study_notes/</link>
+      <pubDate>Sat, 30 Mar 2019 19:02:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_stp_protection_states_study_notes/</guid>
+      <description>This post will take a quick look into the three types of STP Protection available in Juniper including an example diagram of where to use each.
+BPDU Protection: The first and arguably most important protection will prevent unexpected BPDUs from influencing the topology and SPF calulations. When enabled (typically on STP edge ports) BPDU protection will monitor an interface and when it sees a BPDU it will disable that interface to prevent malicous or unitentional network outages.</description>
+    </item>
+    
+    <item>
+      <title>Junos DAI and IP Source Guard Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/junos_dai_and_ip_source_guard_study_notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/junos_dai_and_ip_source_guard_study_notes/</guid>
+      <description>This will looking into Dynamic Arp Insepction and IP Source Guard for Junos.
+Dynamic APR Inspection: DAI is intended as a security solution for possible ARP spoofing or also referred to as ARP poisoning MITM attacks within a LAN/VLAN. Using the previously covered DHCP snooping binding database DAI examines each ARP request and response packet on LAN when coming from untrusted (access ports). Trusted (trunk) ports bypass the DAI check much like the DHCP snooping check.</description>
+    </item>
+    
+  </channel>
+</rss>

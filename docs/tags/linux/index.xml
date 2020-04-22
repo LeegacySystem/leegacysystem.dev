@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Commit-Confirm</title>
+    <link>https://www.commit-confirm.host/tags/linux/</link>
+    <description>Recent content in Linux on Commit-Confirm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 14 Jan 2019 20:22:23 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.commit-confirm.host/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IEEE 802.1D-2004 Broke My Lab :(</title>
+      <link>https://www.commit-confirm.host/posts/802_1d-2004_broke_my_lab/</link>
+      <pubDate>Mon, 14 Jan 2019 20:22:23 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/802_1d-2004_broke_my_lab/</guid>
+      <description>Okay so slightly misleading title as 802.1D-2004 didn&amp;rsquo;t actually break my lab but it did cause a bit of head scratching as to why my lab wasn&amp;rsquo;t working as expected.
+To summarise, I wanted to view all RSTP packets exchange in a small three switch topology. I didn&amp;rsquo;t want to set up loads of port mirroring so I thought it would be best to create a LAB that connecting three Juniper vQFXs together through a single linux node with three bridges for each &amp;lsquo;physical connection&amp;rsquo;; this would give me a single place to capture all traffic.</description>
+    </item>
+    
+  </channel>
+</rss>

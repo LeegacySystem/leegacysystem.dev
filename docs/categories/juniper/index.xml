@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Juniper on Commit-Confirm</title>
+    <link>https://www.commit-confirm.host/categories/juniper/</link>
+    <description>Recent content in Juniper on Commit-Confirm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 10 Apr 2019 15:50:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.commit-confirm.host/categories/juniper/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Junos JNCIS-ENT Easy Wins Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/junos_jncis-ent_easy_wins_study_notes/</link>
+      <pubDate>Wed, 10 Apr 2019 15:50:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/junos_jncis-ent_easy_wins_study_notes/</guid>
+      <description>This post will look over some areas I think will be easy wins for the JNCIS-ENT Exame.
+IEEE Standards:  802.1D - Spanning Tree 802.1w - Rapid Spanning Tree (w = wapid) 802.1ad - LACP  IP Protocols:  6 - TCP  Port 179 - BGP  89 - OSPF 124 - IS-IS over IP  Preferred Preferences: STP Bridge Prority - Lower Routing Preference - lower OSPF DIR priority/RID - Higher IS-IS DIS priority - Higher?</description>
+    </item>
+    
+    <item>
+      <title>Junos BGP Packets and Attributes Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/junos_bgp_packets_and_attributes_study_notes/</link>
+      <pubDate>Wed, 10 Apr 2019 15:20:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/junos_bgp_packets_and_attributes_study_notes/</guid>
+      <description>This post will skim over BGP packets and attributes.
+BGP Packet Types: There are five types of packets in BGP:  Open  Keepalive 
+Notification  Update 
+Refresh  
+BGP Attributes: There are four categories of attributes with different types in each:
+ Well-known Mandatory - These attributes must be present in any BGP update.  Origin AS Path - Loop protection Next-Hop  Well-known Discretionary - Must be in every BGP implementation but is not required in every BGP update.</description>
+    </item>
+    
+    <item>
+      <title>Junos BGP States Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/junos_bgp_states_study_notes/</link>
+      <pubDate>Wed, 10 Apr 2019 12:59:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/junos_bgp_states_study_notes/</guid>
+      <description>This post will take a quick look into the BGP Finite State model.
+IDLE: This is the first state and essentially means a session is inactive waiting for a start event which can be manual or automatic. I&amp;rsquo;ll need to look into Junipers definitions of a start event.
+Connect: After a start event BGP will try to establish a TCP connection. A session will remain in the Connect state until either a TCP session is formed or the TCP handshake failed.</description>
+    </item>
+    
+    <item>
+      <title>Juniper DHCP Snooping Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_dhcp_snooping_study_notes/</link>
+      <pubDate>Sun, 31 Mar 2019 13:30:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_dhcp_snooping_study_notes/</guid>
+      <description>This post will cover DHCP snooping in Junos, starting with the exchange of DHCP packets.
+As shown in the diagram above the process of obtaining an IP address through DHCP involves multiple broadcasts to the network segment. This can be abuses by attackers as they can by default see and respond to those broadcast messages just as easily as the DHCP server can. If a rogue DHCP server was to assign a fake IP address it would essentially DOS that end host, or it could forward its traffic while capture in a MITM attack.</description>
+    </item>
+    
+    <item>
+      <title>Juniper Persistent MAC Learning Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_persistent_mac_learning_study_notes/</link>
+      <pubDate>Sun, 31 Mar 2019 12:30:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_persistent_mac_learning_study_notes/</guid>
+      <description>This will be a very short port looking into persistent MAC learning.
+Persistent MAC learning (also known as sticky MAC) allows for a switch to retain dynamically learned MACs and their associated interfaces after a reboot of the system. Persistent learning has to be enabled as by default it is disabled. When coupled with MAC limiting methods covered previously persistent learning ensures that only trusted devices are connected to a switch port even after a reboot when any counters would have cleared.</description>
+    </item>
+    
+    <item>
+      <title>Juniper MAC Limiting Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_mac_limiting_study_notes/</link>
+      <pubDate>Sun, 31 Mar 2019 12:04:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_mac_limiting_study_notes/</guid>
+      <description>This post will take a quick look into the three types of MAC Limiting available in Juniper.
+This post will take a quick look into the three types of STP Protection available in Juniper including an example diagram of where to use each.
+MAC Limit (mac-limit): Allows for the admin to define the maximum number of expected MAC addresses for a specific port. If that value is set to 2 and a third MAC arrives at the interface, traffic from that MAC is subject to later action conditions but by default will be dropped and logged.</description>
+    </item>
+    
+    <item>
+      <title>Juniper STP Protection States Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_stp_protection_states_study_notes/</link>
+      <pubDate>Sat, 30 Mar 2019 19:02:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_stp_protection_states_study_notes/</guid>
+      <description>This post will take a quick look into the three types of STP Protection available in Juniper including an example diagram of where to use each.
+BPDU Protection: The first and arguably most important protection will prevent unexpected BPDUs from influencing the topology and SPF calulations. When enabled (typically on STP edge ports) BPDU protection will monitor an interface and when it sees a BPDU it will disable that interface to prevent malicous or unitentional network outages.</description>
+    </item>
+    
+    <item>
+      <title>Juniper OSPF States Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_ospf_states_study_notes/</link>
+      <pubDate>Sat, 30 Mar 2019 16:40:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_ospf_states_study_notes/</guid>
+      <description>This post will take a quick look into the OSPF adjacency state transtitions of OSPF in a multi-access broadcast network.</description>
+    </item>
+    
+    <item>
+      <title>Juniper OSPF Packet Types Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_ospf_packet_types_study_notes/</link>
+      <pubDate>Sat, 30 Mar 2019 15:05:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_ospf_packet_types_study_notes/</guid>
+      <description>This post will take a quick look into the five types of OSPF packets.
+OSPF is a dynamic routing protocol used as an interior gateway protocol (IGP). Unlinke BGP which is implemented over TCP, OSPF is its own IP protocol (89) different from TCP or UDP. As such the protocol has its own packet formats which are all reviewed below.
+OSPF Common Header: Each of the five OSPF packet types start with a common 24 byte header as shown below.</description>
+    </item>
+    
+    <item>
+      <title>Juniper Tunnels (GRE &amp; IP-IP) Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_tunnels_greip-ip_study_notes/</link>
+      <pubDate>Thu, 21 Mar 2019 19:22:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_tunnels_greip-ip_study_notes/</guid>
+      <description>GRE - Generic Routing Encapsulation. IP-IP - IP-over-IP        When a network can&amp;rsquo;t support a specific traffic type often the solution is to use tunnels. A tunnel is an overlay in that it encapsulates and decapsulates unsupported packets that in a packet type the underlying network can support. The tunnels in this post do not add security, despite some Juniper tech library articles saying otherwise (I hope I&amp;rsquo;m right).</description>
+    </item>
+    
+    <item>
+      <title>Juniper Filter Based Forwarding Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_filter_based_forwarding_study_notes/</link>
+      <pubDate>Thu, 21 Mar 2019 19:09:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_filter_based_forwarding_study_notes/</guid>
+      <description>This is another cool one! To set the scene, Filter Based Forwarding in Juniper is essentially Policy Based Routing in Cisco. As a note I will skip over the details of firewall filters in this post.
+In junos as well as permit/deny a firewall filter can be used to direct matching traffic to totally seperate routing instance or RIB group. This gives amazing control of the routing decision that would normally be taken and can be used to override dynamic routing protocols or load balancers where needed.</description>
+    </item>
+    
+    <item>
+      <title>Juniper Load Balancing Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_load_balancing_study_notes.md/</link>
+      <pubDate>Thu, 21 Mar 2019 18:55:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_load_balancing_study_notes.md/</guid>
+      <description>By default in Junos when two equal cost paths exist a hash algorithm is used to determing which route will become the active FIB route and which will be come inactive. However if the links are equal cost there is the negative effect of having an used link, load balancing allows for both links to be utilise at the same time.
+A routing policy can be used to allow all equal cost paths to be load balanced or only specific equal cost paths.</description>
+    </item>
+    
+    <item>
+      <title>Juniper Routing Instances and RIB Groups Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_routing_instances_and_rib_groups_study_notes/</link>
+      <pubDate>Thu, 21 Mar 2019 18:35:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_routing_instances_and_rib_groups_study_notes/</guid>
+      <description>Just to get it out there, routing instances are awesome! An instance is a container that can have its own routing table, routing options/policies and interfaces. They essentially break a switch or router down into segments that can be used for difference customers or traffic types etc. There are different types of instances each with their own usecases and caveats. On every junos device the default routing instance is the master instance.</description>
+    </item>
+    
+    <item>
+      <title>Juniper Martian Addresses Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_martian_addresses_study_notes/</link>
+      <pubDate>Thu, 21 Mar 2019 18:13:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_martian_addresses_study_notes/</guid>
+      <description>Martian addresses are actually very simple. They are simply addresses that will never be installed into a Juniper routing table as doing so wouldn&amp;rsquo;t make sense. An example of this would be the loopback addresses or multicast addresses. The one thing to note is that a network administartor can add prefixes to the martian list if they had any usecase to do so.
+To view all martian addresses the command &amp;ldquo;show route martians table inet&amp;rdquo; can be used.</description>
+    </item>
+    
+    <item>
+      <title>Juniper Static, Aggregated and Generated Routes Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_static_aggregated_and_generated_routes_study_notes/</link>
+      <pubDate>Thu, 21 Mar 2019 17:21:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_static_aggregated_and_generated_routes_study_notes/</guid>
+      <description>Static Routes (SR) Aggregated Routes (AR) Generated Routes (GR)        The aim of this post is to cover personal study notes on a subsection of the Protocol Independent Routing JNCIS-ENT exam objective.
+So lets start by skipping ahead by a reasonable amount. The table below shows the default global routing preferences for the three types of routes.</description>
+    </item>
+    
+    <item>
+      <title>Juniper IS-IS Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper-isis-study-notes/</link>
+      <pubDate>Tue, 12 Mar 2019 17:41:23 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper-isis-study-notes/</guid>
+      <description>First draft notes, likely to be messy/missing information IS-IS or Intermediate System to Intermediate System is an exam objective in the JNCIS-ENT curriculum and a routing protocol I had never actually come across before. At the time when I studied the CCNA and CCNP IS-IS was mentioned but never looked at in detail, this may have changed by now.
+The interesting thing about IS-IS is that was inteded to superceed OSPF once the OSI model became widely adopted.</description>
+    </item>
+    
+    <item>
+      <title>Juniper Spanning Tree - Key STP Terms</title>
+      <link>https://www.commit-confirm.host/posts/juniper-spanning-tree-key-stp-terms/</link>
+      <pubDate>Mon, 14 Jan 2019 15:41:23 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper-spanning-tree-key-stp-terms/</guid>
+      <description>Bridge ID - A Unique identifier for a switch. Root Bridge - The elected switch with the lowest Bridge ID. Root Path Cost - The calculated cost to get to the Root Bridge. Port Cost - Every interface on a bridges as an assigned and configurable cost value. Root Port - A single port on every non-root bridges which is the closest to the Root Bridge.</description>
+    </item>
+    
+    <item>
+      <title>Juniper Virtual Labs - Ethernet-switching</title>
+      <link>https://www.commit-confirm.host/posts/juniper-virtual-labs-ethernet-switching/</link>
+      <pubDate>Sun, 19 Aug 2018 13:42:23 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper-virtual-labs-ethernet-switching/</guid>
+      <description>I wanted to write up a quick post on getting a virtual lab up and running for studying towards the JNCIS-ENT exam. I was lucky enough to go on the in-person juniper training course for JEX &amp;amp; JIR so I have physical lab examples that I wanted to run at home. To do this I choose to use Eve-NG as it seems to be gaining popularity and covers a reasonable amount of supported images.</description>
+    </item>
+    
+    <item>
+      <title>Juniper Hardware Platform Overview</title>
+      <link>https://www.commit-confirm.host/posts/juniper-hardware-platforms/</link>
+      <pubDate>Thu, 16 Aug 2018 17:00:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper-hardware-platforms/</guid>
+      <description>This post will look at the various juniper hardware platforms and summarise on each. The information presented is taken directly from the juniper product-services page. As there are comparisions of each platform this post will be table heavy.
+The Switching Platforms:  EX Switches QFX Switches  The Routing Platforms:  MX Routers PTX Routers ACX Routers CTP Routers T4000 Routers  The Security Platforms:  SRX series firewalls</description>
+    </item>
+    
+    <item>
+      <title>Junos Routing Notes</title>
+      <link>https://www.commit-confirm.host/posts/junos-routing-notes/</link>
+      <pubDate>Thu, 16 Aug 2018 17:00:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/junos-routing-notes/</guid>
+      <description>This post is a review of Juniper Static Routing statements, mainly focusing on these three types:
+ Discard Reject Forwarding (next-hop)  
+1. Discard In Cisco Terms this is a null route with no ICMP reject notification, this is typically used for advertising summary/aggregate routes to neighboring devices. An example of this would be:
+Local routes: 10.10.0.0/25 10.10.0.128&amp;frasl;25 | Aggregate discard route: 10.10.0.0/24
+Both /25 local routes can be aggregated into a single /24.</description>
+    </item>
+    
+    <item>
+      <title>Junos Routing Prefrences</title>
+      <link>https://www.commit-confirm.host/posts/junos-routing-prefrences/</link>
+      <pubDate>Thu, 16 Aug 2018 17:00:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/junos-routing-prefrences/</guid>
+      <description>This is a short post on juniper default route prefrences for specific protcols seen in the routing table. Routes with a lower prefrence are preferred over higher.
+
+Summary:    Route Protocol/Source Default Preference Statement to Modify Default Preference     Directly connected network 0 –   System routes 4 –   Static and Static LSPs 5 static   Static LSPs 6 –   OSPF internal route 10 OSPF   RIP / RIPng 100 RIP   PIM 105 &amp;ldquo;Multicast Protocols Feature Guide&amp;rdquo;   Aggregate 130 aggregate   Generated 130 Generated   OSPF AS external routes 150 OSPF external-preference   BGP (EBGP/IBGP) 170 BGP preference, export, import    source:https://www.</description>
+    </item>
+    
+    <item>
+      <title>Junos DAI and IP Source Guard Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/junos_dai_and_ip_source_guard_study_notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/junos_dai_and_ip_source_guard_study_notes/</guid>
+      <description>This will looking into Dynamic Arp Insepction and IP Source Guard for Junos.
+Dynamic APR Inspection: DAI is intended as a security solution for possible ARP spoofing or also referred to as ARP poisoning MITM attacks within a LAN/VLAN. Using the previously covered DHCP snooping binding database DAI examines each ARP request and response packet on LAN when coming from untrusted (access ports). Trusted (trunk) ports bypass the DAI check much like the DHCP snooping check.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home Lab on Commit-Confirm</title>
+    <link>https://www.commit-confirm.host/tags/home-lab/</link>
+    <description>Recent content in Home Lab on Commit-Confirm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 19 Aug 2018 13:42:23 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.commit-confirm.host/tags/home-lab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Juniper Virtual Labs - Ethernet-switching</title>
+      <link>https://www.commit-confirm.host/posts/juniper-virtual-labs-ethernet-switching/</link>
+      <pubDate>Sun, 19 Aug 2018 13:42:23 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper-virtual-labs-ethernet-switching/</guid>
+      <description>I wanted to write up a quick post on getting a virtual lab up and running for studying towards the JNCIS-ENT exam. I was lucky enough to go on the in-person juniper training course for JEX &amp;amp; JIR so I have physical lab examples that I wanted to run at home. To do this I choose to use Eve-NG as it seems to be gaining popularity and covers a reasonable amount of supported images.</description>
+    </item>
+    
+  </channel>
+</rss>

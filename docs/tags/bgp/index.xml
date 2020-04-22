@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bgp on Commit-Confirm</title>
+    <link>https://www.commit-confirm.host/tags/bgp/</link>
+    <description>Recent content in Bgp on Commit-Confirm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 10 Apr 2019 15:20:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.commit-confirm.host/tags/bgp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Junos BGP Packets and Attributes Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/junos_bgp_packets_and_attributes_study_notes/</link>
+      <pubDate>Wed, 10 Apr 2019 15:20:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/junos_bgp_packets_and_attributes_study_notes/</guid>
+      <description>This post will skim over BGP packets and attributes.
+BGP Packet Types: There are five types of packets in BGP:  Open  Keepalive 
+Notification  Update 
+Refresh  
+BGP Attributes: There are four categories of attributes with different types in each:
+ Well-known Mandatory - These attributes must be present in any BGP update.  Origin AS Path - Loop protection Next-Hop  Well-known Discretionary - Must be in every BGP implementation but is not required in every BGP update.</description>
+    </item>
+    
+    <item>
+      <title>Junos BGP States Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/junos_bgp_states_study_notes/</link>
+      <pubDate>Wed, 10 Apr 2019 12:59:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/junos_bgp_states_study_notes/</guid>
+      <description>This post will take a quick look into the BGP Finite State model.
+IDLE: This is the first state and essentially means a session is inactive waiting for a start event which can be manual or automatic. I&amp;rsquo;ll need to look into Junipers definitions of a start event.
+Connect: After a start event BGP will try to establish a TCP connection. A session will remain in the Connect state until either a TCP session is formed or the TCP handshake failed.</description>
+    </item>
+    
+  </channel>
+</rss>

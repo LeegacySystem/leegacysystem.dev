@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Lee Dowdells">
+    <meta name="description" content="A personal stash of notes covering various topics">
+    <meta name="keywords" content="blog, devops, neteng, juniper">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Juniper STP Protection States Study Notes"/>
+<meta name="twitter:description" content="This post will take a quick look into the three types of STP Protection available in Juniper including an example diagram of where to use each.
+BPDU Protection: The first and arguably most important protection will prevent unexpected BPDUs from influencing the topology and SPF calulations. When enabled (typically on STP edge ports) BPDU protection will monitor an interface and when it sees a BPDU it will disable that interface to prevent malicous or unitentional network outages."/>
+
+    <meta property="og:title" content="Juniper STP Protection States Study Notes" />
+<meta property="og:description" content="This post will take a quick look into the three types of STP Protection available in Juniper including an example diagram of where to use each.
+BPDU Protection: The first and arguably most important protection will prevent unexpected BPDUs from influencing the topology and SPF calulations. When enabled (typically on STP edge ports) BPDU protection will monitor an interface and when it sees a BPDU it will disable that interface to prevent malicous or unitentional network outages." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.commit-confirm.host/posts/juniper_stp_protection_states_study_notes/" />
+<meta property="article:published_time" content="2019-03-30T19:02:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-03-30T19:02:00&#43;00:00"/>
+
+
+    
+      <base href="https://www.commit-confirm.host/posts/juniper_stp_protection_states_study_notes/">
+    
+    <title>
+  Juniper STP Protection States Study Notes · Commit-Confirm
+</title>
+
+    
+      <link rel="canonical" href="https://www.commit-confirm.host/posts/juniper_stp_protection_states_study_notes/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://www.commit-confirm.host/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://www.commit-confirm.host/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css" integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://www.commit-confirm.host/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.commit-confirm.host/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.54.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-dark">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://www.commit-confirm.host/">
+      Commit-Confirm
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.commit-confirm.host/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.commit-confirm.host/posts/">Blog</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Juniper STP Protection States Study Notes</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-03-30T19:02:00Z'>
+                March 30, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              3-minute read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fas fa-folder"></i>
+    <a href="https://www.commit-confirm.host/categories/juniper/">Juniper</a></div>
+
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://www.commit-confirm.host/tags/juniper/">Juniper</a>
+      <span class="separator">•</span>
+    <a href="https://www.commit-confirm.host/tags/routing/">Routing</a>
+      <span class="separator">•</span>
+    <a href="https://www.commit-confirm.host/tags/jncis-ent/">JNCIS-ENT</a>
+      <span class="separator">•</span>
+    <a href="https://www.commit-confirm.host/tags/stp/">STP</a>
+      <span class="separator">•</span>
+    <a href="https://www.commit-confirm.host/tags/l2sec/">L2SEC</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        
+
+<p>This post will take a quick look into the three types of STP Protection available in Juniper including an example diagram of where to use each.</p>
+
+<h4 id="bpdu-protection"><strong>BPDU Protection:</strong></h4>
+
+<p>The first and arguably most important protection will prevent unexpected BPDUs from influencing the topology and SPF calulations. When enabled (typically on STP edge ports) BPDU protection will monitor an interface and when it sees a BPDU it will disable that interface to prevent malicous or unitentional network outages.</p>
+
+<p>To further explain an edge port is typically a server or end host, which typically wouldn&rsquo;t send BPDUs anyway so the edpe port status gives them the ability to shortcut the SPF process. If a user or attacked was to attached a switch to an edge port they could potentially cause loops.</p>
+
+<p>As mentioned the default action for BPDU protect is to disable the offending interface until a network admin clears the error. The alternative is to havethe disable-timeoute statement is configured and once this timer expires, the port will be unblocked (FACT CHECK NEEDED).</p>
+
+<p>BPDU protection can be used in STP, RSTP, VSTP and MSTP deployments, some key statements for STP configuration are:
+<ul>
+  <li><i>bpdu-block</i> – Enables BDPU protection on a switch not running spanning tree </li>
+  <li><i>bpdu-block-on-edge</i> – Enable BDPU projection on a switch running spanning tree </li>
+  <li><i>disable-timeout</i> – Change the timeout of a port being down after BDPU breach </li>
+  <li><i>clear error bpdu interface</i> – Manually clear BPDU breach </li>
+</ul></p>
+
+<h4 id="loop-protection"><strong>Loop Protection:</strong></h4>
+
+<p>LP is intrusive to the normal operations of STP for the sake of security. On a non-root bridge switch if a designated port changes state to down, the non-designated port would normally transition to designated and come up. With LP enabled this doesn&rsquo;t automatically happen, instead the  switch will alert that a non-designated port is trying to become designated for the admin to allow or disallow. LP should be used on non-designated ports that have a chance of becoming designated or root ports.</p>
+
+<p>If a port that should be receiving BPDUs and is in a loop protection state stops receiving BPDUs, it will go into <strong>loop-inconsistent</strong> until a BPDU is received again.</p>
+
+<h4 id="root-protection"><strong>Root Protection:</strong></h4>
+
+<p>Protects against an unexpected switch with a higher root priority coming into the topology and taking the designated root bridge role. RP should be enabled on interfaces which should not receive superior BPDUs and not be elected as root ports.</p>
+
+<p>If a breach of RP is detected the offending port will be placed into a <strong>root-prevented STP state (inconsistency state)</strong> and block traffic. Once the superior BPDU stops being received the port automatically transitions back through listening, learning and finally forwarding.</p>
+
+<h4 id="example-topology"><strong>Example Topology:</strong></h4>
+
+<p>Using the example below I will review which ports from the perspective of switch D should be configured with each protection under Juniper recommendation.</p>
+
+<p><a href="{{ site.url }}/images/posts/2019/01/capture.png"><img src="{{ site.url }}/images/posts/2019/05/STP_Protections.png" width="720" ></p>
+
+<p><strong>BPDU Protect:</strong> As mentioned previously edge ports should be configured for BPDU protection. This would result in ports 2, 3 in the example being BPDU protected.</p>
+
+<p><strong>Loop Protect:</strong> As previously mentioned LP should be configured on any port that has a chance of being a root or designated port. For switch 4 the only port that this may happen for is Port 1.</p>
+
+<p><strong>Loop Protect:</strong> As previously mentioned RP should be configured on any port that should not recieve a superior BPDU. In this example again ports 2 and 3 should not recieve any superior BPDUs. (FACT CHECK)</p>
+
+<p>| Protection | Port |
+| BPDU | 2,3 |
+| Loop | 4 |
+| Root | 2,3 |</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+    </main>
+
+    
+
+    
+
+  </body>
+
+</html>

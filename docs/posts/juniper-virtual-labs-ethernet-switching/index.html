@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Lee Dowdells">
+    <meta name="description" content="A personal stash of notes covering various topics">
+    <meta name="keywords" content="blog, devops, neteng, juniper">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Juniper Virtual Labs - Ethernet-switching"/>
+<meta name="twitter:description" content="I wanted to write up a quick post on getting a virtual lab up and running for studying towards the JNCIS-ENT exam. I was lucky enough to go on the in-person juniper training course for JEX &amp; JIR so I have physical lab examples that I wanted to run at home. To do this I choose to use Eve-NG as it seems to be gaining popularity and covers a reasonable amount of supported images."/>
+
+    <meta property="og:title" content="Juniper Virtual Labs - Ethernet-switching" />
+<meta property="og:description" content="I wanted to write up a quick post on getting a virtual lab up and running for studying towards the JNCIS-ENT exam. I was lucky enough to go on the in-person juniper training course for JEX &amp; JIR so I have physical lab examples that I wanted to run at home. To do this I choose to use Eve-NG as it seems to be gaining popularity and covers a reasonable amount of supported images." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.commit-confirm.host/posts/juniper-virtual-labs-ethernet-switching/" />
+<meta property="article:published_time" content="2018-08-19T13:42:23&#43;00:00"/>
+<meta property="article:modified_time" content="2018-08-19T13:42:23&#43;00:00"/>
+
+
+    
+      <base href="https://www.commit-confirm.host/posts/juniper-virtual-labs-ethernet-switching/">
+    
+    <title>
+  Juniper Virtual Labs - Ethernet-switching · Commit-Confirm
+</title>
+
+    
+      <link rel="canonical" href="https://www.commit-confirm.host/posts/juniper-virtual-labs-ethernet-switching/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://www.commit-confirm.host/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://www.commit-confirm.host/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css" integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://www.commit-confirm.host/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.commit-confirm.host/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.54.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-dark">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://www.commit-confirm.host/">
+      Commit-Confirm
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.commit-confirm.host/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.commit-confirm.host/posts/">Blog</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Juniper Virtual Labs - Ethernet-switching</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2018-08-19T13:42:23Z'>
+                August 19, 2018
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              4-minute read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fas fa-folder"></i>
+    <a href="https://www.commit-confirm.host/categories/juniper/">Juniper</a></div>
+
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://www.commit-confirm.host/tags/juniper/">Juniper</a>
+      <span class="separator">•</span>
+    <a href="https://www.commit-confirm.host/tags/home-lab/">Home-Lab</a>
+      <span class="separator">•</span>
+    <a href="https://www.commit-confirm.host/tags/vqfx/">vQFX</a>
+      <span class="separator">•</span>
+    <a href="https://www.commit-confirm.host/tags/jncis-ent/">JNCIS-ENT</a>
+      <span class="separator">•</span>
+    <a href="https://www.commit-confirm.host/tags/eve-ng/">Eve-NG</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        
+
+<p>I wanted to write up a quick post on getting a virtual lab up and running for studying towards the JNCIS-ENT exam. I was lucky enough to go on the in-person juniper training course for JEX &amp; JIR so I have physical lab examples that I wanted to run at home. To do this I choose to use Eve-NG as it seems to be gaining popularity and covers a reasonable amount of <a href="http://www.eve-ng.net/documentation/supported-images">supported images</a>. I&rsquo;m not going to cover the installation/configuration of eve-ng as their documentation is very good. However, as a caution, the main downside to Eve vs GNS3 that I have found is simply there is less community discussion around Eve-ng.</p>
+
+<h4 id="the-problem"><strong>The problem</strong></h4>
+
+<p>In the JEX syllabus there is a section on Ethernet-switching. The very first lab covers this section and expects some switching functionality to work. I had originally configured two vSRXs to do this lab and got most of the way through. However as soon as I tried to run &ldquo;show ethernet-switching table&rdquo; I got no result.</p>
+
+<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2018/01/vsrx-output.png"><img src="{{ site.url }}/images/posts/2018/01/vsrx-output.png" width="520" ></a></div>
+
+<p><br></p>
+
+<p>After looking over the Juniper feature explorer I found that ethernet-switching is not available to the vSRX. I had seen discussions saying it was possible with the 17 code base, though the image I downloaded did not seem to work on Eve so I haven&rsquo;t tested this.</p>
+
+<h4 id="the-solution"><strong>The solution</strong></h4>
+
+<p>I ended up spending more time than I would care to admit on this, I resorted to using the vQFX evaluation image provided by juniper (specifically: 15.1X53-D60.4). The trick here is to use both the VRE and VPFE in conjunction by connecting the em1. I was caught out here as I had originally tried this but I had not waited long enough for the RE and PFE to sync.</p>
+
+<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2018/01/vqfx-topology.png"><img src="{{ site.url }}/images/posts/2018/01/vqfx-topology.png" width="520" ></a></div>
+
+<p><br></p>
+
+<p>If your RE and PFE are connected as shown above, all you have to do is power them up and wait. On my home server they both powered up fairly fast (compared to vsrx), however it took another <sup>10</sup>&frasl;<sub>15</sub> minutes before they both started to work as expected. On your first attempt if you power them up and go for a 30 minute coffee/youtube mini binge, by the time you come back &ldquo;show interface terse&rdquo; should include xe-0/0/X interfaces.</p>
+
+<p>In order to test that basic switching was working as expected I created a test VLAN on both REs, put the connecting interface between REs (xe-0/0/2) into the vlan and created a L3 interface with an IP assigned at each end. I&rsquo;ve included both full configurations below along with my test output.</p>
+
+<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2018/01/vqfx-testing.png"><img src="{{ site.url }}/images/posts/2018/01/vqfx-testing.png" width="630" ></a></div>
+
+<p><br></p>
+
+<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2018/01/vqfx-output.png"><img src="{{ site.url }}/images/posts/2018/01/vqfx-output.png" width="630" ></a></div>
+
+<p><br></p>
+
+<h5 id="vqfx-re1-configuration"><strong><em>vQFX-RE1 configuration</em></strong></h5>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">root@vQFX-RE1# show configuration | display set | except &#34;dhcp&#34;
+set version 15.1X53-D60.4
+set system host-name vQFX-RE1
+set system root-authentication encrypted-password &#34;$1$VarABIj2$69bMxK8kQ/hdkAbUdIiam/&#34;
+set system root-authentication ssh-rsa &#34;ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key&#34;
+set system login user vagrant uid 2000
+set system login user vagrant class super-user
+set system login user vagrant authentication ssh-rsa &#34;ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key&#34;
+set system services ssh root-login allow
+set system services netconf ssh
+set system services rest http port 8080
+set system services rest enable-explorer
+set system syslog user * any emergency
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system extensions providers juniper license-type juniper deployment-scope commercial
+set system extensions providers chef license-type juniper deployment-scope commercial
+set interfaces xe-0/0/2 unit 0 family ethernet-switching vlan members test
+set interfaces em1 unit 0 family inet address 169.254.0.2/24
+set interfaces irb unit 99 family inet address 192.168.7.1/30
+set forwarding-options storm-control-profiles default all
+set protocols igmp-snooping vlan default
+set vlans default vlan-id 1
+set vlans test vlan-id 99
+set vlans test l3-interface irb.99</pre></div>
+<p><br></p>
+
+<h5 id="vqfx-re2-configuration"><strong><em>vQFX-RE2 configuration</em></strong></h5>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">root@vQFX-RE2# show configuration | display set | except &#34;dhcp&#34;
+
+set version 15.1X53-D60.4
+set system host-name vQFX-RE2 
+set system root-authentication encrypted-password &#34;$1$VarABIj2$69bMxK8kQ/hdkAbUdIiam/&#34;
+set system root-authentication ssh-rsa &#34;ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key&#34;
+set system login user vagrant uid 2000 
+set system login user vagrant class super-user
+set system login user vagrant authentication ssh-rsa &#34;ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key&#34;
+set system services ssh root-login allow
+set system services netconf ssh
+set system services rest http port 8080
+set system services rest enable-explorer
+set system syslog user * any emergency
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system extensions providers juniper license-type juniper deployment-scope commercial
+set system extensions providers chef license-type juniper deployment-scope commercial
+set interfaces xe-0/0/2 unit 0 family ethernet-switching vlan members test
+set interfaces em1 unit 0 family inet address 169.254.0.2/24
+set interfaces irb unit 99 family inet address 192.168.7.2/30
+set forwarding-options storm-control-profiles default all
+set protocols igmp-snooping vlan default
+set vlans default vlan-id 1
+set vlans test vlan-id 99
+set vlans test l3-interface irb.99</pre></div>
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+    </main>
+
+    
+
+    
+
+  </body>
+
+</html>

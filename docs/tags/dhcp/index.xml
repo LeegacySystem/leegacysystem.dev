@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dhcp on Commit-Confirm</title>
+    <link>https://www.commit-confirm.host/tags/dhcp/</link>
+    <description>Recent content in Dhcp on Commit-Confirm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 31 Mar 2019 13:30:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.commit-confirm.host/tags/dhcp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Juniper DHCP Snooping Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_dhcp_snooping_study_notes/</link>
+      <pubDate>Sun, 31 Mar 2019 13:30:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_dhcp_snooping_study_notes/</guid>
+      <description>This post will cover DHCP snooping in Junos, starting with the exchange of DHCP packets.
+As shown in the diagram above the process of obtaining an IP address through DHCP involves multiple broadcasts to the network segment. This can be abuses by attackers as they can by default see and respond to those broadcast messages just as easily as the DHCP server can. If a rogue DHCP server was to assign a fake IP address it would essentially DOS that end host, or it could forward its traffic while capture in a MITM attack.</description>
+    </item>
+    
+  </channel>
+</rss>

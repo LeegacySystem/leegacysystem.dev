@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Lee Dowdells">
+    <meta name="description" content="A personal stash of notes covering various topics">
+    <meta name="keywords" content="blog, devops, neteng, juniper">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Juniper Spanning Tree - Key STP Terms"/>
+<meta name="twitter:description" content="Bridge ID - A Unique identifier for a switch. Root Bridge - The elected switch with the lowest Bridge ID. Root Path Cost - The calculated cost to get to the Root Bridge. Port Cost - Every interface on a bridges as an assigned and configurable cost value. Root Port - A single port on every non-root bridges which is the closest to the Root Bridge."/>
+
+    <meta property="og:title" content="Juniper Spanning Tree - Key STP Terms" />
+<meta property="og:description" content="Bridge ID - A Unique identifier for a switch. Root Bridge - The elected switch with the lowest Bridge ID. Root Path Cost - The calculated cost to get to the Root Bridge. Port Cost - Every interface on a bridges as an assigned and configurable cost value. Root Port - A single port on every non-root bridges which is the closest to the Root Bridge." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.commit-confirm.host/posts/juniper-spanning-tree-key-stp-terms/" />
+<meta property="article:published_time" content="2019-01-14T15:41:23&#43;00:00"/>
+<meta property="article:modified_time" content="2019-01-14T15:41:23&#43;00:00"/>
+
+
+    
+      <base href="https://www.commit-confirm.host/posts/juniper-spanning-tree-key-stp-terms/">
+    
+    <title>
+  Juniper Spanning Tree - Key STP Terms · Commit-Confirm
+</title>
+
+    
+      <link rel="canonical" href="https://www.commit-confirm.host/posts/juniper-spanning-tree-key-stp-terms/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://www.commit-confirm.host/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://www.commit-confirm.host/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css" integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://www.commit-confirm.host/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.commit-confirm.host/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.54.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-dark">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://www.commit-confirm.host/">
+      Commit-Confirm
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.commit-confirm.host/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.commit-confirm.host/posts/">Blog</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Juniper Spanning Tree - Key STP Terms</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-01-14T15:41:23Z'>
+                January 14, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              4-minute read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fas fa-folder"></i>
+    <a href="https://www.commit-confirm.host/categories/juniper/">Juniper</a></div>
+
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://www.commit-confirm.host/tags/juniper/">Juniper</a>
+      <span class="separator">•</span>
+    <a href="https://www.commit-confirm.host/tags/stp/">STP</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <nav>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#bridge-id-a-unique-identifier-for-a-switch"><strong>Bridge ID</strong> - A Unique identifier for a switch.</a></li>
+<li><a href="#root-bridge-the-elected-switch-with-the-lowest-bridge-id"><strong>Root Bridge</strong> - The elected switch with the lowest Bridge ID.</a></li>
+<li><a href="#root-path-cost-the-calculated-cost-to-get-to-the-root-bridge"><strong>Root Path Cost</strong> - The calculated cost to get to the Root Bridge.</a></li>
+<li><a href="#port-cost-every-interface-on-a-bridges-as-an-assigned-and-configurable-cost-value"><strong>Port Cost</strong> - Every interface on a bridges as an assigned and configurable cost value.</a></li>
+<li><a href="#root-port-a-single-port-on-every-non-root-bridges-which-is-the-closest-to-the-root-bridge"><strong>Root Port</strong> - A single port on every non-root bridges which is the closest to the Root Bridge.</a></li>
+<li><a href="#bonus-round-checking-the-current-switch-to-verify-its-root-bridge-status"><strong>Bonus Round</strong> - Checking the current switch to verify its root bridge status</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+<p>It has been a while since I&rsquo;ve last proepry studied Juniper which in turn also explains the lack of posting notes. Hopefully the gap between this post and the next will not be as long.</p>
+
+<p>The reason for this is post is to drill in key STP terms by giving more information than is probably required for the JNCIS-ENT. This is inteded to the be first chapter/post of the many that I will have to write to memorise STP and its flavours.</p>
+
+<!-- Using the HTML List below as Jekyll list formating doesn't work as expected, need to fix at some point. -->
+
+<ul style="list-style-type:disc">
+  <li>Chapter 1: <a href="http://127.0.0.1:4000/2019/Juniper-Spanning-Tree-Key-STP-Terms/">Key STP Terms</a> </li> 
+  <li>Chapter 2: TBC</li>
+  <li>Chapter 3: TBC</li>
+</ul>  
+
+<h6 id="bridge-id-a-unique-identifier-for-a-switch"><strong>Bridge ID</strong> - A Unique identifier for a switch.</h6>
+
+<p>A unique bridge ID Is used to identify all switches participating in an STP topology. It is used to elect the root bridge (lowest bridge ID preferred) and is formed by combining the system MAC address and a configurable priority (default value 32k).</p>
+
+<p>If all switches in a spanning tree topology have the same default Bridge ID priority this can cause a common problem. As the next tie braking metric is the lowest MAC address, typically the older/oldest switch in the network will become the root bridge as it  is likely to have the lowest MAC address. This should be a consideration and avoided.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Show spanning-tree bridge | match &#34;Bridge ID&#34;</pre></div>
+<h6 id="root-bridge-the-elected-switch-with-the-lowest-bridge-id"><strong>Root Bridge</strong> - The elected switch with the lowest Bridge ID.</h6>
+
+<p>There will only be one Root Bridge in a spanning tree topology. Any other bridges are considered non-root and each will build a shortest path to the Root Bridge blocking of any redundant ports.  As previously mentioned setting a bridge priority is the best way to influence the elected Root Bridge.</p>
+
+<p>Root Protection is a spanning tree feature that can be used to protect the STP topology from being hijacked by a non-authorised bridges with a lower Bridge ID. When configured on interfaces which should not receive lower-priority/preferred BPDUs, the bridges will ignore them or perform the requested action.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Show spanning-tree bridge | match &#34;Root ID&#34;</pre></div>
+<h6 id="root-path-cost-the-calculated-cost-to-get-to-the-root-bridge"><strong>Root Path Cost</strong> - The calculated cost to get to the Root Bridge.</h6>
+
+<p>This value is a cumulative cost of all the links leading to the root bridge across a given path. Each bridge will add its own cost to the BPDU before sending further down the path (received path cost + port cost).</p>
+
+<h6 id="port-cost-every-interface-on-a-bridges-as-an-assigned-and-configurable-cost-value"><strong>Port Cost</strong> - Every interface on a bridges as an assigned and configurable cost value.</h6>
+
+<p>This value is used as mentioned in the Root Path Cost calculation, it is added to the received path cost to form the root path cost (received path cost + port cost).  The value is configurable with a range from 1 to 200000000 with 1Ge being 20000. There are two iterations of the speed to cost values 802.1D-2004 defines the newer standard to account for faster interface speeds.</p>
+
+<h6 id="root-port-a-single-port-on-every-non-root-bridges-which-is-the-closest-to-the-root-bridge"><strong>Root Port</strong> - A single port on every non-root bridges which is the closest to the Root Bridge.</h6>
+
+<p>After the root path costs have been calculated, each bridges designates the interface with the lowest cost as the root port.  There can only be one root port but in RSTP an alternate ports can exist, which is a path to the root bridges but with a calculated higher cost.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Show spanning-tree interfaces | match &#34;root&#34;</pre></div>
+<p>If no root port exists then that bridges is the Root Bridge. This is because the Root Bridge will not have any interfaces in the Root role.</p>
+
+<h6 id="bonus-round-checking-the-current-switch-to-verify-its-root-bridge-status"><strong>Bonus Round</strong> - Checking the current switch to verify its root bridge status</h6>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">show spanning-tree bridge | grep &#34;Bridge|Root&#34;</pre></div>
+<p>If the returned values are the same then the current Bridge is the Root Bridge of the topology</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+    </main>
+
+    
+
+    
+
+  </body>
+
+</html>

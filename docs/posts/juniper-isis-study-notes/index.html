@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Lee Dowdells">
+    <meta name="description" content="A personal stash of notes covering various topics">
+    <meta name="keywords" content="blog, devops, neteng, juniper">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Juniper IS-IS Study Notes"/>
+<meta name="twitter:description" content="First draft notes, likely to be messy/missing information IS-IS or Intermediate System to Intermediate System is an exam objective in the JNCIS-ENT curriculum and a routing protocol I had never actually come across before. At the time when I studied the CCNA and CCNP IS-IS was mentioned but never looked at in detail, this may have changed by now.
+The interesting thing about IS-IS is that was inteded to superceed OSPF once the OSI model became widely adopted."/>
+
+    <meta property="og:title" content="Juniper IS-IS Study Notes" />
+<meta property="og:description" content="First draft notes, likely to be messy/missing information IS-IS or Intermediate System to Intermediate System is an exam objective in the JNCIS-ENT curriculum and a routing protocol I had never actually come across before. At the time when I studied the CCNA and CCNP IS-IS was mentioned but never looked at in detail, this may have changed by now.
+The interesting thing about IS-IS is that was inteded to superceed OSPF once the OSI model became widely adopted." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.commit-confirm.host/posts/juniper-isis-study-notes/" />
+<meta property="article:published_time" content="2019-03-12T17:41:23&#43;00:00"/>
+<meta property="article:modified_time" content="2019-03-12T17:41:23&#43;00:00"/>
+
+
+    
+      <base href="https://www.commit-confirm.host/posts/juniper-isis-study-notes/">
+    
+    <title>
+  Juniper IS-IS Study Notes · Commit-Confirm
+</title>
+
+    
+      <link rel="canonical" href="https://www.commit-confirm.host/posts/juniper-isis-study-notes/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://www.commit-confirm.host/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://www.commit-confirm.host/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css" integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://www.commit-confirm.host/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.commit-confirm.host/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.54.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-dark">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://www.commit-confirm.host/">
+      Commit-Confirm
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.commit-confirm.host/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.commit-confirm.host/posts/">Blog</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Juniper IS-IS Study Notes</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-03-12T17:41:23Z'>
+                March 12, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              5-minute read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fas fa-folder"></i>
+    <a href="https://www.commit-confirm.host/categories/juniper/">Juniper</a></div>
+
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://www.commit-confirm.host/tags/juniper/">Juniper</a>
+      <span class="separator">•</span>
+    <a href="https://www.commit-confirm.host/tags/is-is/">IS-IS</a>
+      <span class="separator">•</span>
+    <a href="https://www.commit-confirm.host/tags/jncis-ent/">JNCIS-ENT</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        
+
+<h2 id="first-draft-notes-likely-to-be-messy-missing-information"><strong>First draft notes, likely to be messy/missing information</strong></h2>
+
+<p>IS-IS or Intermediate System to Intermediate System is an exam objective in the <a href="https://www.juniper.net/uk/en/training/certification/certification-tracks/ent-routing-switching-track?tab=jncis-enterprise">JNCIS-ENT</a> curriculum and a routing protocol I had never actually come across before. At the time when I studied the CCNA and CCNP IS-IS was mentioned but never looked at in detail, this may have changed by now.</p>
+
+<p>The interesting thing about IS-IS is that was inteded to superceed OSPF once the OSI model became widely adopted. As IS-IS was originally developed a long time ago and the OSI model never really overtook TCP/IP there are some legacy concepts in IS-IS that newer engineers like myself wont understand/recognise. One being CLNP or Connectionless-Mode Network Protocol which when looking at the name was the OSI model replacement for UDP in TCP/IP. CLNP traffic was also intended to be sent across ISO addressing another largely forgotten concept.</p>
+
+<p>One of the reasons IS-IS is still used today and wasn&rsquo;t largely left behind like the bulk of the OSI model is that it is comparatively easy to expand on due to TLVs which I&rsquo;ll cover.</p>
+
+<p>As IS-IS was inteded to replace OSPF they both have lots in common with each other. Firstly IS-IS is an interor gate protcol (IGP) intended to route insde an autonoumous system. Both protocols are considered link-state based and form adjacenies to build their link state databases evne using the same shortest path first algorithm. Both protocols elected a designated router based on prorities to reduce protocol chatter. Additionally both protocols have the concept of Areas with IS-IS adding the concept of levels. While the similarities sound great from a learning perspective, there are some big differences between the two which are covereted below.</p>
+
+<h6 id="iso-addressing"><strong>ISO Addressing</strong></h6>
+
+<p>ISO addresses can be difficult to look at but actually aren&rsquo;t hugely complicated. Each ISO address points to a unique Network Service Access Point (NSAP). In addition to this each Network Entity has a &ldquo;Network Entity Title&rdquo;, a special address broken down blow.</p>
+
+<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2019/02/ISO_Address.png"><img src="{{ site.url }}/images/posts/2019/02/ISO_Address.png" width="320" ></a></div> 
+
+<ul style="list-style-type:disc">
+  <li>AFI - Autority and Format ID: In the past an authority such as ARIN/RIPE would hand out NSAP addresses however this doesn't happen anymore. The 49.* is the ISO equivalent to a private address. </li> 
+  <li>Area ID: This is a similar concept to OSPF, the example area ID would be 1 here.</li>
+  <li>System ID:  This is a unique identified, common practice is to use the loopback IP address (192.168.1.1). </li>
+  <li>Selctor:  Also known as the NSEL, it is similar to a port/socket in IP. 00 address identifies the device itself. </li>
+</ul>  
+
+<p>It is important to note I did not include the Domain ID in my example. The domain ID is mentioned in the Juniper configuration I haven&rsquo;t come across it in my studies so I don&rsquo;t belive it will be in the JNCIS-ENT exam.</p>
+
+<h6 id="is-is-area-levels"><strong>IS-IS Area &amp; Levels</strong></h6>
+
+<p>One of the major differences between OSPF and IS-IS is Levels. IS-IS autonoumous systems can be broken down into either a Level 1 or Level 2 domain. Areas are also used in IS-IS and can increment continually as long a the areas are contigous. Level 1 domains are like totally stubby areas in OSPF. A Level 1 router can only route within the area while a Level 2 router will have an &ldquo;attached bit&rdquo; set that will cause Level 1 routers to generate a default route via the Level 2 router.</p>
+
+<p>A router can operate a Level 1 and Level 2 router at the same time. These devices act as level boundaries routing between areas. Level 2 can be thought of like area 0 in OSPF as it is the backbone performing inter-area routing were as level 1 is doing intra-area routing.</p>
+
+<p>Level 1 paths are preferred over Level 2 paths.</p>
+
+<h6 id="is-is-packet-types"><strong>IS-IS Packet Types</strong></h6>
+
+<p>1) Link State PDUs (LSP) -
+These packets are flooded perodically <em>within</em> an area to ensure link-state database information refreshes. A Link-State PDU consists of the System ID (6 Bytes), Circuit ID (1 Byte) and a Link-State PDU Number (1 Byte). These PDUs describe reachable addresses and identify Adjacencies and their states.</p>
+
+<p>2) Hello PDU (IIH) -
+Also known as the IIH packet, these are used for neighbor discovery and to maintain adjacencies. OSPF forces the dead/hold timer to match between two neighbors but IS-IS does not, each router will adhere to its neighbors timer. There are seperate hello types for broadcast and P2P networks.</p>
+
+<p>The default Hello/Hold times in Juniper is <sup>9</sup>&frasl;<sub>27</sub> seconds for standard routers and <sup>3</sup>&frasl;<sub>9</sub> for the DIS router.</p>
+
+<p>3) Complete Sequence Number PDU (CSNP) -
+This PDU type contains a description or the headers of all the link-state PDUs in the database and is sent periodically on LANs. If a router recieves and comapres a CSNP to its own database and notices missing information it will request the missing LSPs using the next PDU type.</p>
+
+<p>4) Partial Sequence Number PDU (PSCP) -
+These types of PDU are sent for two reason; firstly to acknowledge receipt of an LSP. Secondly to request a missing LSP to fill in a gap within the senders routing tables</p>
+
+<h6 id="is-is-dis"><strong>IS-IS DIS</strong></h6>
+
+<p>TBC</p>
+
+<p>The Designated Intermediate System or DIS is similar to DR in OSPF. Unlike a DR there is no backup of the DIS, and it is simply a psuedonode that advertises to all attached routers. In IS-IS every router forms an adjacency with every other router, not just the DIS. Every router will advertise a single link to the pseudonode, including the DIS device itself.</p>
+
+<p>The DIS is elected based first on prority (high preferred default is 64). The prority can be set between 0 and 127 and when tied the higher MAC address wins. If a router with a higher prority comes into the network it will become the DIS.</p>
+
+<h6 id="is-is-tlvs"><strong>IS-IS TLVs</strong></h6>
+
+<p>TBC</p>
+
+<p>TLV = Type, Length, Value.</p>
+
+<h6 id="is-is-metrics"><strong>IS-IS Metrics</strong></h6>
+
+<p>TBC</p>
+
+<p>The default behaviour for IS-IS metrics is to have a maximum interface metric value of 63 and a maximum path metric of 1023.
+Wide metrics were later added to increase the values available.</p>
+
+<p>Rather than set every interface metric a reference metric can be used on speed. IS-IS is also capable of factoring in Delay, Cost and something else?</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+    </main>
+
+    
+
+    
+
+  </body>
+
+</html>

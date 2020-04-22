@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ospf on Commit-Confirm</title>
+    <link>https://www.commit-confirm.host/tags/ospf/</link>
+    <description>Recent content in Ospf on Commit-Confirm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 30 Mar 2019 16:40:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.commit-confirm.host/tags/ospf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Juniper OSPF States Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_ospf_states_study_notes/</link>
+      <pubDate>Sat, 30 Mar 2019 16:40:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_ospf_states_study_notes/</guid>
+      <description>This post will take a quick look into the OSPF adjacency state transtitions of OSPF in a multi-access broadcast network.</description>
+    </item>
+    
+    <item>
+      <title>Juniper OSPF Packet Types Study Notes</title>
+      <link>https://www.commit-confirm.host/posts/juniper_ospf_packet_types_study_notes/</link>
+      <pubDate>Sat, 30 Mar 2019 15:05:00 +0000</pubDate>
+      
+      <guid>https://www.commit-confirm.host/posts/juniper_ospf_packet_types_study_notes/</guid>
+      <description>This post will take a quick look into the five types of OSPF packets.
+OSPF is a dynamic routing protocol used as an interior gateway protocol (IGP). Unlinke BGP which is implemented over TCP, OSPF is its own IP protocol (89) different from TCP or UDP. As such the protocol has its own packet formats which are all reviewed below.
+OSPF Common Header: Each of the five OSPF packet types start with a common 24 byte header as shown below.</description>
+    </item>
+    
+  </channel>
+</rss>
