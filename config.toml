@@ -69,7 +69,7 @@ publishDir = "docs/"
 	name = "Email"
 	icon = "far fa-envelope"
 	weight = 0
-  url = "lee@commit-confirm.host"
+    url = "mailto:lee@commit-confirm.host"
 
 [[params.social]]
     name = "Github"
