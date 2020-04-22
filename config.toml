@@ -22,7 +22,7 @@ publishDir = "docs/"
     description = "A personal stash of notes covering various topics"
     keywords = "blog, devops, neteng, juniper"
     info = "Network/Automation Engineer"
-    avatarurl = "images/avatar.jpg"
+    avatarurl = "images/20190727_220410.jpg"
     #gravatar = "john.doe@example.com"
     footercontent = "Enter a text here."
 
