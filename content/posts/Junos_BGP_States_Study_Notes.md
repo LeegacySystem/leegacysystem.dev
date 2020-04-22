@@ -12,7 +12,7 @@ tags:
 This post will take a quick look into the BGP Finite State model.
 
 
-<a href="{{ site.url }}/images/posts/2019/07/BGP_States.png"><img src="{{ site.url }}/images/posts/2019/07/BGP_States.png" width="720" >
+<a href="/images/posts/2019/07/BGP_States.png"><img src="/images/posts/2019/07/BGP_States.png" width="720" >
 
 #### **IDLE:**
 This is the first state and essentially means a session is inactive waiting for a start event which can be manual or automatic. I'll need to look into Junipers definitions of a start event.

@@ -12,4 +12,4 @@ tags:
 This post will take a quick look into the OSPF adjacency state transtitions of OSPF in a multi-access broadcast network.
 
 
-<a href="{{ site.url }}/images/posts/2019/01/capture.png"><img src="{{ site.url }}/images/posts/2019/04/OSPF_Packets-OSPF_States.png" width="720" >
+<a href="/images/posts/2019/01/capture.png"><img src="/images/posts/2019/04/OSPF_Packets-OSPF_States.png" width="720" >

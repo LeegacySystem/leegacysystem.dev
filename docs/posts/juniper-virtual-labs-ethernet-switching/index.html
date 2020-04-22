@@ -147,7 +147,7 @@
 
 <p>In the JEX syllabus there is a section on Ethernet-switching. The very first lab covers this section and expects some switching functionality to work. I had originally configured two vSRXs to do this lab and got most of the way through. However as soon as I tried to run &ldquo;show ethernet-switching table&rdquo; I got no result.</p>
 
-<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2018/01/vsrx-output.png"><img src="{{ site.url }}/images/posts/2018/01/vsrx-output.png" width="520" ></a></div>
+<div style="text-align:center;"><a href="https://www.commit-confirm.host/images/posts/2018/01/vsrx-output.png"><img src="https://www.commit-confirm.host/images/posts/2018/01/vsrx-output.png" width="520" ></a></div>
 
 <p><br></p>
 
@@ -157,7 +157,7 @@
 
 <p>I ended up spending more time than I would care to admit on this, I resorted to using the vQFX evaluation image provided by juniper (specifically: 15.1X53-D60.4). The trick here is to use both the VRE and VPFE in conjunction by connecting the em1. I was caught out here as I had originally tried this but I had not waited long enough for the RE and PFE to sync.</p>
 
-<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2018/01/vqfx-topology.png"><img src="{{ site.url }}/images/posts/2018/01/vqfx-topology.png" width="520" ></a></div>
+<div style="text-align:center;"><a href="https://www.commit-confirm.host/images/posts/2018/01/vqfx-topology.png"><img src="https://www.commit-confirm.host/images/posts/2018/01/vqfx-topology.png" width="520" ></a></div>
 
 <p><br></p>
 
@@ -165,11 +165,11 @@
 
 <p>In order to test that basic switching was working as expected I created a test VLAN on both REs, put the connecting interface between REs (xe-0/0/2) into the vlan and created a L3 interface with an IP assigned at each end. I&rsquo;ve included both full configurations below along with my test output.</p>
 
-<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2018/01/vqfx-testing.png"><img src="{{ site.url }}/images/posts/2018/01/vqfx-testing.png" width="630" ></a></div>
+<div style="text-align:center;"><a href="https://www.commit-confirm.host/images/posts/2018/01/vqfx-testing.png"><img src="https://www.commit-confirm.host/images/posts/2018/01/vqfx-testing.png" width="630" ></a></div>
 
 <p><br></p>
 
-<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2018/01/vqfx-output.png"><img src="{{ site.url }}/images/posts/2018/01/vqfx-output.png" width="630" ></a></div>
+<div style="text-align:center;"><a href="https://www.commit-confirm.host/images/posts/2018/01/vqfx-output.png"><img src="https://www.commit-confirm.host/images/posts/2018/01/vqfx-output.png" width="630" ></a></div>
 
 <p><br></p>
 

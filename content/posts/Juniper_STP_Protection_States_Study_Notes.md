@@ -40,7 +40,7 @@ If a breach of RP is detected the offending port will be placed into a **root-pr
 #### **Example Topology:**
 Using the example below I will review which ports from the perspective of switch D should be configured with each protection under Juniper recommendation.
 
-<a href="{{ site.url }}/images/posts/2019/01/capture.png"><img src="{{ site.url }}/images/posts/2019/05/STP_Protections.png" width="720" >
+<a href="/images/posts/2019/01/capture.png"><img src="/images/posts/2019/05/STP_Protections.png" width="720" >
 
 **BPDU Protect:** As mentioned previously edge ports should be configured for BPDU protection. This would result in ports 2, 3 in the example being BPDU protected.
 

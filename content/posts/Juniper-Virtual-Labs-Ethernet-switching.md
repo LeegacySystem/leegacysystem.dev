@@ -16,7 +16,7 @@ I wanted to write up a quick post on getting a virtual lab up and running for st
 
 In the JEX syllabus there is a section on Ethernet-switching. The very first lab covers this section and expects some switching functionality to work. I had originally configured two vSRXs to do this lab and got most of the way through. However as soon as I tried to run "show ethernet-switching table" I got no result.
 
-<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2018/01/vsrx-output.png"><img src="{{ site.url }}/images/posts/2018/01/vsrx-output.png" width="520" ></a></div>
+<div style="text-align:center;"><a href="/images/posts/2018/01/vsrx-output.png"><img src="/images/posts/2018/01/vsrx-output.png" width="520" ></a></div>
 
 <br>
 
@@ -27,7 +27,7 @@ After looking over the Juniper feature explorer I found that ethernet-switching 
 
 I ended up spending more time than I would care to admit on this, I resorted to using the vQFX evaluation image provided by juniper (specifically: 15.1X53-D60.4). The trick here is to use both the VRE and VPFE in conjunction by connecting the em1. I was caught out here as I had originally tried this but I had not waited long enough for the RE and PFE to sync.
 
-<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2018/01/vqfx-topology.png"><img src="{{ site.url }}/images/posts/2018/01/vqfx-topology.png" width="520" ></a></div>
+<div style="text-align:center;"><a href="/images/posts/2018/01/vqfx-topology.png"><img src="/images/posts/2018/01/vqfx-topology.png" width="520" ></a></div>
 
 <br>
 
@@ -35,11 +35,11 @@ If your RE and PFE are connected as shown above, all you have to do is power the
 
 In order to test that basic switching was working as expected I created a test VLAN on both REs, put the connecting interface between REs (xe-0/0/2) into the vlan and created a L3 interface with an IP assigned at each end. I've included both full configurations below along with my test output. 
 
-<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2018/01/vqfx-testing.png"><img src="{{ site.url }}/images/posts/2018/01/vqfx-testing.png" width="630" ></a></div>
+<div style="text-align:center;"><a href="/images/posts/2018/01/vqfx-testing.png"><img src="/images/posts/2018/01/vqfx-testing.png" width="630" ></a></div>
 
 <br>
 
-<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2018/01/vqfx-output.png"><img src="{{ site.url }}/images/posts/2018/01/vqfx-output.png" width="630" ></a></div>
+<div style="text-align:center;"><a href="/images/posts/2018/01/vqfx-output.png"><img src="/images/posts/2018/01/vqfx-output.png" width="630" ></a></div>
 
 <br>
 

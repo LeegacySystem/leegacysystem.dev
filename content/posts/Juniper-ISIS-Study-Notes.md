@@ -21,7 +21,7 @@ As IS-IS was inteded to replace OSPF they both have lots in common with each oth
 ###### **ISO Addressing** 
 ISO addresses can be difficult to look at but actually aren't hugely complicated. Each ISO address points to a unique Network Service Access Point (NSAP). In addition to this each Network Entity has a "Network Entity Title", a special address broken down blow.
 
-<div style="text-align:center;"><a href="{{ site.url }}/images/posts/2019/02/ISO_Address.png"><img src="{{ site.url }}/images/posts/2019/02/ISO_Address.png" width="320" ></a></div> 
+<div style="text-align:center;"><a href="/images/posts/2019/02/ISO_Address.png"><img src="/images/posts/2019/02/ISO_Address.png" width="320" ></a></div> 
 
 <ul style="list-style-type:disc">
   <li>AFI - Autority and Format ID: In the past an authority such as ARIN/RIPE would hand out NSAP addresses however this doesn't happen anymore. The 49.* is the ISO equivalent to a private address. </li> 

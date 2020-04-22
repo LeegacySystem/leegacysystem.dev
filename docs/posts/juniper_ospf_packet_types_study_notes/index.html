@@ -151,7 +151,7 @@ OSPF Common Header: Each of the five OSPF packet types start with a common 24 by
 
 <p>Each of the five OSPF packet types start with a common 24 byte header as shown below. This header identifies the OSPF version and packet type, along with the router and area ID of the sender. If implemented authentication will also be handled by the common header.</p>
 
-<p><a href="{{ site.url }}/images/posts/2019/01/capture.png"><img src="{{ site.url }}/images/posts/2019/03/OSPF_Packets-Common Header.png" width="720" ></p>
+<p><a href="https://www.commit-confirm.host/images/posts/2019/01/capture.png"><img src="https://www.commit-confirm.host/images/posts/2019/03/OSPF_Packets-Common Header.png" width="720" ></p>
 
 <h4 id="ospf-hello-packet-type-1"><strong>OSPF Hello Packet (type 1):</strong></h4>
 
@@ -159,31 +159,31 @@ OSPF Common Header: Each of the five OSPF packet types start with a common 24 by
 
 <p>The diagram below shows the structure of a hello packet including the OSPF common header with dotted lines. Note how the common header defines the following packet as type 1.</p>
 
-<p><a href="{{ site.url }}/images/posts/2019/01/capture.png"><img src="{{ site.url }}/images/posts/2019/03/OSPF_Packets-Hello Packet.png" width="720" ></p>
+<p><a href="https://www.commit-confirm.host/images/posts/2019/01/capture.png"><img src="https://www.commit-confirm.host/images/posts/2019/03/OSPF_Packets-Hello Packet.png" width="720" ></p>
 
 <h4 id="ospf-database-description-packet-type-2"><strong>OSPF Database Description Packet (type 2):</strong></h4>
 
 <p>The DDP is the second type of OSPF packet and are exchanged between two OSPF routers when the adjacency is forming. One or more of these packets will be sent to define and synchronise the link-state database between OSPF routers. THE DDP excahnge process involves one router acting as the master and the other as a slave for the exchange. The OSPF router with the higest Router ID will take the mastership role in the exchange.</p>
 
-<p><a href="{{ site.url }}/images/posts/2019/01/capture.png"><img src="{{ site.url }}/images/posts/2019/03/OSPF_Packets-DDP-Packet.png" width="720" ></p>
+<p><a href="https://www.commit-confirm.host/images/posts/2019/01/capture.png"><img src="https://www.commit-confirm.host/images/posts/2019/03/OSPF_Packets-DDP-Packet.png" width="720" ></p>
 
 <h4 id="ospf-link-state-request-type-3"><strong>OSPF Link State Request (type 3):</strong></h4>
 
 <p>LSR packets are sent by an OSPF router after the DDP exchange when the router detects it is missing information from its link-state database. The LSR is sent to neighbours requesting the missing or more up-to-date inforamtion. An LSR can contain multiple requests for LSA inforamtion.</p>
 
-<p><a href="{{ site.url }}/images/posts/2019/01/capture.png"><img src="{{ site.url }}/images/posts/2019/03/OSPF_Packets-LSR_Packet.png" width="720" ></p>
+<p><a href="https://www.commit-confirm.host/images/posts/2019/01/capture.png"><img src="https://www.commit-confirm.host/images/posts/2019/03/OSPF_Packets-LSR_Packet.png" width="720" ></p>
 
 <h4 id="ospf-link-state-update-type-4"><strong>OSPF Link State Update (type 4):</strong></h4>
 
 <p>LSUs are the flooding mechanism used to send Link-State Advertisements. Each LSU can carry on or mora LSAs one hop further than the origin. The follow OSPF packet type is used to acknowledge the reciept of an LSU, if no ack is recieved the LSU is sent again directly to the neighbour to ensure reliable transmission and a converged link-state database between all OSPF devices.</p>
 
-<p><a href="{{ site.url }}/images/posts/2019/01/capture.png"><img src="{{ site.url }}/images/posts/2019/03/OSPF_Packets-LSU_Packet.png" width="720" ></p>
+<p><a href="https://www.commit-confirm.host/images/posts/2019/01/capture.png"><img src="https://www.commit-confirm.host/images/posts/2019/03/OSPF_Packets-LSU_Packet.png" width="720" ></p>
 
 <h4 id="ospf-link-state-acknowledgement-type-5"><strong>OSPF Link State Acknowledgement (type 5):</strong></h4>
 
 <p>As previously mentioned an Acknowledgement has to be sent in response to an LSU to acknowledge that the reciever obtained all LSAs within the LSU. One packet can be used to acknowledge multiple LSAs.</p>
 
-<p><a href="{{ site.url }}/images/posts/2019/01/capture.png"><img src="{{ site.url }}/images/posts/2019/03/OSPF_Packets-LSA_(Ack)_packet.png" width="720" ></p>
+<p><a href="https://www.commit-confirm.host/images/posts/2019/01/capture.png"><img src="https://www.commit-confirm.host/images/posts/2019/03/OSPF_Packets-LSA_(Ack)_packet.png" width="720" ></p>
 
       </div>
 
