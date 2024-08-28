@@ -18,20 +18,20 @@ The interesting thing about IS-IS is that was inteded to superceed OSPF once the
 <meta property="og:description" content="First draft notes, likely to be messy/missing information IS-IS or Intermediate System to Intermediate System is an exam objective in the JNCIS-ENT curriculum and a routing protocol I had never actually come across before. At the time when I studied the CCNA and CCNP IS-IS was mentioned but never looked at in detail, this may have changed by now.
 The interesting thing about IS-IS is that was inteded to superceed OSPF once the OSI model became widely adopted." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.commit-confirm.host/posts/juniper-isis-study-notes/" />
+<meta property="og:url" content="https://www.leegacysystem.dev/posts/juniper-isis-study-notes/" />
 <meta property="article:published_time" content="2019-03-12T17:41:23&#43;00:00"/>
 <meta property="article:modified_time" content="2019-03-12T17:41:23&#43;00:00"/>
 
 
     
-      <base href="https://www.commit-confirm.host/posts/juniper-isis-study-notes/">
+      <base href="https://www.leegacysystem.dev/posts/juniper-isis-study-notes/">
     
     <title>
   Juniper IS-IS Study Notes · Commit-Confirm
 </title>
 
     
-      <link rel="canonical" href="https://www.commit-confirm.host/posts/juniper-isis-study-notes/">
+      <link rel="canonical" href="https://www.leegacysystem.dev/posts/juniper-isis-study-notes/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@ The interesting thing about IS-IS is that was inteded to superceed OSPF once the
     
       
       
-      <link rel="stylesheet" href="https://www.commit-confirm.host/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+      <link rel="stylesheet" href="https://www.leegacysystem.dev/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
     
 
     
@@ -50,7 +50,7 @@ The interesting thing about IS-IS is that was inteded to superceed OSPF once the
       
         
         
-        <link rel="stylesheet" href="https://www.commit-confirm.host/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css" integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin="anonymous" media="screen" />
+        <link rel="stylesheet" href="https://www.leegacysystem.dev/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css" integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin="anonymous" media="screen" />
       
     
 
@@ -60,8 +60,8 @@ The interesting thing about IS-IS is that was inteded to superceed OSPF once the
 
     
 
-    <link rel="icon" type="image/png" href="https://www.commit-confirm.host/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://www.commit-confirm.host/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://www.leegacysystem.dev/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.leegacysystem.dev/images/favicon-16x16.png" sizes="16x16">
 
     <meta name="generator" content="Hugo 0.54.0" />
   </head>
@@ -74,7 +74,7 @@ The interesting thing about IS-IS is that was inteded to superceed OSPF once the
     <main class="wrapper">
       <nav class="navigation">
   <section class="container">
-    <a class="navigation-title" href="https://www.commit-confirm.host/">
+    <a class="navigation-title" href="https://www.leegacysystem.dev/">
       Commit-Confirm
     </a>
     
@@ -84,11 +84,11 @@ The interesting thing about IS-IS is that was inteded to superceed OSPF once the
       
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://www.commit-confirm.host/about/">About</a>
+            <a class="navigation-link" href="https://www.leegacysystem.dev/about/">About</a>
           </li>
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://www.commit-confirm.host/posts/">Blog</a>
+            <a class="navigation-link" href="https://www.leegacysystem.dev/posts/">Blog</a>
           </li>
         
       
@@ -122,15 +122,15 @@ The interesting thing about IS-IS is that was inteded to superceed OSPF once the
           </div>
           <div class="categories">
   <i class="fas fa-folder"></i>
-    <a href="https://www.commit-confirm.host/categories/juniper/">Juniper</a></div>
+    <a href="https://www.leegacysystem.dev/categories/juniper/">Juniper</a></div>
 
           <div class="tags">
   <i class="fas fa-tag"></i>
-    <a href="https://www.commit-confirm.host/tags/juniper/">Juniper</a>
+    <a href="https://www.leegacysystem.dev/tags/juniper/">Juniper</a>
       <span class="separator">•</span>
-    <a href="https://www.commit-confirm.host/tags/is-is/">IS-IS</a>
+    <a href="https://www.leegacysystem.dev/tags/is-is/">IS-IS</a>
       <span class="separator">•</span>
-    <a href="https://www.commit-confirm.host/tags/jncis-ent/">JNCIS-ENT</a></div>
+    <a href="https://www.leegacysystem.dev/tags/jncis-ent/">JNCIS-ENT</a></div>
 
         </div>
       </header>
@@ -153,7 +153,7 @@ The interesting thing about IS-IS is that was inteded to superceed OSPF once the
 
 <p>ISO addresses can be difficult to look at but actually aren&rsquo;t hugely complicated. Each ISO address points to a unique Network Service Access Point (NSAP). In addition to this each Network Entity has a &ldquo;Network Entity Title&rdquo;, a special address broken down blow.</p>
 
-<div style="text-align:center;"><a href="https://www.commit-confirm.host/images/posts/2019/02/ISO_Address.png"><img src="https://www.commit-confirm.host/images/posts/2019/02/ISO_Address.png" width="320" ></a></div> 
+<div style="text-align:center;"><a href="https://www.leegacysystem.dev/images/posts/2019/02/ISO_Address.png"><img src="https://www.leegacysystem.dev/images/posts/2019/02/ISO_Address.png" width="320" ></a></div> 
 
 <ul style="list-style-type:disc">
   <li>AFI - Autority and Format ID: In the past an authority such as ARIN/RIPE would hand out NSAP addresses however this doesn't happen anymore. The 49.* is the ISO equivalent to a private address. </li> 
