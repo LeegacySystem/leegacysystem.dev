@@ -21,7 +21,7 @@ publishDir = "docs/"
     author = "Lee Dowdells"
     description = "A personal stash of notes covering various topics"
     keywords = "blog, devops, neteng, juniper"
-    info = "Network/Automation Engineer"
+    info = "Cloud & DevOps Specialist"
     avatarurl = "images/ny_jetSki2.jpg"
     footercontent = "Enter a text here."
 
@@ -74,7 +74,7 @@ publishDir = "docs/"
     name = "Github"
     icon = "fab fa-github"
     weight = 1
-    url = "https://github.com/commit-confirm"
+    url = "https://github.com/LeegacySystem"
 
 [[params.social]]
 	name = "LinkedIn"
@@ -87,7 +87,7 @@ publishDir = "docs/"
 #	name = "Resume"
 #	icon = "far fa-file-alt"
 #	weight = 4
-#	url = "https://github.com/commit-confirm"
+#	url = "https://github.com/LeegacySystem"
 #[[params.social]]
 #    name = "Medium"
 #    icon = "fab fa-medium"
