@@ -27,7 +27,7 @@ defaultcontentlanguage = "en"
     rtl = false
 
     # Series see also post count
-    maxSeeAlsoItems = 5
+    maxSeeAlsoItems = 20
 
   # customCSS = ["css/custom.css"]
   # customSCSS = ["scss/custom.scss"]
