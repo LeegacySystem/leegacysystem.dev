@@ -1,21 +1,10 @@
-baseurl = "https://www.leegacysystem.dev"
-title = "Commit-Confirm"
-
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Leegacy System'
 theme = "hugo-coder"
-
 languagecode = "en"
 defaultcontentlanguage = "en"
 
-paginate = 20
-canonifyurls = true
-
-pygmentsstyle = "b2"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
-
-disqusShortname = "commit-confirm-github-io"
-
-publishDir = "docs/"
 
 [params]
     author = "Lee Dowdells"
@@ -23,41 +12,28 @@ publishDir = "docs/"
     keywords = "blog, devops, neteng, juniper"
     info = "Cloud & DevOps Specialist"
     avatarurl = "images/ny_jetSki2.jpg"
-    footercontent = "Enter a text here."
+    since = 2018
 
-    dateformat = "January 2, 2006"
+    faviconSVG = "/images/site/favicon.svg"
+    favicon_32 = "/images/site/favicon-32x32.png"
+    favicon_16 = "/images/site/favicon-16x16.png"
 
-    hideFooter = true
-    hideCredits = true
-    hideCopyright = false
-    since = 2019
 
-    # Git Commit in Footer, uncomment the line below to enable it.
-    commit = "https://github.com/luizdepra/hugo-coder/tree/"
+    enableTwemoji = true
+
+    colorScheme = "dark"
+    hidecolorschemetoggle = false
 
     rtl = false
-
-    # Specify light/dark colorscheme
-    # Supported values:
-    # "auto" (use preference set by browser)
-    # "dark" (dark background, light foreground)
-    # "light" (light background, dark foreground) (default)
-    colorscheme = "dark"
 
     # Series see also post count
     maxSeeAlsoItems = 5
 
-    # Custom CSS
-    custom_css = []
+  # customCSS = ["css/custom.css"]
+  # customSCSS = ["scss/custom.scss"]
+  # customJS = ["js/app.js", "js/particles.js"]
+  customHomeJS = ["js/particles.js", "js/app.js"]
 
-    # Custom JS
-    custom_js = []
-
-# If you want to use fathom(https://usefathom.com) for analytics, add this section
-[params.fathomAnalytics]
-    #siteID = "ABCDE"
-    # Default value is cdn.usefathom.com, overwrite this if you are self-hosting
-    #serverURL = "analytics.example.com"
 
 [taxonomies]
   category = "categories"
@@ -82,36 +58,16 @@ publishDir = "docs/"
 	weight = 2
 	url = "https://www.linkedin.com/in/lee-dow180/"
 
-
-#[[params.social]]
-#	name = "Resume"
-#	icon = "far fa-file-alt"
-#	weight = 4
-#	url = "https://github.com/LeegacySystem"
-#[[params.social]]
-#    name = "Medium"
-#    icon = "fab fa-medium"
-#    weight = 5
-#    url = "https://medium.com/@johndoe"
-#[[params.social]]
-#    name = "RSS"
-#    icon = "fas fa-rss"
-#    weight = 6
-#    url = "https://myhugosite.com/index.xml"
-#    rel = "alternate"
-#    type = "application/rss+xml"
-
-
 [languages]
     [languages.en]
         languagename = "English"
 
         [languages.en.menu]
 
-            [[languages.en.menu.main]]
-            name = "About"
-            weight = 1
-            url = "about/"
+            #[[languages.en.menu.main]]
+            #name = "About"
+            #weight = 1
+            #url = "about/"
 
             [[languages.en.menu.main]]
             name = "Blog"
@@ -122,4 +78,3 @@ publishDir = "docs/"
             #name = "Projects"
             #weight = 3
             #url = "projects/"
-
