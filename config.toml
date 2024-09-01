@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://www.leegacysystem.dev/'
 languageCode = 'en-us'
 title = 'Leegacy System'
 theme = "hugo-coder"
