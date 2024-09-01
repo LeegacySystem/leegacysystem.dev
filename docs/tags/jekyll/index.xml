@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll on Leegacy System</title>
+    <link>http://localhost:1313/tags/jekyll/</link>
+    <description>Recent content in Jekyll on Leegacy System</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 12 Jul 2018 18:42:23 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The First Dump</title>
+      <link>http://localhost:1313/posts/first-blog-post/</link>
+      <pubDate>Thu, 12 Jul 2018 18:42:23 +0000</pubDate>
+      <guid>http://localhost:1313/posts/first-blog-post/</guid>
+      <description>The First Dump&#xD;Link to heading&#xD;This is simply a note to myself on how to fix the midnight Jekyll theme should any others have the same problem. This was mainly figured out by trial and error along with some comparisons with working github page sources.&#xA;As I&amp;rsquo;ve already forgotten how I fixed it, see commit#5 with file change highlights below:&#xA;1) Gemfile.lock&#xD;Link to heading&#xD;There are a lot of additions in here.</description>
+    </item>
+  </channel>
+</rss>

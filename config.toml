@@ -5,6 +5,7 @@ theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
 
+publishDir = "docs" # Required for Github pages
 
 [params]
     author = "Lee Dowdells"

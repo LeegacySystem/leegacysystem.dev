@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Junos JNCIS-ENT Easy Wins Study Notes · Leegacy System
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Lee Dowdells">
+<meta name="description" content="This post will look over some areas I think will be easy wins for the JNCIS-ENT Exame.
+IEEE Standards:Link to headingIP Protocols:Link to headingPreferred Preferences:Link to headingSTP Bridge Prority - Lower Routing Preference - lower OSPF DIR priority/RID - Higher IS-IS DIS priority - Higher? BGP local pref - Higher
+Default TTLs:Link to headingiBGP TTL - 255 eBGP TTL - 1 VRRP TTL - 255?">
+<meta name="keywords" content="blog, devops, neteng, juniper">
+<meta name="fediverse:creator" content="" />
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Junos JNCIS-ENT Easy Wins Study Notes">
+  <meta name="twitter:description" content="This post will look over some areas I think will be easy wins for the JNCIS-ENT Exame.
+IEEE Standards:Link to headingIP Protocols:Link to headingPreferred Preferences:Link to headingSTP Bridge Prority - Lower Routing Preference - lower OSPF DIR priority/RID - Higher IS-IS DIS priority - Higher? BGP local pref - Higher
+Default TTLs:Link to headingiBGP TTL - 255 eBGP TTL - 1 VRRP TTL - 255?">
+
+<meta property="og:url" content="http://localhost:1313/posts/junos_jncis-ent_easy_wins_study_notes/">
+  <meta property="og:site_name" content="Leegacy System">
+  <meta property="og:title" content="Junos JNCIS-ENT Easy Wins Study Notes">
+  <meta property="og:description" content="This post will look over some areas I think will be easy wins for the JNCIS-ENT Exame.
+IEEE Standards:Link to headingIP Protocols:Link to headingPreferred Preferences:Link to headingSTP Bridge Prority - Lower Routing Preference - lower OSPF DIR priority/RID - Higher IS-IS DIS priority - Higher? BGP local pref - Higher
+Default TTLs:Link to headingiBGP TTL - 255 eBGP TTL - 1 VRRP TTL - 255?">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2019-04-10T15:50:00+00:00">
+    <meta property="article:modified_time" content="2019-04-10T15:50:00+00:00">
+    <meta property="article:tag" content="Juniper">
+    <meta property="article:tag" content="Routing">
+    <meta property="article:tag" content="JNCIS-ENT">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/junos_jncis-ent_easy_wins_study_notes/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/site/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/site/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/site/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Leegacy System
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/junos_jncis-ent_easy_wins_study_notes/">
+              Junos JNCIS-ENT Easy Wins Study Notes
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2019-04-10T15:50:00Z">
+                April 10, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/juniper/">Juniper</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/juniper/">Juniper</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/routing/">Routing</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/jncis-ent/">JNCIS-ENT</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>This post will look over some areas I think will be easy wins for the JNCIS-ENT Exame.</p>
+<h4 id="ieee-standards">
+  <strong>IEEE Standards:</strong>
+  <a class="heading-link" href="#ieee-standards">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<!-- raw HTML omitted -->
+<h4 id="ip-protocols">
+  <strong>IP Protocols:</strong>
+  <a class="heading-link" href="#ip-protocols">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<!-- raw HTML omitted -->
+<h4 id="preferred-preferences">
+  <strong>Preferred Preferences:</strong>
+  <a class="heading-link" href="#preferred-preferences">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>STP Bridge Prority - Lower
+Routing Preference - lower
+OSPF DIR priority/RID - Higher
+IS-IS DIS priority - Higher?
+BGP local pref - Higher</p>
+<h4 id="default-ttls">
+  <strong>Default TTLs:</strong>
+  <a class="heading-link" href="#default-ttls">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>iBGP TTL - 255
+eBGP TTL - 1
+VRRP TTL - 255?</p>
+<h4 id="random-bits">
+  <strong>Random Bits:</strong>
+  <a class="heading-link" href="#random-bits">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Ethernet switching - Learning, Forwarding, Filtering, Flooding, Aging</p>
+<p>STP States - Blocking, Listening, Learning, Forwarding
+RSTP States - Discarding, Learning, Forwarding</p>
+<h4 id="routing-preferences">
+  <strong>Routing Preferences:</strong>
+  <a class="heading-link" href="#routing-preferences">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<table>
+<thead>
+<tr>
+<th>Route Protocol/Source</th>
+<th>Default Preference</th>
+<th>Statement to Modify Default Preference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Directly connected network</td>
+<td>0</td>
+<td>–</td>
+</tr>
+<tr>
+<td>System routes</td>
+<td>4</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Static and Static LSPs</td>
+<td>5</td>
+<td>static</td>
+</tr>
+<tr>
+<td>Static LSPs</td>
+<td>6</td>
+<td>–</td>
+</tr>
+<tr>
+<td>OSPF internal route</td>
+<td>10</td>
+<td>OSPF</td>
+</tr>
+<tr>
+<td>IS-IS Level 1 Internal Router</td>
+<td>15</td>
+<td>IS-IS</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>IS-IS Level 2 Internal Router</td>
+<td>18</td>
+<td>IS-IS</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>RIP / RIPng</td>
+<td>100</td>
+<td>RIP</td>
+</tr>
+<tr>
+<td>PIM</td>
+<td>105</td>
+<td>&ldquo;Multicast Protocols Feature Guide&rdquo;</td>
+</tr>
+<tr>
+<td>Aggregate</td>
+<td>130</td>
+<td>aggregate</td>
+</tr>
+<tr>
+<td>Generated</td>
+<td>130</td>
+<td>Generated</td>
+</tr>
+<tr>
+<td>OSPF AS external routes</td>
+<td>150</td>
+<td>OSPF external-preference</td>
+</tr>
+<tr>
+<td>IS-IS Level 1 External Router</td>
+<td>160</td>
+<td>IS-IS</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>IS-IS Level 2 External Router</td>
+<td>165</td>
+<td>IS-IS</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>BGP (EBGP/IBGP)</td>
+<td>170</td>
+<td>BGP preference, export, import</td>
+</tr>
+</tbody>
+</table>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2018 -
+    
+    2024
+     Lee Dowdells 
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

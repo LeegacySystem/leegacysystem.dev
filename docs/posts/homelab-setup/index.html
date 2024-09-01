@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  CoreDNS Homelab Setup · Leegacy System
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Lee Dowdells">
+<meta name="description" content="CoreDNS Homelab SetupLink to headingWell it turns out Coronavirus is great studying as there&rsquo;s literally nothing else to do, apart from play games and watching tv&hellip;.
+Anyway this post will go over my notes on setting up CoreDNS for DNS resolution within my home network. The post will focus on Docker along with DNS principles.
+super important tldr The hardest thing about using CoreDNS is not typing or saying CoreOS, super annoying habbit.">
+<meta name="keywords" content="blog, devops, neteng, juniper">
+<meta name="fediverse:creator" content="" />
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CoreDNS Homelab Setup">
+  <meta name="twitter:description" content="CoreDNS Homelab SetupLink to headingWell it turns out Coronavirus is great studying as there’s literally nothing else to do, apart from play games and watching tv….
+Anyway this post will go over my notes on setting up CoreDNS for DNS resolution within my home network. The post will focus on Docker along with DNS principles.
+super important tldr The hardest thing about using CoreDNS is not typing or saying CoreOS, super annoying habbit.">
+
+<meta property="og:url" content="http://localhost:1313/posts/homelab-setup/">
+  <meta property="og:site_name" content="Leegacy System">
+  <meta property="og:title" content="CoreDNS Homelab Setup">
+  <meta property="og:description" content="CoreDNS Homelab SetupLink to headingWell it turns out Coronavirus is great studying as there’s literally nothing else to do, apart from play games and watching tv….
+Anyway this post will go over my notes on setting up CoreDNS for DNS resolution within my home network. The post will focus on Docker along with DNS principles.
+super important tldr The hardest thing about using CoreDNS is not typing or saying CoreOS, super annoying habbit.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-03-29T14:40:00+00:00">
+    <meta property="article:modified_time" content="2020-03-29T14:40:00+00:00">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="DNS">
+    <meta property="article:tag" content="Homelab">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/homelab-setup/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/site/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/site/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/site/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Leegacy System
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/homelab-setup/">
+              CoreDNS Homelab Setup
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2020-03-29T14:40:00Z">
+                March 29, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              5-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/docker/">Docker</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/docker/">Docker</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/dns/">DNS</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/homelab/">Homelab</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h1 id="coredns-homelab-setup">
+  CoreDNS Homelab Setup
+  <a class="heading-link" href="#coredns-homelab-setup">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Well it turns out Coronavirus is great studying as there&rsquo;s literally nothing else to do, apart from play games and watching tv&hellip;.</p>
+<p>Anyway this post will go over my notes on setting up CoreDNS for DNS resolution within my home network. The post will focus on Docker along with DNS principles.</p>
+<p><strong>super important tldr</strong> The hardest thing about using CoreDNS is not typing or saying CoreOS, super annoying habbit.</p>
+<h2 id="coredns">
+  CoreDNS
+  <a class="heading-link" href="#coredns">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>CoreDNS is designed to be a lightweight, DNS Server written the Go programming language. CoreDNS graduated from the Cloud Native Computing Foundation in 2019 following Promethues and Kubernetes, which relies heavily on CoreDNS as a default DNS provider.</p>
+<h3 id="coredns-configuration">
+  CoreDNS Configuration
+  <a class="heading-link" href="#coredns-configuration">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Three default zone files:</p>
+<ol>
+<li>CoreDNS corefile</li>
+<li>Forward lookup zone</li>
+<li>Reverse lookup Zone</li>
+</ol>
+<p>A zone file is simply the file which defines each record, a mapping of IP address to host names.</p>
+<h4 id="basic-configuration-tests">
+  Basic Configuration Tests
+  <a class="heading-link" href="#basic-configuration-tests">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>I don&rsquo;t require anything complicated so for now I will focus on the Corefile. Looking over the documentation there are some config snippets provided which I;ve used to verify basic operations.</p>
+<p><strong>corefile</strong></p>
+<pre tabindex="0"><code>. {
+   chaos CoreDNS-001
+}
+</code></pre><p>I used this corefile with the following compose:</p>
+<p><strong>docker-compose</strong></p>
+<pre tabindex="0"><code>version: &#34;3.7&#34;
+services:
+  coredns:
+    image: coredns/coredns
+    container_name: lab_coredns
+    hostname: coredns
+    ports:
+      - 53:53/udp
+      - 53:53/tcp
+    volumes:
+      - ./coredns:/root/
+    command: &#34;-conf /root/corefile&#34;
+    networks:
+      homelab:
+        aliases:
+        - &#34;coreDNS&#34;
+</code></pre><p><strong>Testing</strong></p>
+<pre tabindex="0"><code>⇒  docker-compose up coredns                         
+Starting lab_coredns ... done
+Attaching to lab_coredns
+lab_coredns       | .:53
+lab_coredns       | CoreDNS-1.6.9
+lab_coredns       | linux/amd64, go1.14.1, 1766568
+
+
+--
+
+⇒  dig CH txt version.bind @localhost
+
+; &lt;&lt;&gt;&gt; DiG 9.11.14-RedHat-9.11.14-2.fc31 &lt;&lt;&gt;&gt; CH txt version.bind @localhost
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 58270
+;; flags: qr rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: d14a96c110ad8ef1 (echoed)
+;; QUESTION SECTION:
+;version.bind.                  CH      TXT
+
+;; ANSWER SECTION:
+version.bind.           0       CH      TXT     &#34;CoreDNS-001&#34;
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#53(127.0.0.1)
+;; WHEN: Sun Mar 29 13:00:40 BST 2020
+;; MSG SIZE  rcvd: 89
+</code></pre><h4 id="global-zone">
+  Global zone
+  <a class="heading-link" href="#global-zone">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>As the previous configuration doesn&rsquo;t really do much but return a string for a specific query its time to move on. One thing to note that everything between {} brackets counts as a zone. I need to modify this root zone for it to allow non-defined zone queries be forwarded to external DNS servers.</p>
+<pre tabindex="0"><code>.:53 {
+    forward . 8.8.8.8 9.9.9.9
+    log
+    errors
+}
+</code></pre><p>This global zone file will for all matching queries forward them to the public Goggle DNS servers. Along with logging errors.</p>
+<h4 id="private-zone">
+  Private zone
+  <a class="heading-link" href="#private-zone">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Next up is to add a second zone which defines the homelab enviroment.</p>
+<pre tabindex="0"><code>.:53 {
+    forward . 8.8.8.8 9.9.9.9
+    log
+    errors
+}
+
+⇒ homelab.host:53 {
+    file /root/homelab.db
+    log
+    errors
+}
+</code></pre><p>The private zone defined here is actually very similar to the global zone with only two real diferences. Now any query that comes in relating to a host which belongs in the ⇒ homelab.host zone will trigger a lookup in the homelab.db file, which doesn&rsquo;t exist yet.</p>
+<h4 id="defining-zone-records">
+  Defining zone records
+  <a class="heading-link" href="#defining-zone-records">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Creating the homelab.db and defining the records as below:</p>
+<pre tabindex="0"><code>⇒ homelab.host.        IN  SOA coredns.⇒ homelab.host. dummy-email.⇒ homelab.host. 1585484552 7200 3600 1209600 3600
+</code></pre><pre tabindex="0"><code>1) *⇒ homelab.host.* 				- Zone
+2) *SOA*  								- Start Of Authority record type
+3) *coredns.⇒ homelab.host.* 		- SOA server for zone (this server)
+4) *dummy-email.⇒ homelab.host.* 	- fake email
+5) *1585484552* 						- Unique serial (unix timestamp)
+6) *7200* 								- SOA Refresh Rate
+7) *3600* 								- SOA Retry Rate
+8) *1209600* 							- SOA Expiration hold time
+9) *3600* 								- Records default TTL
+</code></pre><p>There are some interesting values in here, a quick Google of recommended times (<a href="https://tools.ietf.org/html/rfc2308"  class="external-link" target="_blank" rel="noopener">RFC 2308</a>) shows that the defaults for SOA refresh/retry/expiry rates are: 30m/15m/7d/20m. However this is a dated document and for homelab usage those defaults are a little extreme, I don&rsquo;t want to wait 20 minutes just for TTLs to expire.</p>
+<p>Next up is to define the rest of the host file, you can see its structure in the previously linked RFS.
+<strong>homelab.db</strong></p>
+<pre tabindex="0"><code>⇒ homelab.host.        IN  SOA coredns.⇒ homelab.host. dummy-email.⇒ homelab.host. 1585484552 7200 3600 1209600 3600
+
+future_stuff.⇒ homelab.host.    IN  A   192.168.0.22
+desktop.⇒ homelab.host.    IN  A   127.0.0.1
+*.⇒ homelab.host. IN  A   127.0.0.1
+
+#*.⇒ homelab.host. IN  CNAME   desktop.⇒ homelab.host
+</code></pre><p>My homelab.db file only has three entires in it, the first indicates and queries to &ldquo;<em>future_stuff.⇒ homelab.host</em>&rdquo; should go to <em>192.168.0.22</em>. This is just an example as for now all my services live on my desktop in seperate containers, although this will change in future. The second entry defines a mapping for <em>desktop.⇒ homelab.host</em> to <em>127.0.0.1</em>. Lastly the final CNAME entry maps everything else to the previously defined A record host name.</p>
+<h5 id="testing-each-zone">
+  Testing each zone:
+  <a class="heading-link" href="#testing-each-zone">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h5>
+<p>After starting the contianer I should be able to run dig commands from my host command prompt:</p>
+<pre tabindex="0"><code># Showing the global zone works
+⇒  dig @127.0.0.1 google.com | grep google     
+; &lt;&lt;&gt;&gt; DiG 9.11.14-RedHat-9.11.14-2.fc31 &lt;&lt;&gt;&gt; @127.0.0.1 google.com
+;google.com.                    IN      A
+google.com.             58      IN      A       172.217.169.14
+
+# Showing the desktop record
+⇒  dig @127.0.0.1 desktop.⇒ homelab.host | grep commit
+; &lt;&lt;&gt;&gt; DiG 9.11.14-RedHat-9.11.14-2.fc31 &lt;&lt;&gt;&gt; @127.0.0.1 desktop.⇒ homelab.host
+;desktop.⇒ homelab.host.   IN      A
+desktop.⇒ homelab.host. 0  IN      A       127.0.0.1
+
+# Showing the place holder record
+⇒  dig @127.0.0.1 future_stuff.⇒ homelab.host | grep future
+; &lt;&lt;&gt;&gt; DiG 9.11.14-RedHat-9.11.14-2.fc31 &lt;&lt;&gt;&gt; @127.0.0.1 future_stuff.⇒ homelab.host
+;future_stuff.⇒ homelab.host. IN   A
+future_stuff.⇒ homelab.host. 0 IN  A       192.168.0.22
+</code></pre><h3 id="summary">
+  Summary
+  <a class="heading-link" href="#summary">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>This has been a very basic coverage of CoreDNS going over my usecase. In future I&rsquo;ll likely build on this using CoreDNS and Kubernetes together, possibly with other provider types such as Git and other modules.</p>
+<h2 id="note">
+  Note
+  <a class="heading-link" href="#note">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The CNAME wildcard entry didn&rsquo;t work, and I couldn&rsquo;t be bothered spending time on it so I change the wildcard CNAME to an A record</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2018 -
+    
+    2024
+     Lee Dowdells 
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Junos DAI and IP Source Guard Study Notes · Leegacy System
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Lee Dowdells">
+<meta name="description" content="This will looking into Dynamic Arp Insepction and IP Source Guard for Junos.
+Dynamic APR Inspection:Link to headingDAI is intended as a security solution for possible ARP spoofing or also referred to as ARP poisoning MITM attacks within a LAN/VLAN. Using the previously covered DHCP snooping binding database DAI examines each ARP request and response packet on LAN when coming from untrusted (access ports). Trusted (trunk) ports bypass the DAI check much like the DHCP snooping check.">
+<meta name="keywords" content="blog, devops, neteng, juniper">
+<meta name="fediverse:creator" content="" />
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Junos DAI and IP Source Guard Study Notes">
+  <meta name="twitter:description" content="This will looking into Dynamic Arp Insepction and IP Source Guard for Junos.
+Dynamic APR Inspection:Link to headingDAI is intended as a security solution for possible ARP spoofing or also referred to as ARP poisoning MITM attacks within a LAN/VLAN. Using the previously covered DHCP snooping binding database DAI examines each ARP request and response packet on LAN when coming from untrusted (access ports). Trusted (trunk) ports bypass the DAI check much like the DHCP snooping check.">
+
+<meta property="og:url" content="http://localhost:1313/posts/junos_dai_and_ip_source_guard_study_notes/">
+  <meta property="og:site_name" content="Leegacy System">
+  <meta property="og:title" content="Junos DAI and IP Source Guard Study Notes">
+  <meta property="og:description" content="This will looking into Dynamic Arp Insepction and IP Source Guard for Junos.
+Dynamic APR Inspection:Link to headingDAI is intended as a security solution for possible ARP spoofing or also referred to as ARP poisoning MITM attacks within a LAN/VLAN. Using the previously covered DHCP snooping binding database DAI examines each ARP request and response packet on LAN when coming from untrusted (access ports). Trusted (trunk) ports bypass the DAI check much like the DHCP snooping check.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:tag" content="Juniper">
+    <meta property="article:tag" content="Routing">
+    <meta property="article:tag" content="JNCIS-ENT">
+    <meta property="article:tag" content="DAI">
+    <meta property="article:tag" content="IP Source Guard">
+    <meta property="article:tag" content="L2SEC">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/junos_dai_and_ip_source_guard_study_notes/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/site/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/site/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/site/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Leegacy System
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/junos_dai_and_ip_source_guard_study_notes/">
+              Junos DAI and IP Source Guard Study Notes
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="0001-01-01T00:00:00Z">
+                January 1, 0001
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/juniper/">Juniper</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/juniper/">Juniper</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/routing/">Routing</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/jncis-ent/">JNCIS-ENT</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/dai/">DAI</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/ip-source-guard/">IP Source Guard</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/l2sec/">L2SEC</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>This will looking into Dynamic Arp Insepction and IP Source Guard for Junos.</p>
+<h4 id="dynamic-apr-inspection">
+  <strong>Dynamic APR Inspection:</strong>
+  <a class="heading-link" href="#dynamic-apr-inspection">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>DAI is intended as a security solution for possible ARP spoofing or also referred to as ARP poisoning MITM attacks within a LAN/VLAN. Using the previously covered DHCP snooping binding database DAI examines each ARP request and response packet on LAN when coming from untrusted (access ports).  Trusted (trunk) ports bypass the DAI check much like the DHCP snooping check. If an arp packet goes through DAI inspection and the DHCP snooping database does not contain a IP-to-MAC mapping the ARP packet will be droped by DAI.</p>
+<p>DAI is configured on a per VLAN basis and not per port, it is disabled by default in Junos. One important note is that if an access port has a static IP address, it must either be configured as a trusted port to bypass DAI or have a static DHCP snooping binding, if neither of these rules have been followed then any ARP packets will be dropped by DAI. As DAI involves sending ARP packets to the RE for inspection there is a built in rate-limit on ARP packets sent to the RE.</p>
+<p>Like DHCP snooping again DAI is configured under the &ldquo;edit ethernet-switching-options secure-access-port&rdquo; hierarchy. The keyword to enable DAI is &ldquo;arp-inspection&rdquo; as previously mentioned configured per VLAN. The main operation commands are &ldquo;show dhcp snooping binding&rdquo; which has come up before and &ldquo;show arp inspection statistics&rdquo; which is new but self-explanatory.</p>
+<h4 id="ip-source-guard">
+  <strong>IP Source Guard:</strong>
+  <a class="heading-link" href="#ip-source-guard">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>A possibility when running a network is that some malicous user will come along and try to change/spoof their IP and MAC addresses. This can be difficult for a network admin to trace back to the source and remedy, while the spoofed IP is in play another machine may be DOS&rsquo;d. IP Source Guard is intended prevent spoofing or unintended changes from happening by using the DHCP binding table.</p>
+<p>With IP Source Guard enabled if a packet enters an untrusted access port it will be examined against the DHCP snooping database. If the source IP or mac is invalid the switch will discard the offending packet or packets, thus preventing any spoof/changes. Like DAI IP Source Guard is enabled at a VLAN level on one or more VLANs. With a fully populated DHCP binding database IP Source will derive its own database for packet validation. For any static IPs assigned to hosts the switch must have a static DHCP binding for the IP address otherwise packets will be dropped.</p>
+<p>Much like DAI, IP Source Guard is enabled in the edit &ldquo;ethernet-switching-options secure-access-ports&rdquo; using the keyword ip-source-guard or the reverse no-ip-source-guard to disable. The two main operational commands are &ldquo;show dhcp snooping binding&rdquo; and &ldquo;show ip-source-guard&rdquo;.</p>
+<p>As a note if IP Source Guard is used with 802.1x only one of the three modes can be used with IP Soure Guard. Single Supplicant mode can be used but not single-secure supplicant or multiple supplicant.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2018 -
+    
+    2024
+     Lee Dowdells 
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
