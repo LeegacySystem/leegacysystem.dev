@@ -1,4 +1,17 @@
 <section class="container centered">
+
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <div id="particles-js"></div>
+  {{ range .Site.Params.customHomeJS }}
+  {{ if hugo.IsServer }}
+  {{ $script := resources.Get . }}
+  <script src="{{ $script.RelPermalink }}"></script>
+  {{ else }}
+  {{ $script := resources.Get . | minify | fingerprint }}
+  <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+  {{ end }}
+  {{ end }}
+
   <div class="about">
     {{ partialCached "home/avatar.html" . }}
 
