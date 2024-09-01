@@ -79,3 +79,8 @@ publishDir = "docs" # Required for Github pages
             #name = "Projects"
             #weight = 3
             #url = "projects/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true # Required to generate links to image

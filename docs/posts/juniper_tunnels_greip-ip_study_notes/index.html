@@ -182,7 +182,10 @@
         <p>When a network can&rsquo;t support a specific traffic type often the solution is to use tunnels. A tunnel is an overlay in that it encapsulates and decapsulates unsupported packets that in a packet type the underlying network can support. The tunnels in this post do not add security, despite some Juniper tech library articles saying otherwise (I hope I&rsquo;m right). Tunnels also aren&rsquo;t stateful, this means that each tunnel end-point is unaware if the opposing point is reachable.</p>
 <p>Tunnels can be thought of as path vector in a sense similar to BGP. This is because the two end-points must be able to communicate with each other to pass traffic through their tunnels.</p>
 <p>The two tunnels covered in JNCIS-ENT are:</p>
-<!-- raw HTML omitted -->
+<ol>
+  <li> GRE </li>
+  <li> IP-IP </li>
+</ol>
 <h6 id="gre---generic-routing-encapsulation">
   <strong>GRE</strong> - Generic Routing Encapsulation.
   <a class="heading-link" href="#gre---generic-routing-encapsulation">

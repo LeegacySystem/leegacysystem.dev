@@ -157,7 +157,7 @@ Persistent MAC learning (also known as sticky MAC) allows for a switch to retain
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              One-minute read
+              2-minute read
             </span>
           </div>
           
@@ -196,7 +196,12 @@ Persistent MAC learning (also known as sticky MAC) allows for a switch to retain
 <p>Persistent MAC learning (also known as sticky MAC) allows for a switch to retain dynamically learned MACs and their associated interfaces after a reboot of the system. Persistent learning has to be enabled as by default it is disabled. When coupled with MAC limiting methods covered previously persistent learning ensures that only trusted devices are connected to a switch port even after a reboot when any counters would have cleared.</p>
 <p>It is important to clear any persistent MACs before moving them within your network. If you repatch a server to a new unused switch port it may come up, but should its previously active port turn back up its sticky entry will overide the current and would knock the server offline.</p>
 <p>There are four main considerations when using persistent learning:</p>
-<!-- raw HTML omitted -->
+<ol>
+  <li><i>Only access ports can be configured with stick MACs</i></li>
+  <li><i>The interface cannot be part of a redundant trunk group</i></li>
+  <li><i>The interface must not be configured with no-mac-learning</i></li>
+  <li><i>The interface must not be configured with 802.1x auth</i></li>
+</ol>
 <p>Persistent MAC learning is configured under &ldquo;edit ethernet-switching-options secure-access-port interface ge-0/0/0.0&rdquo; with the persistent-learning statement. To verify the MAC is persistent the &ldquo;show ethernet-switching table&rdquo; command can be used to display the type of entry in the forwarding table.</p>
 
       </div>

@@ -189,7 +189,7 @@ The interesting thing about IS-IS is that was inteded to superceed OSPF once the
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>IS-IS or Intermediate System to Intermediate System is an exam objective in the <!-- raw HTML omitted -->JNCIS-ENT<!-- raw HTML omitted --> curriculum and a routing protocol I had never actually come across before. At the time when I studied the CCNA and CCNP IS-IS was mentioned but never looked at in detail, this may have changed by now.</p>
+<p>IS-IS or Intermediate System to Intermediate System is an exam objective in the <a href="https://www.juniper.net/uk/en/training/certification/certification-tracks/ent-routing-switching-track?tab=jncis-enterprise">JNCIS-ENT</a> curriculum and a routing protocol I had never actually come across before. At the time when I studied the CCNA and CCNP IS-IS was mentioned but never looked at in detail, this may have changed by now.</p>
 <p>The interesting thing about IS-IS is that was inteded to superceed OSPF once the OSI model became widely adopted. As IS-IS was originally developed a long time ago and the OSI model never really overtook TCP/IP there are some legacy concepts in IS-IS that newer engineers like myself wont understand/recognise. One being CLNP or Connectionless-Mode Network Protocol which when looking at the name was the OSI model replacement for UDP in TCP/IP. CLNP traffic was also intended to be sent across ISO addressing another largely forgotten concept.</p>
 <p>One of the reasons IS-IS is still used today and wasn&rsquo;t largely left behind like the bulk of the OSI model is that it is comparatively easy to expand on due to TLVs which I&rsquo;ll cover.</p>
 <p>As IS-IS was inteded to replace OSPF they both have lots in common with each other. Firstly IS-IS is an interor gate protcol (IGP) intended to route insde an autonoumous system. Both protocols are considered link-state based and form adjacenies to build their link state databases evne using the same shortest path first algorithm. Both protocols elected a designated router based on prorities to reduce protocol chatter. Additionally both protocols have the concept of Areas with IS-IS adding the concept of levels. While the similarities sound great from a learning perspective, there are some big differences between the two which are covereted below.</p>
@@ -201,8 +201,13 @@ The interesting thing about IS-IS is that was inteded to superceed OSPF once the
   </a>
 </h6>
 <p>ISO addresses can be difficult to look at but actually aren&rsquo;t hugely complicated. Each ISO address points to a unique Network Service Access Point (NSAP). In addition to this each Network Entity has a &ldquo;Network Entity Title&rdquo;, a special address broken down blow.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<div style="text-align:center;"><a href="/images/posts/2019/02/ISO_Address.png"><img src="/images/posts/2019/02/ISO_Address.png" width="320" ></a></div> 
+<ul style="list-style-type:disc">
+  <li>AFI - Autority and Format ID: In the past an authority such as ARIN/RIPE would hand out NSAP addresses however this doesn't happen anymore. The 49.* is the ISO equivalent to a private address. </li> 
+  <li>Area ID: This is a similar concept to OSPF, the example area ID would be 1 here.</li>
+  <li>System ID:  This is a unique identified, common practice is to use the loopback IP address (192.168.1.1). </li>
+  <li>Selctor:  Also known as the NSEL, it is similar to a port/socket in IP. 00 address identifies the device itself. </li>
+</ul>  
 <p>It is important to note I did not include the Domain ID in my example. The domain ID is mentioned in the Juniper configuration I haven&rsquo;t come across it in my studies so I don&rsquo;t belive it will be in the JNCIS-ENT exam.</p>
 <h6 id="is-is-area--levels">
   <strong>IS-IS Area &amp; Levels</strong>

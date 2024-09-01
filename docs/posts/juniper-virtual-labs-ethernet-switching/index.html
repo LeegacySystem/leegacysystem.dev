@@ -198,8 +198,8 @@
   </a>
 </h4>
 <p>In the JEX syllabus there is a section on Ethernet-switching. The very first lab covers this section and expects some switching functionality to work. I had originally configured two vSRXs to do this lab and got most of the way through. However as soon as I tried to run &ldquo;show ethernet-switching table&rdquo; I got no result.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<div style="text-align:center;"><a href="/images/posts/2018/01/vsrx-output.png"><img src="/images/posts/2018/01/vsrx-output.png" width="520" ></a></div>
+<br>
 <p>After looking over the Juniper feature explorer I found that ethernet-switching is not available to the vSRX. I had seen discussions saying it was possible with the 17 code base, though the image I downloaded did not seem to work on Eve so I haven&rsquo;t tested this.</p>
 <h4 id="the-solution">
   <strong>The solution</strong>
@@ -209,14 +209,14 @@
   </a>
 </h4>
 <p>I ended up spending more time than I would care to admit on this, I resorted to using the vQFX evaluation image provided by juniper (specifically: 15.1X53-D60.4). The trick here is to use both the VRE and VPFE in conjunction by connecting the em1. I was caught out here as I had originally tried this but I had not waited long enough for the RE and PFE to sync.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<div style="text-align:center;"><a href="/images/posts/2018/01/vqfx-topology.png"><img src="/images/posts/2018/01/vqfx-topology.png" width="520" ></a></div>
+<br>
 <p>If your RE and PFE are connected as shown above, all you have to do is power them up and wait. On my home server they both powered up fairly fast (compared to vsrx), however it took another 10/15 minutes before they both started to work as expected. On your first attempt if you power them up and go for a 30 minute coffee/youtube mini binge, by the time you come back &ldquo;show interface terse&rdquo; should include xe-0/0/X interfaces.</p>
 <p>In order to test that basic switching was working as expected I created a test VLAN on both REs, put the connecting interface between REs (xe-0/0/2) into the vlan and created a L3 interface with an IP assigned at each end. I&rsquo;ve included both full configurations below along with my test output.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<div style="text-align:center;"><a href="/images/posts/2018/01/vqfx-testing.png"><img src="/images/posts/2018/01/vqfx-testing.png" width="630" ></a></div>
+<br>
+<div style="text-align:center;"><a href="/images/posts/2018/01/vqfx-output.png"><img src="/images/posts/2018/01/vqfx-output.png" width="630" ></a></div>
+<br>
 <h5 id="_vqfx-re1-configuration_">
   <strong><em>vQFX-RE1 configuration</em></strong>
   <a class="heading-link" href="#_vqfx-re1-configuration_">
@@ -250,7 +250,7 @@ set protocols igmp-snooping vlan default
 set vlans default vlan-id 1
 set vlans test vlan-id 99
 set vlans test l3-interface irb.99
-</code></pre><!-- raw HTML omitted -->
+</code></pre><br>
 <h5 id="_vqfx-re2-configuration_">
   <strong><em>vQFX-RE2 configuration</em></strong>
   <a class="heading-link" href="#_vqfx-re2-configuration_">

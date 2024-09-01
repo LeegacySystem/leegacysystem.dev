@@ -15,8 +15,8 @@
 <meta name="author" content="Lee Dowdells">
 <meta name="description" content="This post will skim over BGP packets and attributes.
 BGP Packet Types:Link to headingThere are five types of packets in BGP:
-BGP Attributes:Link to headingThere are four categories of attributes with different types in each:
-BGP Route Selection:Link to heading">
+Open Keepalive Notification Update Refresh BGP Attributes:Link to headingThere are four categories of attributes with different types in each:
+Well-known Mandatory - These attributes must be present in any BGP update.OriginAS Path - Loop protectionNext-HopWell-known Discretionary - Must be in every BGP implementation but is not required in every BGP update.">
 <meta name="keywords" content="blog, devops, neteng, juniper">
 <meta name="fediverse:creator" content="" />
 
@@ -25,16 +25,16 @@ BGP Route Selection:Link to heading">
   <meta name="twitter:title" content="Junos BGP Packets and Attributes Study Notes">
   <meta name="twitter:description" content="This post will skim over BGP packets and attributes.
 BGP Packet Types:Link to headingThere are five types of packets in BGP:
-BGP Attributes:Link to headingThere are four categories of attributes with different types in each:
-BGP Route Selection:Link to heading">
+Open Keepalive Notification Update Refresh BGP Attributes:Link to headingThere are four categories of attributes with different types in each:
+Well-known Mandatory - These attributes must be present in any BGP update.OriginAS Path - Loop protectionNext-HopWell-known Discretionary - Must be in every BGP implementation but is not required in every BGP update.">
 
 <meta property="og:url" content="http://localhost:1313/posts/junos_bgp_packets_and_attributes_study_notes/">
   <meta property="og:site_name" content="Leegacy System">
   <meta property="og:title" content="Junos BGP Packets and Attributes Study Notes">
   <meta property="og:description" content="This post will skim over BGP packets and attributes.
 BGP Packet Types:Link to headingThere are five types of packets in BGP:
-BGP Attributes:Link to headingThere are four categories of attributes with different types in each:
-BGP Route Selection:Link to heading">
+Open Keepalive Notification Update Refresh BGP Attributes:Link to headingThere are four categories of attributes with different types in each:
+Well-known Mandatory - These attributes must be present in any BGP update.OriginAS Path - Loop protectionNext-HopWell-known Discretionary - Must be in every BGP implementation but is not required in every BGP update.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -202,7 +202,13 @@ BGP Route Selection:Link to heading">
   </a>
 </h4>
 <p>There are five types of packets in BGP:</p>
-<!-- raw HTML omitted -->
+ <ol>
+   <li>Open </li>
+   <li>Keepalive </li>  
+   <li>Notification </li>
+   <li>Update </li>   
+   <li>Refresh </li>
+</ol> 
 <h4 id="bgp-attributes">
   <strong>BGP Attributes:</strong>
   <a class="heading-link" href="#bgp-attributes">
@@ -211,7 +217,33 @@ BGP Route Selection:Link to heading">
   </a>
 </h4>
 <p>There are four categories of attributes with different types in each:</p>
-<!-- raw HTML omitted -->
+<ol>
+    <li>Well-known Mandatory - These attributes must be present in any BGP update.</li>
+    <ol>
+        <li>Origin</li>
+        <li>AS Path - Loop protection</li>
+        <li>Next-Hop</li>
+    </ol>
+    <li>Well-known Discretionary - Must be in every BGP implementation but is not required in every BGP update.</li>
+    <ol>
+        <li>Local Prefrence</li>
+        <li>Atomic Aggregator</li>
+    </ol>
+    <li>Optional Transitive - If present it should be passed long to the next peers.</li>
+    <ol>
+        <li>Aggregator</li>
+        <li>Community (4 octets)</li>
+        <li>Extended Community (8 octets)</li>
+    </ol>
+    <li>Optional Non-Transitive - Doesn't have to be updated to peers.</li>
+    <ol>
+        <li>Multi Exit Discriminator (MED)</li>
+        <li>Originator ID</li>
+        <li>Cluster List</li>
+        <li>Multiprotocol Reachable NLRI</li>
+        <li>Multiprotocol Unreachable NLRI</li>
+    </ol>
+</ol>
 <h4 id="bgp-route-selection">
   <strong>BGP Route Selection:</strong>
   <a class="heading-link" href="#bgp-route-selection">
@@ -219,8 +251,15 @@ BGP Route Selection:Link to heading">
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<!-- raw HTML omitted -->
-
+<ol>
+    <li>Highest Local Preference First</li>
+    <li>Shortest AS Path</li>
+    <li>Lowest Origin Value</li>
+    <li>Lowest MED value</li>
+    <li>Lowest IGP metric as AS exit</li>
+    <li>Longest uptime of eBGP peer or lowest router ID</li>
+    <li>Lowest Peeer IP Address</li>
+</ol>
       </div>
 
 

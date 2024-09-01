@@ -204,7 +204,12 @@ BPDU Protection:Link to headingThe first and arguably most important protectio
 <p>To further explain an edge port is typically a server or end host, which typically wouldn&rsquo;t send BPDUs anyway so the edpe port status gives them the ability to shortcut the SPF process. If a user or attacked was to attached a switch to an edge port they could potentially cause loops.</p>
 <p>As mentioned the default action for BPDU protect is to disable the offending interface until a network admin clears the error. The alternative is to havethe disable-timeoute statement is configured and once this timer expires, the port will be unblocked (FACT CHECK NEEDED).</p>
 <p>BPDU protection can be used in STP, RSTP, VSTP and MSTP deployments, some key statements for STP configuration are:</p>
-<!-- raw HTML omitted -->
+<ul>
+  <li><i>bpdu-block</i> – Enables BDPU protection on a switch not running spanning tree </li>
+  <li><i>bpdu-block-on-edge</i> – Enable BDPU projection on a switch running spanning tree </li>
+  <li><i>disable-timeout</i> – Change the timeout of a port being down after BDPU breach </li>
+  <li><i>clear error bpdu interface</i> – Manually clear BPDU breach </li>
+</ul>
 <h4 id="loop-protection">
   <strong>Loop Protection:</strong>
   <a class="heading-link" href="#loop-protection">
@@ -231,7 +236,7 @@ BPDU Protection:Link to headingThe first and arguably most important protectio
   </a>
 </h4>
 <p>Using the example below I will review which ports from the perspective of switch D should be configured with each protection under Juniper recommendation.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a href="/images/posts/2019/01/capture.png"><img src="/images/posts/2019/05/STP_Protections.png" width="720" ></p>
 <p><strong>BPDU Protect:</strong> As mentioned previously edge ports should be configured for BPDU protection. This would result in ports 2, 3 in the example being BPDU protected.</p>
 <p><strong>Loop Protect:</strong> As previously mentioned LP should be configured on any port that has a chance of being a root or designated port. For switch 4 the only port that this may happen for is Port 1.</p>
 <p><strong>Loop Protect:</strong> As previously mentioned RP should be configured on any port that should not recieve a superior BPDU. In this example again ports 2 and 3 should not recieve any superior BPDUs. (FACT CHECK)</p>

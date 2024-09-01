@@ -14,8 +14,7 @@
 
 <meta name="author" content="Lee Dowdells">
 <meta name="description" content="This post will look over some areas I think will be easy wins for the JNCIS-ENT Exame.
-IEEE Standards:Link to headingIP Protocols:Link to headingPreferred Preferences:Link to headingSTP Bridge Prority - Lower Routing Preference - lower OSPF DIR priority/RID - Higher IS-IS DIS priority - Higher? BGP local pref - Higher
-Default TTLs:Link to headingiBGP TTL - 255 eBGP TTL - 1 VRRP TTL - 255?">
+IEEE Standards:Link to heading802.1D - Spanning Tree802.1w - Rapid Spanning Tree (w = wapid)802.1ad - LACPIP Protocols:Link to heading6 - TCPPort 179 - BGP89 - OSPF124 - IS-IS over IPPreferred Preferences:Link to headingSTP Bridge Prority - Lower Routing Preference - lower OSPF DIR priority/RID - Higher IS-IS DIS priority - Higher?">
 <meta name="keywords" content="blog, devops, neteng, juniper">
 <meta name="fediverse:creator" content="" />
 
@@ -23,15 +22,13 @@ Default TTLs:Link to headingiBGP TTL - 255 eBGP TTL - 1 VRRP TTL - 255?">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Junos JNCIS-ENT Easy Wins Study Notes">
   <meta name="twitter:description" content="This post will look over some areas I think will be easy wins for the JNCIS-ENT Exame.
-IEEE Standards:Link to headingIP Protocols:Link to headingPreferred Preferences:Link to headingSTP Bridge Prority - Lower Routing Preference - lower OSPF DIR priority/RID - Higher IS-IS DIS priority - Higher? BGP local pref - Higher
-Default TTLs:Link to headingiBGP TTL - 255 eBGP TTL - 1 VRRP TTL - 255?">
+IEEE Standards:Link to heading802.1D - Spanning Tree802.1w - Rapid Spanning Tree (w = wapid)802.1ad - LACPIP Protocols:Link to heading6 - TCPPort 179 - BGP89 - OSPF124 - IS-IS over IPPreferred Preferences:Link to headingSTP Bridge Prority - Lower Routing Preference - lower OSPF DIR priority/RID - Higher IS-IS DIS priority - Higher?">
 
 <meta property="og:url" content="http://localhost:1313/posts/junos_jncis-ent_easy_wins_study_notes/">
   <meta property="og:site_name" content="Leegacy System">
   <meta property="og:title" content="Junos JNCIS-ENT Easy Wins Study Notes">
   <meta property="og:description" content="This post will look over some areas I think will be easy wins for the JNCIS-ENT Exame.
-IEEE Standards:Link to headingIP Protocols:Link to headingPreferred Preferences:Link to headingSTP Bridge Prority - Lower Routing Preference - lower OSPF DIR priority/RID - Higher IS-IS DIS priority - Higher? BGP local pref - Higher
-Default TTLs:Link to headingiBGP TTL - 255 eBGP TTL - 1 VRRP TTL - 255?">
+IEEE Standards:Link to heading802.1D - Spanning Tree802.1w - Rapid Spanning Tree (w = wapid)802.1ad - LACPIP Protocols:Link to heading6 - TCPPort 179 - BGP89 - OSPF124 - IS-IS over IPPreferred Preferences:Link to headingSTP Bridge Prority - Lower Routing Preference - lower OSPF DIR priority/RID - Higher IS-IS DIS priority - Higher?">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -158,7 +155,7 @@ Default TTLs:Link to headingiBGP TTL - 255 eBGP TTL - 1 VRRP TTL - 255?">
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              One-minute read
+              2-minute read
             </span>
           </div>
           
@@ -193,7 +190,11 @@ Default TTLs:Link to headingiBGP TTL - 255 eBGP TTL - 1 VRRP TTL - 255?">
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<!-- raw HTML omitted -->
+<ul>
+	<li>802.1D - Spanning Tree</li>
+	<li>802.1w - Rapid Spanning Tree (w = wapid)</li>
+	<li>802.1ad - LACP</li>
+</ul>
 <h4 id="ip-protocols">
   <strong>IP Protocols:</strong>
   <a class="heading-link" href="#ip-protocols">
@@ -201,7 +202,14 @@ Default TTLs:Link to headingiBGP TTL - 255 eBGP TTL - 1 VRRP TTL - 255?">
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<!-- raw HTML omitted -->
+<ul>
+	<li>6 - TCP</li>
+	<ul>
+		<li>Port 179 - BGP</li>
+	</ul>
+	<li>89 - OSPF</li>
+	<li>124 - IS-IS over IP</li>
+</ul>
 <h4 id="preferred-preferences">
   <strong>Preferred Preferences:</strong>
   <a class="heading-link" href="#preferred-preferences">

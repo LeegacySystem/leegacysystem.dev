@@ -161,7 +161,7 @@ Both /25 local routes can be aggregated into a single /24.">
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              3-minute read
+              4-minute read
             </span>
           </div>
           
@@ -194,7 +194,7 @@ Both /25 local routes can be aggregated into a single /24.">
 <li>Reject</li>
 <li>Forwarding (next-hop)</li>
 </ol>
-<!-- raw HTML omitted -->
+<br/>
 <h4 id="1-discard">
   <strong>1. Discard</strong>
   <a class="heading-link" href="#1-discard">
@@ -203,11 +203,11 @@ Both /25 local routes can be aggregated into a single /24.">
   </a>
 </h4>
 <p>In Cisco Terms this is a null route with no ICMP reject notification, this is typically used for advertising summary/aggregate routes to neighboring devices. An example of this would be:</p>
-<p>Local routes: <!-- raw HTML omitted --> <strong>10.10.0.0/25</strong> <!-- raw HTML omitted --> <strong>10.10.0.128/25</strong> | Aggregate discard route: <!-- raw HTML omitted --> <strong>10.10.0.0/24</strong></p>
+<p>Local routes: <br> <strong>10.10.0.0/25</strong> <br> <strong>10.10.0.128/25</strong> | Aggregate discard route: <br> <strong>10.10.0.0/24</strong></p>
 <p>Both /25 local routes can be aggregated into a single /24.</p>
 <p>In the example above the aggregate discard route can be given to a routing protocol (ospf/bgp) to advertise to neighbours. This works because it exists in the routing table and packets match the longer local prefixes with valid next-hops before being discarded. An important note is that this type of aggregated advertisement only works when combining smaller subnets. For example, if you had 10.10.0.0/24 in your local routing table and tried to create smaller discard routes, traffic in those networks would be discarded as the /25 prefixes takes precedence over the /24:</p>
-<p>discard routes: <!-- raw HTML omitted --> <strong>10.10.0.0/25</strong> <!-- raw HTML omitted --> <strong>10.10.0.128/25</strong> <!-- raw HTML omitted --> Longest prefix match, packets discarded | local valid route: <!-- raw HTML omitted --> <strong>10.10.0.0/24</strong> <!-- raw HTML omitted -->  <!-- raw HTML omitted --> Valid prefix ignored due to /25s</p>
-<!-- raw HTML omitted -->
+<p>discard routes: <br> <strong>10.10.0.0/25</strong> <br> <strong>10.10.0.128/25</strong> <br> Longest prefix match, packets discarded | local valid route: <br> <strong>10.10.0.0/24</strong> <br>  <br> Valid prefix ignored due to /25s</p>
+<br/>
 <h4 id="2-reject">
   <strong>2. Reject</strong>
   <a class="heading-link" href="#2-reject">
@@ -216,7 +216,7 @@ Both /25 local routes can be aggregated into a single /24.">
   </a>
 </h4>
 <p>This type is similar to a discard however, instead sends an ICMP reject. A different type value may be used in the ICMP message depending on if the Network or Host is unavailable for the router.</p>
-<!-- raw HTML omitted -->
+<br/>
 <h4 id="3-forward">
   <strong>3. Forward</strong>
   <a class="heading-link" href="#3-forward">
@@ -226,7 +226,7 @@ Both /25 local routes can be aggregated into a single /24.">
 </h4>
 <p>This type of next hop determines where traffic should be forwarded. In a LAN (multi-access) network the next-hop IP address will be resolved to a physical mac address via arp however, in a point-to-point link the next-hop can be an interface.</p>
 <h6 id="next-hop-modifiers-br">
-  <strong>Next-hop modifiers</strong> <!-- raw HTML omitted -->
+  <strong>Next-hop modifiers</strong> <br/>
   <a class="heading-link" href="#next-hop-modifiers-br">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
@@ -270,7 +270,9 @@ This qualifier can be used with a next hop to allow Junos to take indirect next-
                  |
           +------+-------+
            192.168.0.0/24
-</code></pre><!-- raw HTML omitted -->
+</code></pre><br/>
+__*Qualified Next-hop*__
+This modifier allows for static routes to have a limited failover capability should there be more than one possible next-hop to the same network. There can be a list of qualified next-hops, with each destination having its own preference. Should a hop be present/resolved in the routing table, then it qualifies, route preference can be used for more control over the active route. A value of 5 is the default preference for a static route as defined by juniper and lower values are preferred. See the example below; 
 <pre tabindex="0"><code>                                          + Router#1 show routing+options
                                           |   static {
                                           |     route 0.0.0.0/0 {
