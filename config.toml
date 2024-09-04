@@ -41,11 +41,11 @@ publishDir = "docs" # Required for Github pages
   series = "series"
   tag = "tags"
 
-#[[params.social]]
-	#name = "Email"
-	#icon = "far fa-envelope"
-	#weight = 0
-  #  url = "mailto:LeegacySystem@outlook.com"
+[[params.social]]
+	name = "Email"
+	icon = "far fa-envelope"
+	weight = 0
+  url = "mailto:LeegacySystem@outlook.com"
 
 [[params.social]]
     name = "Github"
