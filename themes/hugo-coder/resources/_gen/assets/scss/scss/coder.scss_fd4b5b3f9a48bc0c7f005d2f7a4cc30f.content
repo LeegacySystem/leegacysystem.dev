@@ -3382,6 +3382,9 @@ figure {
           font-size: 1.6rem; }
           .centered .about ul li a:hover, .centered .about ul li a:focus {
             color: #1565c0; }
+          .centered .about ul li a i{
+            font-size: 3.2rem;
+          }
           @media only screen and (max-width: 768px) {
             .centered .about ul li a {
               font-size: 1.4rem; } }

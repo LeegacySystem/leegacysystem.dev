@@ -134,7 +134,10 @@ body.colorscheme-dark .content .list ul li .title {
 body.colorscheme-dark .content .centered .about ul li a {
   color: #dadada; }
   body.colorscheme-dark .content .centered .about ul li a:hover, body.colorscheme-dark .content .centered .about ul li a:focus {
-    color: #42a5f5; }
+    colocolorschemer: #42a5f5; }
+
+body.-dark .content .centered .about ul li a i{
+  font-size: 3.2rem; }
 
 @media (prefers-color-scheme: dark) {
   body.colorscheme-auto .content .post .tags .tag {
