@@ -45,7 +45,7 @@ publishDir = "docs" # Required for Github pages
 	#name = "Email"
 	#icon = "far fa-envelope"
 	#weight = 0
-  #  url = "mailto:lee@commit-confirm.host"
+  #  url = "mailto:LeegacySystem@outlook.com"
 
 [[params.social]]
     name = "Github"
