@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+   · Leegacy System
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Lee Dowdells">
+<meta name="description" content="I first started experimenting with Azure Machine Learning workspaces in early 2022, just before OpenAI&rsquo;s ChatGPT exploded in popularity.
+This was before Azure OpenAI service and the corresponding AOI studio being available, even back then I noticed the Machine Learning workspace studio UI was reguarly changing, with new features being added. After Azure OpenAI was released, the pace of change seemed to accelerate even more.
+I’ll admit, I didn’t document any of these UI changes, and I’m definitely not motivated enough to sift through feature release logs—so I’m relying on my sub-par memory here, but I swear the studio was different!">
+<meta name="keywords" content="blog, devops, neteng, juniper">
+<meta name="fediverse:creator" content="" />
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Leegacy System">
+  <meta name="twitter:description" content="I first started experimenting with Azure Machine Learning workspaces in early 2022, just before OpenAI’s ChatGPT exploded in popularity.
+This was before Azure OpenAI service and the corresponding AOI studio being available, even back then I noticed the Machine Learning workspace studio UI was reguarly changing, with new features being added. After Azure OpenAI was released, the pace of change seemed to accelerate even more.
+I’ll admit, I didn’t document any of these UI changes, and I’m definitely not motivated enough to sift through feature release logs—so I’m relying on my sub-par memory here, but I swear the studio was different!">
+
+<meta property="og:url" content="http://localhost:1313/posts/azure_ai_ml/">
+  <meta property="og:site_name" content="Leegacy System">
+  <meta property="og:title" content="Leegacy System">
+  <meta property="og:description" content="I first started experimenting with Azure Machine Learning workspaces in early 2022, just before OpenAI’s ChatGPT exploded in popularity.
+This was before Azure OpenAI service and the corresponding AOI studio being available, even back then I noticed the Machine Learning workspace studio UI was reguarly changing, with new features being added. After Azure OpenAI was released, the pace of change seemed to accelerate even more.
+I’ll admit, I didn’t document any of these UI changes, and I’m definitely not motivated enough to sift through feature release logs—so I’m relying on my sub-par memory here, but I swear the studio was different!">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/azure_ai_ml/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/site/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/site/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/site/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Leegacy System
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/azure_ai_ml/">
+              
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="0001-01-01T00:00:00Z">
+                January 1, 0001
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              6-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>I first started experimenting with Azure Machine Learning workspaces in early 2022, just before OpenAI&rsquo;s ChatGPT exploded in popularity.</p>
+<p>This was before Azure OpenAI service and the corresponding AOI studio being available, even back then I noticed the Machine Learning workspace studio UI was reguarly changing, with new features being added. After Azure OpenAI was released, the pace of change seemed to accelerate even more.</p>
+<p>I’ll admit, I didn’t document any of these UI changes, and I’m definitely not motivated enough to sift through feature release logs—so I’m relying on my sub-par memory here, but I swear the studio was different!</p>
+<p>Microsoft has since introduced AI Studio, which I haven’t followed as closely. From my initial reading, it seems to be the recommended replacement for Azure OpenAI Studio, with added features for centralized governance.</p>
+<p>AI Studio can be deployed as a Hub for central governance or as a Project, which can link back to a Hub. Interestingly, both AI Studio Hub and AI Studio Project are just Machine Learning workspaces under the hood, the resource provider for both being &ldquo;Microsoft.MachineLearningServices/workspaces&rdquo; with their kind attribute set to &ldquo;Project&rdquo; or &ldquo;Hub.&rdquo; I was already struggling to keep up with this studio naming game!</p>
+<p>** Insert Spider Man Meme **</p>
+<p>So, if we forget about the Azure OpenAI Studio as it&rsquo;s no longer the recommended option, we can see that what was once a Machine Learning Workspace Studio has seemingly transformed into AI Studio Project, with AI Studio Hub acting as the overarching governance workspace.</p>
+<p>Given all these changes and the shift towards AI Studio, I would bet money that the Azure Machine Learning service might be due for a rebranding sometime soon.</p>
+<p>If you are a future person from the future that I bet against</p>
+<p>If the rebranding doesn&rsquo;t happen and you&rsquo;re a future person that bet against me, feel free to collect your reward here:</p>
+<p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=dQw4w9WgXcQ</a></p>
+<p>Questions/things to check:</p>
+<hr>
+<ul>
+<li>Does AI Studio have autoMl?</li>
+</ul>
+<p>Experimenting:</p>
+<hr>
+<ul>
+<li>AI studio hub RBAC do not inherit down to project, would need to be done at a higher level</li>
+</ul>
+<p>Doc review:
+__</p>
+<ul>
+<li>Build generative AI applications</li>
+<li>Works with VS  Code desktop &amp; web?</li>
+<li>High and low-code</li>
+<li>build, test, and deploy ML models</li>
+<li>AI hub provides collaborative environment with shared</li>
+<li>AI project allows to save state?</li>
+<li>AI studio has no cost, but the services created and consumed via it do so potential to get complicated</li>
+</ul>
+<p>Integrations with, AI Services, OpenAI Service, Model Catalog managed compute &amp; serverless, model benchmarks</p>
+<p>Hubs:</p>
+<ul>
+<li>Common security and network configration spanning projects.</li>
+<li>Compue for interactive development, fine-tuning, open source and severless model deployments</li>
+<li>Integrations with other AI services (AOAI, Search), shared between projects</li>
+<li>Child projects</li>
+<li>Single storage account for data upload &amp; artifact storage.</li>
+</ul>
+<p>Project:</p>
+<ul>
+<li>Dev tools for building and customising AI apps.</li>
+<li>Shared components from paren hub (compute instaces, network etc)</li>
+<li>Isolated container within parent hub storage account</li>
+</ul>
+<p>Hubs centrally manage projects, as many projects as needed can be created.
+Projects can be used as organise work, data boundaries and or restrict access
+Connections are used to integrate AI studio with other services like AI search, sounds similar to ADO service connections.
+These connections can be shared across projects.
+Connections can use key-based access (assumed bad) or Entra ID passthrough sounds like delegated to me.</p>
+<p>Generally it makes sense to allign hubs to departments where data requirements are similar. For example if you might a customer services AI hub and a innovation hub, ML Ops might dictate dev,test &amp; prod so that would be 6 hubs total for full isolation.</p>
+<p>hub depeonds on - <a href="https://learn.microsoft.com/en-us/azure/ai-studio/concepts/architecture#azure-resource-types-and-providers"  class="external-link" target="_blank" rel="noopener">https://learn.microsoft.com/en-us/azure/ai-studio/concepts/architecture#azure-resource-types-and-providers</a></p>
+<p>Microsoft managed resources - Managed compute, Managed VNET, Metadata storage
+Managed compute requires vulnerability management? <a href="https://learn.microsoft.com/en-us/azure/ai-studio/concepts/vulnerability-management"  class="external-link" target="_blank" rel="noopener">https://learn.microsoft.com/en-us/azure/ai-studio/concepts/vulnerability-management</a></p>
+<p>RBAC &amp; Control Plane Proxy:</p>
+<ul>
+<li>none hub services RBAC is seperate from hub</li>
+<li>AI studio offers control plane proxy where operations are AI studio services makes calls to other resources (AOAI), how does this work with user perms?</li>
+</ul>
+<p>Each project has:</p>
+<ul>
+<li>Service principal with blob data contrib on the stroage account</li>
+<li>unique id (workspace id)</li>
+<li>Containers in storage account, prefixed with workspace id</li>
+<li>Role assignment has ABAC condition to limit SP access to containers with matching prefix, so no cross project container access</li>
+</ul>
+<p>Hub storage account containers:</p>
+<ul>
+<li>
+<p>{workspace-ID}-azureml    - metrics, models, components</p>
+</li>
+<li>
+<p>{workspace-ID}-blobstore  - uploaded data, code snapshots, pipeline data cache</p>
+</li>
+<li>
+<p>{workspace-ID}-code       - Notebooks, comput instance, prompt flow</p>
+</li>
+<li>
+<p>{workspace-ID}-file       - alternate data upload folder</p>
+</li>
+<li>
+<p>AI content safety works for Azure OpenAi and open source models</p>
+</li>
+<li>
+<p>Cost aren&rsquo;t tracked well within hubs or projects, so hubs and project should be kept to their own resource groups/subscriptions</p>
+</li>
+<li>
+<p>Prompt flow within custom environments require Azure Container Registry</p>
+</li>
+</ul>
+<p>RBAC:</p>
+<ul>
+<li>When a user does not have a permission to perform an action, generally the studio will not show that option.</li>
+<li>Only owner or contributor can create hubs</li>
+<li>There is not currently a custom role to create hubs</li>
+<li>Built-in role like Azure AI Developer include permissions across services (ML &amp; Cognitive)</li>
+<li>AI Studio (hub view) has a user management section, not sure how this plays with Azure RBAC</li>
+</ul>
+<p>Comput Vuln Mgmt:</p>
+<ul>
+<li>
+<p>Microsoft manages host OS virtual machine (VM) images for compute instances and serverless compute clusters</p>
+</li>
+<li>
+<p>Monthly update frequency</p>
+</li>
+<li>
+<p>Canonical Ubuntu images</p>
+</li>
+<li>
+<p>Microsoft updates system packages when updates are available.</p>
+</li>
+<li>
+<p>Microsoft checks and validates any machine learning packages that might require an upgrade.</p>
+</li>
+<li>
+<p>All VM images are built on secure subscriptions that run vulnerability scanning regularly.</p>
+</li>
+<li>
+<p>Microsoft applies hotfixes if vulnerabilities surface. Microsoft rolls out hotfixes within 72 hours for serverless compute clusters and within a week for compute instances.</p>
+</li>
+<li>
+<p>Base docker images - Microsoft releases updates for supported images every two weeks to address vulnerabilities.</p>
+</li>
+<li>
+<p>Using the :latest tag or pinning to a particular image version might be a tradeoff between security and environment reproducibility for your machine learning job.</p>
+</li>
+<li>
+<p>AI Studio doesn&rsquo;t delete images from Azure Container Registry but defender for container registry could be used.</p>
+</li>
+<li>
+<p>Compute Instances, Microsoft doesn&rsquo;t actively scan compute nodes for vulnerabilities while they&rsquo;re in use.</p>
+</li>
+</ul>
+<p>Interopability:
+<a href="https://learn.microsoft.com/en-us/azure/machine-learning/concept-hub-workspace?view=azureml-api-2"  class="external-link" target="_blank" rel="noopener">https://learn.microsoft.com/en-us/azure/machine-learning/concept-hub-workspace?view=azureml-api-2</a></p>
+<p>#&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
+<ul>
+<li>
+<p>Write about using Machine Learning Workspace since Summer 2022.</p>
+</li>
+<li>
+<p>Comment that it was before the OpenAI ChatGPT exploding in popularity</p>
+</li>
+<li>
+<p>Comment on the fact that ML workspace stuido constantly changed and really picked up after Chatgpt.</p>
+</li>
+<li>
+<p>Comment on Open Ai Studio changing at a similar pace.</p>
+</li>
+<li>
+<p>Not following AI studio as closely</p>
+</li>
+<li>
+<p>AI Studio now seems to be recommended over Open AI studio</p>
+</li>
+<li>
+<p>AI Studio Hub seems to be new and provides centralisation/governance over machine learning workpsaces</p>
+</li>
+<li>
+<p>In the background AI Studio is just a machine learning workspace, see &ldquo;Microsoft.MachineLearningServices/workspaces&rdquo; <a href="https://learn.microsoft.com/en-us/azure/ai-studio/concepts/architecture"  class="external-link" target="_blank" rel="noopener">https://learn.microsoft.com/en-us/azure/ai-studio/concepts/architecture</a></p>
+</li>
+<li>
+<p>I suspect Azure machine learning workspaces are going to be rebranded.</p>
+</li>
+<li>
+<p>compute nodes use the latest OS version is a shared responsibility.</p>
+</li>
+<li>
+<p>Nodes that aren&rsquo;t idle can&rsquo;t be updated to the latest VM image.</p>
+</li>
+<li>
+<p>Endpoints automatically receive OS host image updates that include vulnerability fixes</p>
+</li>
+</ul>
+<p>After you deploy a compute instance, it isn&rsquo;t actively updated:
+* Re-create a compute instance to get the latest OS image (recommended).
+* Regularly update OS and Python packages.</p>
+<p>Disaster Recovery:
+resources MS responsible for:
+AI Studio Infra
+Compute Instance</p>
+<p>Resources I am responsible for:
+Azure Storage
+Key Vault
+Container Registry
+App Insights
+Any connections</p>
+<h1 id="pamelafoxmicrosoftcom--pamelafoxgmailcom">
+  <a href="mailto:pamelafox@microsoft.com" >pamelafox@microsoft.com</a> / <a href="mailto:pamelafox@gmail.com" >pamelafox@gmail.com</a>
+  <a class="heading-link" href="#pamelafoxmicrosoftcom--pamelafoxgmailcom">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    All posts are my own ramblings... sorry study notes.
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

@@ -6,8 +6,15 @@
     <description>Recent content on Leegacy System</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 29 Mar 2020 14:40:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Sep 2024 20:50:26 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure AI vs ML Studio</title>
+      <link>http://localhost:1313/posts/azure_ai_ml_studio/</link>
+      <pubDate>Wed, 04 Sep 2024 20:50:26 +0100</pubDate>
+      <guid>http://localhost:1313/posts/azure_ai_ml_studio/</guid>
+      <description>I probably first used the Azure Machine Learning service mid-2022, just before OpenAI&amp;rsquo;s ChatGPT exploded in popularity.&#xA;This was before Azure OpenAI service and its corresponding Azure OpenAI studio was available, even back then I noticed the Machine Learning workspace studio UI was changing reguarly with new features being added. After Azure OpenAI was released, the pace of change seemed to accelerate even more.&#xA;I’ll admit, I didn’t document any of these UI changes, and I’m definitely not motivated enough to sift through release logs so I’m relying on my sub-par memory here, but I swear the ML studio UI was different!</description>
+    </item>
     <item>
       <title>CoreDNS Homelab Setup</title>
       <link>http://localhost:1313/posts/homelab-setup/</link>
@@ -175,6 +182,13 @@
       <pubDate>Thu, 12 Jul 2018 18:42:23 +0000</pubDate>
       <guid>http://localhost:1313/posts/first-blog-post/</guid>
       <description>The First Dump&#xD;Link to heading&#xD;This is simply a note to myself on how to fix the midnight Jekyll theme should any others have the same problem. This was mainly figured out by trial and error along with some comparisons with working github page sources.&#xA;As I&amp;rsquo;ve already forgotten how I fixed it, see commit#5 with file change highlights below:&#xA;1) Gemfile.lock&#xD;Link to heading&#xD;There are a lot of additions in here.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/azure_ai_ml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/azure_ai_ml/</guid>
+      <description>I first started experimenting with Azure Machine Learning workspaces in early 2022, just before OpenAI&amp;rsquo;s ChatGPT exploded in popularity.&#xA;This was before Azure OpenAI service and the corresponding AOI studio being available, even back then I noticed the Machine Learning workspace studio UI was reguarly changing, with new features being added. After Azure OpenAI was released, the pace of change seemed to accelerate even more.&#xA;I’ll admit, I didn’t document any of these UI changes, and I’m definitely not motivated enough to sift through feature release logs—so I’m relying on my sub-par memory here, but I swear the studio was different!</description>
     </item>
     <item>
       <title>First snippet</title>

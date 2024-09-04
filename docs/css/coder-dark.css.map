@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "coder-dark.css",
-	"sourceRoot": "C:/Users/lee-2/Desktop/workdir/repos/leegacysystem.dev v2",
+	"sourceRoot": "C:/Users/lee-2/Desktop/workdir/repos/blog/leegacysystem.dev v2",
 	"sources": [
 		"themes/hugo-coder/assets/scss/coder-dark.scss",
 		"themes/hugo-coder/assets/scss/_variables.scss",

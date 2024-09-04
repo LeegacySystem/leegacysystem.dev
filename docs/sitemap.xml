@@ -8,6 +8,30 @@
     <loc>http://localhost:1313/posts/</loc>
     <lastmod>2024-09-24T13:30:23+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/ai/</loc>
+    <lastmod>2024-09-04T20:50:26+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/azure/</loc>
+    <lastmod>2024-09-04T20:50:26+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/azure_ai_ml_studio/</loc>
+    <lastmod>2024-09-04T20:50:26+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/genai/</loc>
+    <lastmod>2024-09-04T20:50:26+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ml/</loc>
+    <lastmod>2024-09-04T20:50:26+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/openai/</loc>
+    <lastmod>2024-09-04T20:50:26+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-09-04T20:50:26+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/terraform/</loc>
+    <lastmod>2024-09-04T20:50:26+01:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
     <lastmod>2020-03-29T14:40:00+00:00</lastmod>
   </url><url>
@@ -24,9 +48,6 @@
     <lastmod>2020-03-29T14:40:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/homelab/</loc>
-    <lastmod>2020-03-29T14:40:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2020-03-29T14:40:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/jncis-ent/</loc>
@@ -166,6 +187,8 @@
   </url><url>
     <loc>http://localhost:1313/posts/first-blog-post/</loc>
     <lastmod>2018-07-12T18:42:23+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/azure_ai_ml/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/dai/</loc>
   </url><url>
