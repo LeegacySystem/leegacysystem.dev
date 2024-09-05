@@ -13,25 +13,28 @@
 
 
 <meta name="author" content="Lee Dowdells">
-<meta name="description" content="I first started experimenting with Azure Machine Learning workspaces in early 2022, just before OpenAI&rsquo;s ChatGPT exploded in popularity.
-This was before Azure OpenAI service and the corresponding AOI studio being available, even back then I noticed the Machine Learning workspace studio UI was reguarly changing, with new features being added. After Azure OpenAI was released, the pace of change seemed to accelerate even more.
-I’ll admit, I didn’t document any of these UI changes, and I’m definitely not motivated enough to sift through feature release logs—so I’m relying on my sub-par memory here, but I swear the studio was different!">
+<meta name="description" content="Questions/things to check:
+Does AI Studio have autoMl? Experimenting:
+AI studio hub RBAC do not inherit down to project, would need to be done at a higher level Doc review: __
+Build generative AI applications Works with VS Code desktop &amp; web? High and low-code build, test, and deploy ML models AI hub provides collaborative environment with shared AI project allows to save state? AI studio has no cost, but the services created and consumed via it do so potential to get complicated Integrations with, AI Services, OpenAI Service, Model Catalog managed compute &amp; serverless, model benchmarks">
 <meta name="keywords" content="blog, devops, neteng, juniper">
 <meta name="fediverse:creator" content="" />
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Leegacy System">
-  <meta name="twitter:description" content="I first started experimenting with Azure Machine Learning workspaces in early 2022, just before OpenAI’s ChatGPT exploded in popularity.
-This was before Azure OpenAI service and the corresponding AOI studio being available, even back then I noticed the Machine Learning workspace studio UI was reguarly changing, with new features being added. After Azure OpenAI was released, the pace of change seemed to accelerate even more.
-I’ll admit, I didn’t document any of these UI changes, and I’m definitely not motivated enough to sift through feature release logs—so I’m relying on my sub-par memory here, but I swear the studio was different!">
+  <meta name="twitter:description" content="Questions/things to check:
+Does AI Studio have autoMl? Experimenting:
+AI studio hub RBAC do not inherit down to project, would need to be done at a higher level Doc review: __
+Build generative AI applications Works with VS Code desktop &amp; web? High and low-code build, test, and deploy ML models AI hub provides collaborative environment with shared AI project allows to save state? AI studio has no cost, but the services created and consumed via it do so potential to get complicated Integrations with, AI Services, OpenAI Service, Model Catalog managed compute &amp; serverless, model benchmarks">
 
-<meta property="og:url" content="http://localhost:1313/posts/azure_ai_ml/">
+<meta property="og:url" content="https://www.leegacysystem.dev/posts/azure_ai_ml/">
   <meta property="og:site_name" content="Leegacy System">
   <meta property="og:title" content="Leegacy System">
-  <meta property="og:description" content="I first started experimenting with Azure Machine Learning workspaces in early 2022, just before OpenAI’s ChatGPT exploded in popularity.
-This was before Azure OpenAI service and the corresponding AOI studio being available, even back then I noticed the Machine Learning workspace studio UI was reguarly changing, with new features being added. After Azure OpenAI was released, the pace of change seemed to accelerate even more.
-I’ll admit, I didn’t document any of these UI changes, and I’m definitely not motivated enough to sift through feature release logs—so I’m relying on my sub-par memory here, but I swear the studio was different!">
+  <meta property="og:description" content="Questions/things to check:
+Does AI Studio have autoMl? Experimenting:
+AI studio hub RBAC do not inherit down to project, would need to be done at a higher level Doc review: __
+Build generative AI applications Works with VS Code desktop &amp; web? High and low-code build, test, and deploy ML models AI hub provides collaborative environment with shared AI project allows to save state? AI studio has no cost, but the services created and consumed via it do so potential to get complicated Integrations with, AI Services, OpenAI Service, Model Catalog managed compute &amp; serverless, model benchmarks">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -39,7 +42,7 @@ I’ll admit, I didn’t document any of these UI changes, and I’m definitely 
 
 
 
-<link rel="canonical" href="http://localhost:1313/posts/azure_ai_ml/">
+<link rel="canonical" href="https://www.leegacysystem.dev/posts/azure_ai_ml/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -107,7 +110,7 @@ I’ll admit, I didn’t document any of these UI changes, and I’m definitely 
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="http://localhost:1313/">
+    <a class="navigation-title" href="https://www.leegacysystem.dev/">
       Leegacy System
     </a>
     
@@ -138,7 +141,7 @@ I’ll admit, I didn’t document any of these UI changes, and I’m definitely 
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="http://localhost:1313/posts/azure_ai_ml/">
+            <a class="title-link" href="https://www.leegacysystem.dev/posts/azure_ai_ml/">
               
             </a>
           </h1>
@@ -153,7 +156,7 @@ I’ll admit, I didn’t document any of these UI changes, and I’m definitely 
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              6-minute read
+              5-minute read
             </span>
           </div>
           
@@ -164,18 +167,7 @@ I’ll admit, I didn’t document any of these UI changes, and I’m definitely 
 
       <div class="post-content">
         
-        <p>I first started experimenting with Azure Machine Learning workspaces in early 2022, just before OpenAI&rsquo;s ChatGPT exploded in popularity.</p>
-<p>This was before Azure OpenAI service and the corresponding AOI studio being available, even back then I noticed the Machine Learning workspace studio UI was reguarly changing, with new features being added. After Azure OpenAI was released, the pace of change seemed to accelerate even more.</p>
-<p>I’ll admit, I didn’t document any of these UI changes, and I’m definitely not motivated enough to sift through feature release logs—so I’m relying on my sub-par memory here, but I swear the studio was different!</p>
-<p>Microsoft has since introduced AI Studio, which I haven’t followed as closely. From my initial reading, it seems to be the recommended replacement for Azure OpenAI Studio, with added features for centralized governance.</p>
-<p>AI Studio can be deployed as a Hub for central governance or as a Project, which can link back to a Hub. Interestingly, both AI Studio Hub and AI Studio Project are just Machine Learning workspaces under the hood, the resource provider for both being &ldquo;Microsoft.MachineLearningServices/workspaces&rdquo; with their kind attribute set to &ldquo;Project&rdquo; or &ldquo;Hub.&rdquo; I was already struggling to keep up with this studio naming game!</p>
-<p>** Insert Spider Man Meme **</p>
-<p>So, if we forget about the Azure OpenAI Studio as it&rsquo;s no longer the recommended option, we can see that what was once a Machine Learning Workspace Studio has seemingly transformed into AI Studio Project, with AI Studio Hub acting as the overarching governance workspace.</p>
-<p>Given all these changes and the shift towards AI Studio, I would bet money that the Azure Machine Learning service might be due for a rebranding sometime soon.</p>
-<p>If you are a future person from the future that I bet against</p>
-<p>If the rebranding doesn&rsquo;t happen and you&rsquo;re a future person that bet against me, feel free to collect your reward here:</p>
-<p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=dQw4w9WgXcQ</a></p>
-<p>Questions/things to check:</p>
+        <p>Questions/things to check:</p>
 <hr>
 <ul>
 <li>Does AI Studio have autoMl?</li>
