@@ -59,6 +59,9 @@ publishDir = "docs" # Required for Github pages
 	weight = 2
 	url = "https://www.linkedin.com/in/lee-dow180/"
 
+[params.cloudflare]
+    token = "a3e23d0e9f3541179b1ae8f47639e993"
+
 [languages]
     [languages.en]
         languagename = "English"
