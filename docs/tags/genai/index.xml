@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GenAI on Leegacy System</title>
-    <link>http://localhost:1313/tags/genai/</link>
+    <link>https://www.leegacysystem.dev:1313/tags/genai/</link>
     <description>Recent content in GenAI on Leegacy System</description>
     <generator>Hugo</generator>
-    <language>en</language>
+    <language>en-us</language>
     <lastBuildDate>Wed, 04 Sep 2024 20:50:26 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/genai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.leegacysystem.dev:1313/tags/genai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Azure AI vs ML Studio</title>
-      <link>http://localhost:1313/posts/azure_ai_vs_ml_studio/</link>
+      <link>https://www.leegacysystem.dev:1313/posts/azure_ai_vs_ml_studio/</link>
       <pubDate>Wed, 04 Sep 2024 20:50:26 +0100</pubDate>
-      <guid>http://localhost:1313/posts/azure_ai_vs_ml_studio/</guid>
+      <guid>https://www.leegacysystem.dev:1313/posts/azure_ai_vs_ml_studio/</guid>
       <description>I probably first used the Azure Machine Learning service mid-2022, just before OpenAI&amp;rsquo;s ChatGPT exploded in popularity.&#xA;This was before Azure OpenAI service and its corresponding Azure OpenAI studio was available, even back then I noticed the Machine Learning workspace studio UI was changing reguarly with new features being added. After Azure OpenAI was released, the pace of change seemed to accelerate even more.&#xA;I’ll admit, I didn’t document any of these UI changes, and I’m definitely not motivated enough to sift through release logs so I’m relying on my sub-par memory here, but I swear the ML studio UI was different!</description>
     </item>
   </channel>

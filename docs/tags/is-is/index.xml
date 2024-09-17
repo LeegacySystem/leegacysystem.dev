@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IS-IS on Leegacy System</title>
-    <link>http://localhost:1313/tags/is-is/</link>
+    <link>https://www.leegacysystem.dev:1313/tags/is-is/</link>
     <description>Recent content in IS-IS on Leegacy System</description>
     <generator>Hugo</generator>
-    <language>en</language>
+    <language>en-us</language>
     <lastBuildDate>Tue, 12 Mar 2019 17:41:23 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/is-is/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.leegacysystem.dev:1313/tags/is-is/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Juniper IS-IS Study Notes</title>
-      <link>http://localhost:1313/posts/juniper-isis-study-notes/</link>
+      <link>https://www.leegacysystem.dev:1313/posts/juniper-isis-study-notes/</link>
       <pubDate>Tue, 12 Mar 2019 17:41:23 +0000</pubDate>
-      <guid>http://localhost:1313/posts/juniper-isis-study-notes/</guid>
+      <guid>https://www.leegacysystem.dev:1313/posts/juniper-isis-study-notes/</guid>
       <description>First draft notes, likely to be messy/missing information&#xD;Link to heading&#xD;IS-IS or Intermediate System to Intermediate System is an exam objective in the JNCIS-ENT curriculum and a routing protocol I had never actually come across before. At the time when I studied the CCNA and CCNP IS-IS was mentioned but never looked at in detail, this may have changed by now.&#xA;The interesting thing about IS-IS is that was inteded to superceed OSPF once the OSI model became widely adopted.</description>
     </item>
   </channel>

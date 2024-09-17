@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>BGP on Leegacy System</title>
-    <link>http://localhost:1313/tags/bgp/</link>
+    <link>https://www.leegacysystem.dev:1313/tags/bgp/</link>
     <description>Recent content in BGP on Leegacy System</description>
     <generator>Hugo</generator>
-    <language>en</language>
+    <language>en-us</language>
     <lastBuildDate>Wed, 10 Apr 2019 15:20:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/bgp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.leegacysystem.dev:1313/tags/bgp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Junos BGP Packets and Attributes Study Notes</title>
-      <link>http://localhost:1313/posts/junos_bgp_packets_and_attributes_study_notes/</link>
+      <link>https://www.leegacysystem.dev:1313/posts/junos_bgp_packets_and_attributes_study_notes/</link>
       <pubDate>Wed, 10 Apr 2019 15:20:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/junos_bgp_packets_and_attributes_study_notes/</guid>
+      <guid>https://www.leegacysystem.dev:1313/posts/junos_bgp_packets_and_attributes_study_notes/</guid>
       <description>This post will skim over BGP packets and attributes.&#xA;BGP Packet Types:&#xD;Link to heading&#xD;There are five types of packets in BGP:&#xA;Open Keepalive Notification Update Refresh BGP Attributes:&#xD;Link to heading&#xD;There are four categories of attributes with different types in each:&#xA;Well-known Mandatory - These attributes must be present in any BGP update.&#xD;Origin&#xD;AS Path - Loop protection&#xD;Next-Hop&#xD;Well-known Discretionary - Must be in every BGP implementation but is not required in every BGP update.</description>
     </item>
     <item>
       <title>Junos BGP States Study Notes</title>
-      <link>http://localhost:1313/posts/junos_bgp_states_study_notes/</link>
+      <link>https://www.leegacysystem.dev:1313/posts/junos_bgp_states_study_notes/</link>
       <pubDate>Wed, 10 Apr 2019 12:59:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/junos_bgp_states_study_notes/</guid>
+      <guid>https://www.leegacysystem.dev:1313/posts/junos_bgp_states_study_notes/</guid>
       <description>This post will take a quick look into the BGP Finite State model.&#xA;IDLE:&#xD;Link to heading&#xD;This is the first state and essentially means a session is inactive waiting for a start event which can be manual or automatic. I&amp;rsquo;ll need to look into Junipers definitions of a start event.&#xA;Connect:&#xD;Link to heading&#xD;After a start event BGP will try to establish a TCP connection. A session will remain in the Connect state until either a TCP session is formed or the TCP handshake failed.</description>
     </item>
   </channel>

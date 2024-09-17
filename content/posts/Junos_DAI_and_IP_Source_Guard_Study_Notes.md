@@ -1,6 +1,6 @@
 ---
 title:  "Junos DAI and IP Source Guard Study Notes"
-date:   2019-04-1 17:00:00
+date:   2019-04-01 17:00:00
 categories: [Juniper]
 tags: 
 - Juniper 
