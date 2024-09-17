@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>EX on Leegacy System</title>
-    <link>https://www.leegacysystem.dev:1313/tags/ex/</link>
+    <link>https://www.leegacysystem.dev/tags/ex/</link>
     <description>Recent content in EX on Leegacy System</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 16 Aug 2018 17:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.leegacysystem.dev:1313/tags/ex/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.leegacysystem.dev/tags/ex/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Juniper Hardware Platform Overview</title>
-      <link>https://www.leegacysystem.dev:1313/posts/juniper-hardware-platforms/</link>
+      <link>https://www.leegacysystem.dev/posts/juniper-hardware-platforms/</link>
       <pubDate>Thu, 16 Aug 2018 17:00:00 +0000</pubDate>
-      <guid>https://www.leegacysystem.dev:1313/posts/juniper-hardware-platforms/</guid>
+      <guid>https://www.leegacysystem.dev/posts/juniper-hardware-platforms/</guid>
       <description>This post will look at the various juniper hardware platforms and summarise on each. The information presented is taken directly from the juniper product-services page. As there are comparisions of each platform this post will be table heavy.&#xA;The Switching Platforms:&#xD;Link to heading&#xD;EX Switches QFX Switches The Routing Platforms:&#xD;Link to heading&#xD;MX Routers PTX Routers ACX Routers CTP Routers T4000 Routers The Security Platforms:&#xD;Link to heading&#xD;SRX series firewalls Overview of EX Switch Series:&#xD;Link to heading&#xD;The EX series of swithces are junipers widest and most varied range.</description>
     </item>
   </channel>
