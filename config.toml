@@ -1,4 +1,4 @@
-baseURL = 'https://www.leegacysystem.dev/'
+baseurl = 'https://www.leegacysystem.dev/'
 languageCode = 'en-us'
 title = 'Leegacy System'
 theme = "hugo-coder"
@@ -19,12 +19,9 @@ publishDir = "docs" # Required for Github pages
     favicon_32 = "/images/site/favicon-32x32.png"
     favicon_16 = "/images/site/favicon-16x16.png"
 
-
     enableTwemoji = true
-
     colorScheme = "dark"
     hidecolorschemetoggle = false
-
     rtl = false
 
     # Series see also post count
@@ -34,7 +31,6 @@ publishDir = "docs" # Required for Github pages
   # customSCSS = ["scss/custom.scss"]
   # customJS = ["js/app.js", "js/particles.js"]
   customHomeJS = ["js/particles.js", "js/app.js"]
-
 
 [taxonomies]
   category = "categories"
@@ -61,27 +57,6 @@ publishDir = "docs" # Required for Github pages
 
 [params.cloudflare]
     token = "a3e23d0e9f3541179b1ae8f47639e993"
-
-[languages]
-    [languages.en]
-        languagename = "English"
-
-        [languages.en.menu]
-
-            #[[languages.en.menu.main]]
-            #name = "About"
-            #weight = 1
-            #url = "about/"
-
-            [[languages.en.menu.main]]
-            name = "Blog"
-            weight = 2
-            url = "posts/"
-
-            #[[languages.en.menu.main]]
-            #name = "Projects"
-            #weight = 3
-            #url = "projects/"
 
 [markup]
   [markup.goldmark]
