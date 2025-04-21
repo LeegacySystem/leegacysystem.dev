@@ -6,8 +6,22 @@
     <description>Recent content on Leegacy System</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 04 Sep 2024 20:50:26 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 21 Apr 2025 20:50:26 +0100</lastBuildDate>
     <atom:link href="https://www.leegacysystem.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LicenseLens - M365 License Reporting &amp; Monitoring</title>
+      <link>https://www.leegacysystem.dev/posts/azure_m365_licenselens/</link>
+      <pubDate>Mon, 21 Apr 2025 20:50:26 +0100</pubDate>
+      <guid>https://www.leegacysystem.dev/posts/azure_m365_licenselens/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve spent more late nights than I probably should have working on a tool that I hope other M365 admins will find useful.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve built an automated M365 license usage report I&amp;rsquo;m calling LicenseLens. I won&amp;rsquo;t go into too much detail here, as I’ve already written a decent amount of information in the repository:&lt;/p&gt;&#xA;&lt;p&gt;👉 &lt;a href=&#34;https://github.com/LeegacySystem/m365-license-lens&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github m365-license-lens&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;The goal of the tool is simple: to provide admins with better analytics on M365 license usage.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://www.leegacysystem.dev/posts/1_hugo/</link>
+      <pubDate>Tue, 24 Sep 2024 13:30:23 +0000</pubDate>
+      <guid>https://www.leegacysystem.dev/posts/1_hugo/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;Hugo is a modern static site generator built on Golang.&lt;/li&gt;&#xA;&lt;li&gt;Markets its speed&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Static Vs Dynamic websites&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Dynamic website would be something like facebook, content changes based on context.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Static is static, not based on users or actions&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Static is cheaper&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Static has less flexibility&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Content is written in markdown&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Hugo community themes&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Directory Structure&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;└───test_site&#xA;├───archetypes  - Define data/metadata about conent&#xA;├───assets      -&#xA;├───content     - Content of the website&#xA;├───data        - Almost database of website&#xA;├───i18n        -&#xA;├───layouts     - Same headers/footers or other layout components&#xA;├───static      - Images/css/javascript that does not change reguarly&#xA;└───themes      - Allows prebuilt themes.&#xA;config.toml     - Main config settings file&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Azure AI vs ML Studio</title>
       <link>https://www.leegacysystem.dev/posts/azure_ai_vs_ml_studio/</link>

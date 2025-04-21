@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Azure on Leegacy System</title>
-    <link>https://www.leegacysystem.dev/tags/azure/</link>
-    <description>Recent content in Azure on Leegacy System</description>
+    <title>Licensing on Leegacy System</title>
+    <link>https://www.leegacysystem.dev/tags/licensing/</link>
+    <description>Recent content in Licensing on Leegacy System</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 21 Apr 2025 20:50:26 +0100</lastBuildDate>
-    <atom:link href="https://www.leegacysystem.dev/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.leegacysystem.dev/tags/licensing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LicenseLens - M365 License Reporting &amp; Monitoring</title>
       <link>https://www.leegacysystem.dev/posts/azure_m365_licenselens/</link>
       <pubDate>Mon, 21 Apr 2025 20:50:26 +0100</pubDate>
       <guid>https://www.leegacysystem.dev/posts/azure_m365_licenselens/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve spent more late nights than I probably should have working on a tool that I hope other M365 admins will find useful.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve built an automated M365 license usage report I&amp;rsquo;m calling LicenseLens. I won&amp;rsquo;t go into too much detail here, as I’ve already written a decent amount of information in the repository:&lt;/p&gt;&#xA;&lt;p&gt;👉 &lt;a href=&#34;https://github.com/LeegacySystem/m365-license-lens&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github m365-license-lens&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;The goal of the tool is simple: to provide admins with better analytics on M365 license usage.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Azure AI vs ML Studio</title>
-      <link>https://www.leegacysystem.dev/posts/azure_ai_vs_ml_studio/</link>
-      <pubDate>Wed, 04 Sep 2024 20:50:26 +0100</pubDate>
-      <guid>https://www.leegacysystem.dev/posts/azure_ai_vs_ml_studio/</guid>
-      <description>&lt;p&gt;I probably first used the Azure Machine Learning service mid-2022, just before OpenAI&amp;rsquo;s ChatGPT exploded in popularity.&lt;/p&gt;&#xA;&lt;p&gt;This was before Azure OpenAI service and its corresponding Azure OpenAI studio was available, even back then I noticed the Machine Learning workspace studio UI was changing reguarly with new features being added. After Azure OpenAI was released, the pace of change seemed to accelerate even more.&lt;/p&gt;&#xA;&lt;p&gt;I’ll admit, I didn’t document any of these UI changes, and I’m definitely not motivated enough to sift through release logs so I’m relying on my sub-par memory here, but I swear the ML studio UI was different!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
